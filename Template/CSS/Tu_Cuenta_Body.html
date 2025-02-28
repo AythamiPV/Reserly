@@ -1,11 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Cuenta</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Body - Tu Cuenta</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,80 +11,69 @@
             padding: 0;
             background-color: #f5f5f5;
         }
-        .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
-            padding: 10px;
-            color: white;
-        }
-        .logo, .profile-image, .location-box, .image-box, .contact-image {
-            width: 100px;
-            height: 100px;
-            background-color: #ccc;
-            margin: 10px;
-            border-radius: 0;
-        }
-        .search-bar {
-            flex-grow: 1;
-            margin: 0 10px;
-            padding: 5px;
+
+        /* Body */
+        main {
+            padding: 20px;
         }
         .account-header {
             display: flex;
             align-items: center;
-            background-color: white;
             padding: 20px;
+            background-color: white;
+            border-bottom: 2px solid #ddd;
         }
-        .account-info h1 {
-            margin: 0;
+        .profile-image {
+            width: 80px;
+            height: 80px;
+            background-color: #ccc;
+            border-radius: 10px;
+            margin-right: 20px;
         }
         .location {
-            background-color: #ddd;
+            display: flex;
+            align-items: center;
             padding: 20px;
+            background-color: #eee;
+            margin: 20px 0;
+        }
+        .location-box {
+            width: 100%;
+            height: 150px;
+            background-color: #ccc;
+            margin-left: 10px;
         }
         .highlights {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             padding: 20px;
         }
         .highlight-item {
             text-align: center;
+            flex: 1;
+            margin: 0 10px;
+        }
+        .image-box {
+            width: 100%;
+            height: 120px;
+            background-color: #ccc;
+            margin-top: 10px;
         }
         .manage-account {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             background-color: #444;
             color: white;
             padding: 20px;
         }
         .account-option {
-            max-width: 300px;
-        }
-        footer {
-            background-color: #222;
-            color: white;
-            padding: 20px;
-            position: relative;
-        }
-        .contact {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            text-align: right;
+            flex: 1;
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
-<header>
-    <div class="top-bar">
-        <div class="logo"></div>
-        <input type="text" class="search-bar" placeholder="Buscar...">
-        <button class="search-button">🔍</button>
-        <div class="profile">Profile</div>
-    </div>
-</header>
+
 <main>
     <section class="account-header">
         <div class="profile-image"></div>
@@ -116,24 +103,18 @@
     <section class="manage-account">
         <div class="account-option">
             <h3>ℹ️ Información Personal</h3>
-            <p>En esta sección, puedes administrar y actualizar tus datos básicos en la plataforma.</p>
+            <p>Administra y actualiza tus datos en la plataforma.</p>
         </div>
         <div class="account-option">
             <h3>📜 Historial de Reservas</h3>
-            <p>Aquí encontrarás detalles sobre tus reservas pasadas, activas y futuras.</p>
+            <p>Consulta detalles sobre tus reservas pasadas, activas y futuras.</p>
         </div>
         <div class="account-option">
             <h3>⚙️ Administrar Cuenta</h3>
-            <p>Cambiar la configuración de seguridad y personalizar ajustes.</p>
+            <p>Configura seguridad y personaliza ajustes.</p>
         </div>
     </section>
-    <footer>
-        <div class="contact">
-            <p><strong>Contacto:</strong><br>
-                Teléfono: +34 666 666 666<br>
-                E-mail: contacto@reserly.es</p>
-        </div>
-    </footer>
 </main>
+
 </body>
 </html>
