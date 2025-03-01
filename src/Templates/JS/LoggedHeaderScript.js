@@ -16,9 +16,15 @@ function initDropdown() {
     }
 }
 
-// Ejecuta initDropdown() cuando el DOM haya cargado completamente
-document.addEventListener("DOMContentLoaded", function () {
-    if (document.querySelector(".profile-pic")) {
-        initDropdown();
-    }
+window.addEventListener("load", function () {
+    setTimeout(() => {
+        const currentPage = window.location.pathname.split("/").pop();
+        console.log("Página actual:", currentPage);
+        if (currentPage !== "CompanyMain.html") {
+            const manageLink = document.querySelector(".dropdown-menu a[href*='ManageCompany.html']");
+            if (manageLink) {
+                manageLink.remove(); // Elimina el enlace en lugar de ocultarlo
+            }
+        }
+    }, 500);
 });

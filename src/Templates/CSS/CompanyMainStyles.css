@@ -41,6 +41,7 @@ body {
 
 .company-name {
     font-size: 32px;
+    color: white;
     font-weight: bold;
 }
 
@@ -94,7 +95,7 @@ body {
 
 .info-title {
     font-size: 28px;
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
@@ -102,7 +103,7 @@ body {
     font-size: 16px;
     margin-top: 10px;
     max-width: 600px;
-    color: darkgray;
+    color: #d5c4c4;
     font-weight: bold;
 }
 

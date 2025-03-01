@@ -37,9 +37,15 @@ async function xLuIncludeFile() {
                         initCalendar();
                     }
 
-                    // Si se carga el header, ejecutar initDropdown()
                     if (file === "LoggedHeader.html" && typeof initDropdown === "function") {
                         initDropdown();
+                        const currentPage = window.location.pathname.split("/").pop();
+                        if (currentPage !== "CompanyMain.html") {
+                            const manageLink = document.querySelector(".dropdown-menu a[href*='ManageCompany.html']");
+                            if (manageLink) {
+                                manageLink.remove();
+                            }
+                        }
                     }
                 }
 

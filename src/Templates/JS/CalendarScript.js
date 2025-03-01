@@ -18,7 +18,8 @@ function initCalendar() {
         const lastDay = new Date(selectedDate.getFullYear(), selectedDate.getMonth() + 1, 0);
         const prevLastDay = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 0);
 
-        monthYear.textContent = firstDay.toLocaleString("es-ES", { month: "long", year: "numeric" });
+        // Cambié "es-ES" por "en-US" para mostrar los meses en inglés
+        monthYear.textContent = firstDay.toLocaleString("en-US", { month: "long", year: "numeric" });
         calendarDays.innerHTML = "<div class='day'>M</div><div class='day'>T</div><div class='day'>W</div><div class='day'>T</div><div class='day'>F</div><div class='day'>S</div><div class='day'>S</div>";
 
         let startDay = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1;
