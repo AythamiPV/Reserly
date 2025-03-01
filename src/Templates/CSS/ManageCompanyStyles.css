@@ -1,0 +1,144 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    width: 100%; /* Asegura que el body tenga la altura completa */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fondo de la página */
+body {
+    background-color: #3a4b5c;
+    padding: 0;
+    min-height: 100vh; /* Esto asegura que el body ocupe al menos toda la altura de la pantalla */
+}
+
+/* Contenedor principal */
+.main-container {
+    display: grid;
+    margin-top: 900px;
+    width: 100%;
+    gap: 20px;
+    flex-grow: 1;
+    justify-items: center;
+}
+
+/* Wrapper de contenido */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between; /* Espacio entre los elementos: izquierda y derecha */
+    width: 100%;
+}
+
+/* Contenedor de los elementos dentro del recuadro */
+.content-container {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos de Schedule y su lista en una columna */
+    gap: 10px;
+    width: 50%; /* Ajusta el ancho de la primera parte */
+}
+
+/* Nuevo contenedor para poner Service y Service List uno al lado del otro */
+.content-container-horizontal {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Espacio entre los elementos */
+}
+
+/* Estilo para los recuadros alrededor de los templates */
+.template-container {
+    background-color: #688297;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1400px; /* Limita el tamaño máximo del recuadro */
+}
+
+/* Estilo para el Calendar a la derecha */
+#CalendarSection {
+    width: 45%; /* El calendario ocupa el 45% del ancho */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Asegura que ListSchedule y Schedule tengan el mismo ancho */
+#Schedule{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#ScheduleList {
+    display: flex;
+    justify-content: center;
+
+}
+
+
+/* Ocupa todo el espacio disponible */
+ #Service {
+     display: flex;
+     min-width: 500px;
+     justify-content: center;
+     width: 100%;
+}
+ #ServiceList {
+     display: flex;
+     width: 200px;
+ }
+ #Service_container{
+     display: grid;
+     gap: 20px;
+ }
+
+ #save-changes {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4FC3F7;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#add-festive{
+    background-color: #4FC3F7;
+    color: white;
+    font-weight: bold;
+    border: none;
+    width: 50%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+#save-changes {
+    margin-bottom: 30px;
+}
+
+#add-festive:hover, #save-changes:hover {
+    background-color: #0097a7;
+}
+
+
+/* Footer */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+}

@@ -5,7 +5,7 @@ body {
     padding: 20px;
 }
 
-.container {
+#ServiceContainer {
     max-width: 400px;
     margin: auto;
     background: #1b2a41;
@@ -26,22 +26,22 @@ label {
     color: white;
 }
 
-input[type="text"],
-input[type="number"],
-input[type="time"], button{
-    width: 375px;
+#ServiceContainer input[type="text"],
+#ServiceContainer input[type="number"],
+#ServiceContainer input[type="time"],
+#ServiceContainer button {
+    width: 100%; /* Mismo ancho que los inputs */
     padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #00bcd4;
-    border-radius: 5px;
+    border-radius: 10px; /* Bordes más redondeados */
     background-color: #ffffff;
     color: #1b2a41;
     font-size: 16px;
     font-weight: bold;
 }
 
-button {
-    width: 100%;
+#ServiceContainer button {
     background-color: #4FC3F7;
     color: white;
     border: none;
@@ -50,6 +50,6 @@ button {
     transition: 0.3s;
 }
 
-button:hover {
+#ServiceContainer button:hover {
     background-color: #0097a7;
 }

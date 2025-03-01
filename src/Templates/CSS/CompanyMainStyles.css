@@ -4,16 +4,22 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
+html, body {
+    height: 100%;
+    display: block;
+    flex-direction: column;
+}
 body {
-    padding-top: 70px;
+    padding: 0;
 }
 
 .main-container {
     display: flex;
+    flex: 1;
     flex-direction: column;
     width: 100%;
     padding: 20px;
+    margin-top: 70px;
 }
 
 .company-profile {
@@ -100,3 +106,10 @@ body {
     font-weight: bold;
 }
 
+footer {
+    width: 100%;
+    background-color: #23334a;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}

@@ -6,7 +6,7 @@
 }
 
 body {
-    padding-top: 70px; /* Para que no se superponga el contenido */
+    padding-top: 70px;
 }
 
 header {
@@ -26,6 +26,9 @@ header {
 
 .logo img {
     height: 50px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 .search-container {
@@ -78,31 +81,47 @@ header {
 .dropdown-menu {
     display: none; /* Oculto por defecto */
     position: absolute;
-    top: 60px;
+    top: 50px; /* Asegura espacio suficiente para el triángulo */
     right: 0;
-    background-color: white;
+    background-color: #80D8FF; /* Color del menú */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
     min-width: 150px;
+    padding: 8px 0;
     z-index: 1000;
+}
+
+/* Triángulo en forma de bocadillo */
+.dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -10px; /* Coloca el triángulo justo encima del menú */
+    right: 15px; /* Lo posiciona en la esquina superior derecha */
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #80D8FF; /* Mismo color que el fondo del menú */
 }
 
 .dropdown-menu a {
     display: block;
-    padding: 12px;
+    padding: 8px 12px;
     text-decoration: none;
-    color: #333;
+    color: black; /* Letras en negro */
     font-weight: bold;
+    white-space: nowrap; /* Evita que el texto se divida en dos líneas */
 }
 
 .dropdown-menu a:hover {
-    background-color: #f0f0f0;
+    background-color: rgba(255, 255, 255, 0.5); /* Efecto hover */
 }
 
-/* Si el dropdown tiene la clase active, mostrar el menú */
+/* Mostrar el menú cuando está activo */
 .dropdown.active .dropdown-menu {
     display: block;
 }
+
+
 
 
