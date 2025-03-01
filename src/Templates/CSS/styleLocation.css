@@ -1,14 +1,23 @@
 .location {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 20px;
     background-color: #1F2D3D;
-    margin: 20px 0;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.location h2 {
+    margin: 0;
+    font-size: 1.8em;
+    color: white;
+    padding-right: 15px;
 }
 
 .location-box {
-    width: 100%;
+    width: 80%;
     height: 150px;
     background-color: #16202A;
-    margin-left: 10px;
+    border-radius: 5px;
 }
