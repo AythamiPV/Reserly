@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #ffffff;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.top-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container {
+    width: 300px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #999;
+    background: transparent;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+/* Grupo de teléfono con prefijo */
+.phone-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+/* Selector personalizado */
+.custom-select {
+    position: relative;
+    width: 120px;
+    cursor: pointer;
+}
+
+.selected-option {
+    display: flex;
+    align-items: center;
+    border: 2px solid #999;
+    padding: 8px;
+    background: none;
+}
+
+.selected-option img {
+    width: 24px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.dropdown {
+    position: absolute;
+    width: 100%;
+    list-style: none;
+    background: white;
+    border: 2px solid #999;
+    padding: 0;
+    margin: 0;
+    display: none;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.dropdown li {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown li:hover {
+    background-color: #f0f0f0;
+}
+
+.phone-group input {
+    flex: 1;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.login-link {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+.top-button:hover {
+    background-color: darkblue;
+}
+
+form button:hover {
+    background-color: darkblue;
+}

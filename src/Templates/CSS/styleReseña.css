@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.review-card {
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+}
+
+.text {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.stars {
+    color: #f4a261;
+}
+
+.name {
+    color: #666666;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.role {
+    font-size: 12px;
+    color: #333;
+    font-weight: bold;
+}

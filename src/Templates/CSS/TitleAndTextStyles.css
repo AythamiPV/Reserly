@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3a4b5c;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    background: #1b2a41;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.editable-area {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #3a4b5c;
+}
+
+.edit-icon {
+    cursor: pointer;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.text-area {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #0097a7;
+    border-radius: 5px;
+    background-color: white;
+    min-height: 40px;
+}

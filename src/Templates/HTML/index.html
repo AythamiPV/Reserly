@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../JS/xlu-include-file.js"></script>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/styleHeader1.css">
+    <link rel="stylesheet" href="../CSS/styleReseña.css">
+    <link rel="stylesheet" href="../CSS/styleFooter.css">
+</head>
+<body>
+<div class="wrapper">
+    <header id="main_header" xlu-include-file="../HTML-components/Header1.html"></header>
+    <div class="main_content">
+        <div class="header1">
+            <h1>Acerca de nosotros</h1>
+        </div>
+        <div class="header_reseña">
+            <h1>Comercios Destacados</h1>
+        </div>
+        <div class="article-container">
+            <article class="article" xlu-include-file="../HTML-components/Reseña.html"></article>
+            <article class="article" xlu-include-file="../HTML-components/Reseña.html"></article>
+            <article class="article" xlu-include-file="../HTML-components/Reseña.html"></article>
+            <article class="article" xlu-include-file="../HTML-components/Reseña.html"></article>
+            <article class="article" xlu-include-file="../HTML-components/Reseña.html"></article>
+        </div>
+    </div>
+
+    <footer id="main_footer" xlu-include-file="../HTML-components/Footer.html"></footer>
+
+</div>
+<script>
+
+    xLuIncludeFile();
+
+</script>
+
+</body>
+</html>
