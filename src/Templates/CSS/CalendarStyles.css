@@ -1,80 +1,89 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #000;
+    background-color: #3a4b5c;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-
 .date-picker-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
-
+.date-picker-container label {
+    font-weight: bold;
+    font-size: 18px;
+    color: #FFFFFF;
+}
 .date-input {
     width: 200px;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #80D8FF;
     border-radius: 5px;
-    background-color: #000;
-    color: #fff;
+    background-color: #4A5D6A;
+    color: #FFFFFF;
+    font-weight: bold;
 }
-
 .calendar {
     margin-top: 10px;
     width: 300px;
-    background-color: #bfbfbf;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    background-color: #1b2a41;
     padding: 15px;
     border-radius: 10px;
+    color: #003366;
 }
-
 .calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 18px;
     font-weight: bold;
+    color: #FFFFFF;
 }
-
 .calendar-header button {
     background: none;
     border: none;
     font-size: 18px;
     cursor: pointer;
+    color: #FFFFFF;
 }
-
 .calendar-days {
+    flex-grow: 1;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     text-align: center;
     margin-top: 10px;
 }
-
 .day {
     font-weight: bold;
+    color: #FFFFFF;
 }
-
 .date {
     padding: 8px;
     margin: 2px;
     border-radius: 5px;
     cursor: pointer;
+    background-color: #FFFFFF;
+    color: #003366;
+    font-weight: bold;
 }
-
 .date:hover {
-    background-color: #999;
+    background-color: #4FC3F7;
+    color: #FFFFFF;
 }
-
 .inactive {
     color: #777;
 }
-
 .selected {
-    background-color: #fff;
-    color: #000;
+    background-color: #4FC3F7;
+    color: #FFFFFF;
     font-weight: bold;
     border-radius: 5px;
+    font-size: 18px;
 }

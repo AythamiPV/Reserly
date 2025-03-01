@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #3a4b5c;
     margin: 0;
     padding: 20px;
 }
@@ -8,7 +8,7 @@ body {
 .container {
     max-width: 400px;
     margin: auto;
-    background: white;
+    background: #1b2a41;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -16,32 +16,40 @@ body {
 
 h1 {
     text-align: center;
-    color: #333;
+    color: white;
 }
 
 label {
     display: block;
     margin: 10px 0 5px;
+    font-weight: bold;
+    color: white;
 }
 
 input[type="text"],
 input[type="number"],
-input[type="time"],
-button {
-    width: 100%;
-    padding: 10px;
+input[type="time"], button{
+    width: 375px;
+    padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #00bcd4;
     border-radius: 5px;
+    background-color: #ffffff;
+    color: #1b2a41;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 button {
-    background-color: #007bff;
+    width: 100%;
+    background-color: #4FC3F7;
     color: white;
     border: none;
     cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #0097a7;
 }

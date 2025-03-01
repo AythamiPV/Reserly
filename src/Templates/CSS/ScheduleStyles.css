@@ -1,44 +1,75 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #3a4b5c;
     margin: 0;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
     max-width: 400px;
-    margin: auto;
-    background: white;
+    width: 100%;
+    background: #1b2a41;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 label {
     display: block;
     margin: 10px 0 5px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
 }
 
-select, input[type="time"], button {
+select, select option {
+    font-weight: bold;
+}
+
+select, button {
     width: 100%;
-    padding: 10px;
+    height: 45px;
+    padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #00bcd4;
     border-radius: 5px;
+    background-color: #ffffff;
+    color: #1b2a41;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+input[type=time]{
+    width: 375px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #00bcd4;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #1b2a41;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 button {
-    background-color: #28a745;
+    background-color: #4FC3F7;
     color: white;
     border: none;
     cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #0097a7;
 }

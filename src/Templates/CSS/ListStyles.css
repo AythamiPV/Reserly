@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #bfbfbf;
+    background-color: #3a4b5c;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +12,7 @@ body {
     overflow-y: auto;
     max-height: 400px;
     padding: 10px;
-    background-color: #bfbfbf;
+    background-color: #1b2a41;
     border-radius: 10px;
 }
 
@@ -32,10 +32,10 @@ body {
 }
 
 .light {
-    background-color: #e0e0e0;
+    background-color: #80D8FF;
 }
 
-.dark {
-    background-color: #666;
-    color: white;
+.dark{
+    background-color: #0097a7;
+    color: #ffffff;
 }
