@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const code = event.target.getAttribute("data-code");
             const flag = event.target.getAttribute("data-flag");
 
-            selectedFlag.src = `../Imagenes/${flag}`;
+            selectedFlag.src = `../Pictures/${flag}`;
             selectedCode.textContent = code;
 
             dropdown.style.display = "none";
@@ -24,5 +24,14 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!selectedOption.contains(event.target) && !dropdown.contains(event.target)) {
             dropdown.style.display = "none";
         }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const selectedFlag = document.getElementById("selected-flag");
+        const selectedCode = document.getElementById("selected-code");
+
+        // Asegurar que la imagen inicial sea la correcta
+        selectedFlag.src = "../Pictures/us.png";
+        selectedCode.textContent = "+1";
     });
 });
