@@ -41,19 +41,18 @@ header {
 .search-container input {
     width: 200px;
     padding: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.3); /* Borde gris oscuro semitransparente */
+    border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.1); /* Fondo gris oscuro translúcido */
-    color: white; /* Texto blanco para contraste */
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
     outline: none;
     font-weight: bold;
 }
 
 .search-container input::placeholder {
-    color: rgb(255, 255, 255); /* Placeholder más visible */
+    color: rgb(255, 255, 255);
 }
 
-/* Estilos para el usuario y la imagen de perfil */
 .user-info {
     display: flex;
     align-items: center;
@@ -70,7 +69,7 @@ header {
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid white; /* Borde blanco para destacar la imagen */
+    border: 2px solid white;
 }
 
 .dropdown {
@@ -79,11 +78,11 @@ header {
 }
 
 .dropdown-menu {
-    display: none; /* Oculto por defecto */
+    display: none;
     position: absolute;
-    top: 50px; /* Asegura espacio suficiente para el triángulo */
+    top: 50px;
     right: 0;
-    background-color: #80D8FF; /* Color del menú */
+    background-color: #80D8FF;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     min-width: 150px;
@@ -91,33 +90,31 @@ header {
     z-index: 1000;
 }
 
-/* Triángulo en forma de bocadillo */
 .dropdown-menu::before {
     content: "";
     position: absolute;
-    top: -10px; /* Coloca el triángulo justo encima del menú */
-    right: 15px; /* Lo posiciona en la esquina superior derecha */
+    top: -10px;
+    right: 15px;
     width: 0;
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 10px solid #80D8FF; /* Mismo color que el fondo del menú */
+    border-bottom: 10px solid #80D8FF;
 }
 
 .dropdown-menu a {
     display: block;
     padding: 8px 12px;
     text-decoration: none;
-    color: black; /* Letras en negro */
+    color: black;
     font-weight: bold;
-    white-space: nowrap; /* Evita que el texto se divida en dos líneas */
+    white-space: nowrap;
 }
 
 .dropdown-menu a:hover {
-    background-color: rgba(255, 255, 255, 0.5); /* Efecto hover */
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Mostrar el menú cuando está activo */
 .dropdown.active .dropdown-menu {
     display: block;
 }

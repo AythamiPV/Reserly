@@ -23,7 +23,7 @@ window.addEventListener("load", function () {
         if (currentPage !== "CompanyMain.html") {
             const manageLink = document.querySelector(".dropdown-menu a[href*='ManageCompany.html']");
             if (manageLink) {
-                manageLink.remove(); // Elimina el enlace en lugar de ocultarlo
+                manageLink.remove();
             }
         }
     }, 500);

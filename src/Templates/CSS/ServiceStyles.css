@@ -30,11 +30,11 @@ label {
 #ServiceContainer input[type="number"],
 #ServiceContainer input[type="time"],
 #ServiceContainer button {
-    width: 100%; /* Mismo ancho que los inputs */
+    width: 100%;
     padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #00bcd4;
-    border-radius: 10px; /* Bordes más redondeados */
+    border-radius: 10px;
     background-color: #ffffff;
     color: #1b2a41;
     font-size: 16px;

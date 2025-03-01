@@ -1,17 +1,17 @@
 .article {
-    flex: 1 1 200px; /* Hace que los artículos se distribuyan de manera flexible, con un ancho mínimo de 200px */
-    padding: 10px; /* Opcional: para agregar algo de espacio dentro de los artículos */
-    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del artículo */
+    flex: 1 1 200px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .main_content{
     background-color: #3a4b5c;
 }
 .Imagen_Principal {
-    width: 100%;  /* Usar 100% en vez de 100vw para evitar desbordamiento */
-    height: 100vh; /* Mantiene la altura igual a la ventana */
-    overflow: hidden; /* Evita cualquier desbordamiento */
-    display: flex; /* Asegura que la imagen se centre correctamente */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -19,30 +19,28 @@
 .Imagen_Principal img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que la imagen cubra toda el área sin deformarse */
-    display: block; /* Evita espacios extra alrededor de la imagen */
+    object-fit: cover;
+    display: block;
 }
 
 .Informacion {
-    max-width: 1200px;  /* Ajusta el ancho máximo para mejor lectura */
-    margin: 50px auto;  /* Espaciado arriba y abajo, centrado */
-    padding: 40px;  /* Espaciado interno */
-    border-radius: 10px;  /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra para resaltar */
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: white;
 }
 
-/* Fondo diferente para que sean visualmente distintos */
 .Informacion {
-    background-color: #1b2a41;  /* Color claro */
+    background-color: #1b2a41;
 }
 
 .Valoracion {
-    background-color: #1b2a41;  /* Fondo blanco */
+    background-color: #1b2a41;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Ajuste de los títulos */
 .Informacion h1, .Valoracion h1 {
     text-align: center;
     font-size: 2rem;
@@ -50,7 +48,6 @@
     color: white;
 }
 
-/* Espaciado entre los artículos dentro de "Valoracion" */
 .article-container {
     display: flex;
     flex-wrap: wrap;

@@ -31,8 +31,7 @@ async function xLuIncludeFile() {
                 let scriptFile = scriptMap[file];
                 if (scriptFile) {
                     await loadScript(`../JS/${scriptFile}`);
-
-                    // ✅ Asegurar que se ejecuta initCalendar()
+                    
                     if (file === "Calendar_template.html" && typeof initCalendar === "function") {
                         initCalendar();
                     }
@@ -48,8 +47,6 @@ async function xLuIncludeFile() {
                         }
                     }
                 }
-
-                // Llamar recursivamente para procesar los nuevos elementos cargados
                 await xLuIncludeFile();
             }
         } catch (error) {

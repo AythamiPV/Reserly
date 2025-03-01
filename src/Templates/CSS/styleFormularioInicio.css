@@ -24,13 +24,13 @@ h2 {
 }
 
 form input {
-    background-color: rgba(0, 0, 0, 0.1); /* Fondo gris oscuro translúcido */
-    color: white; /* Texto blanco para contraste */
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
     display: block;
     width: calc(100% - 20px);
     padding: 10px;
     margin: 10px auto;
-    border: 1px solid rgba(0, 0, 0, 0.3); /* Borde gris oscuro semitransparente */
+    border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     outline: none;
     font-size: 16px;

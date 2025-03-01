@@ -13,7 +13,7 @@
 <script>
   document.addEventListener("DOMContentLoaded", function(){
     setTimeout(() => {
-      // Botón superior "User sign"
+
       const topButton = document.querySelector(".top-button");
       if (topButton) {
         topButton.textContent = "User sign";
@@ -24,13 +24,11 @@
         });
       }
 
-      // Cambiar el título del formulario
       const heading = document.querySelector(".form-container h2");
       if (heading) {
         heading.textContent = "Company Registration";
       }
 
-      // Cambiar los placeholders de los inputs
       const inputs = document.querySelectorAll(".form-container form input");
       if (inputs.length >= 4) {
         inputs[0].placeholder = "Company Name";
@@ -45,7 +43,6 @@
         phoneInput.placeholder = "Contact Number";
       }
 
-      // Botón de envío: establecer texto a "Sign in" y enlazar con CompanyMain.html
       const submitButton = document.querySelector(".form-container form button[type='submit']");
       if (submitButton) {
         submitButton.textContent = "Sign in";
@@ -55,7 +52,6 @@
         });
       }
 
-      // Cambiar el texto del enlace de login
       const loginLink = document.querySelector(".form-container .login-link");
       if (loginLink) {
         loginLink.textContent = "Already have an account?";
