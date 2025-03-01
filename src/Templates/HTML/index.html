@@ -2,39 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="../JS/xlu-include-file.js"></script>
-    <link rel="stylesheet" href="../CSS/styles.css">
-    <link rel="stylesheet" href="../CSS/styleHeader1.css">
-    <link rel="stylesheet" href="../CSS/styleReseña.css">
-    <link rel="stylesheet" href="../CSS/styleFooter.css">
+    <script src="../JS/xLuInclude.js" defer></script>
+    <link rel="stylesheet" href="../CSS/index.css">
 </head>
 <body>
 <div class="wrapper">
-    <header id="main_header" xlu-include-file="../HTML-components/Header1.html"></header>
+    <header id="main_header" xlu-include-file="Header1.html"></header>
     <div class="main_content">
-        <div class="header1">
-            <h1>Acerca de nosotros</h1>
+        <div class="Imagen_Principal">
+            <img src="../Pictures/ImagenPrincipal.png" alt="ImagenPrincipal">
         </div>
-        <div class="header_reseña">
-            <h1>Comercios Destacados</h1>
+        <div class="Informacion">
+            <h1>About us</h1>
+            <p>Easy booking, no hassle. At Reserly, we connect customers with the best beauty and wellness businesses: barbershops, hair salons, nail artists, massage therapists, and more. Our online booking system lets you schedule your appointment in seconds—no calls, no waiting.
+
+                Whether you're a customer looking for quality service or a business wanting to optimize your schedule, we offer an intuitive and efficient platform. Discover nearby professionals, choose the time that suits you best, and receive automatic confirmations.
+
+                For businesses, we simplify appointment management, reducing cancellations and maximizing productivity. Plus, we provide visibility and new growth opportunities.
+
+                Join the new way of booking and offering services. With Reserly, convenience and efficiency are just one click away. Book your next appointment today!</p>
         </div>
-        <div class="article-container">
-            <article class="article" xlu-include-file="../HTML-components/Reseña.html"></article>
-            <article class="article" xlu-include-file="../HTML-components/Reseña.html"></article>
-            <article class="article" xlu-include-file="../HTML-components/Reseña.html"></article>
-            <article class="article" xlu-include-file="../HTML-components/Reseña.html"></article>
-            <article class="article" xlu-include-file="../HTML-components/Reseña.html"></article>
+        <div class="Valoracion">
+            <div class="header_valoracion">
+                <h1>Featured businesses</h1>
+            </div>
+            <div class="article-container">
+                <article class="article" xlu-include-file="Valoracion.html"></article>
+                <article class="article" xlu-include-file="Valoracion.html"></article>
+                <article class="article" xlu-include-file="Valoracion.html"></article>
+                <article class="article" xlu-include-file="Valoracion.html"></article>
+                <article class="article" xlu-include-file="Valoracion.html"></article>
+            </div>
         </div>
     </div>
-
-    <footer id="main_footer" xlu-include-file="../HTML-components/Footer.html"></footer>
-
+    <div class="footer">
+        <footer id="main_footer" xlu-include-file="Footer.html"></footer>
+    </div>
 </div>
-<script>
-
-    xLuIncludeFile();
-
-</script>
 
 </body>
 </html>

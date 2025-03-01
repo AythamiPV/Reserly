@@ -1,17 +1,23 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #ffffff;
+    background-color: #568d93;
     position: relative;
     margin: 0;
     padding: 0;
 }
 
+.formulario {
+    flex: 1;
+    padding: 20px;
+    position: relative; /* Asegura que los elementos hijos con position:absolute se posicionen respecto a este */
+}
+
 .top-button {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: blue;
+    position: absolute;
+    top: 10px;  /* Ajusta la distancia desde la parte superior */
+    right: 10px; /* Asegura que el botón esté pegado a la imagen */
+    background-color: #4FC3F7;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -20,9 +26,15 @@ body {
 }
 
 .form-container {
+    position: relative; /* Permite que los elementos hijos con posición absoluta se ubiquen respecto a este contenedor */
     width: 300px;
-    margin: 100px auto;
+    margin: auto;
     text-align: center;
+    padding: 100px;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-color: #23334a;
+    color: white;
 }
 
 h2 {
@@ -40,6 +52,11 @@ form input {
     border-radius: 5px;
     outline: none;
     font-size: 16px;
+    color: white;
+}
+
+form input::placeholder {
+    color: white;
 }
 
 /* Grupo de teléfono con prefijo */
@@ -48,6 +65,7 @@ form input {
     align-items: center;
     gap: 10px;
     position: relative;
+    width: 325px;
 }
 
 /* Selector personalizado */
@@ -61,8 +79,9 @@ form input {
     display: flex;
     align-items: center;
     border: 2px solid #999;
-    padding: 8px;
+    padding: 10px;
     background: none;
+    border-radius: 5px;
 }
 
 .selected-option img {
@@ -89,10 +108,11 @@ form input {
     cursor: pointer;
     display: flex;
     align-items: center;
+    background-color: #215268;
 }
 
 .dropdown li:hover {
-    background-color: #f0f0f0;
+    background-color: #184153;
 }
 
 .phone-group input {
@@ -100,9 +120,9 @@ form input {
 }
 
 form button {
-    width: 100%;
+    width: 325px;
     padding: 10px;
-    background-color: blue;
+    background-color: #4FC3F7;
     color: white;
     border: none;
     border-radius: 5px;
@@ -115,7 +135,7 @@ form button {
     display: block;
     margin-top: 15px;
     font-size: 14px;
-    color: #666;
+    color: white;
     text-decoration: none;
 }
 
@@ -124,9 +144,9 @@ form button {
 }
 
 .top-button:hover {
-    background-color: darkblue;
+    background-color: #0097a7;
 }
 
 form button:hover {
-    background-color: darkblue;
+    background-color: #0097a7;
 }

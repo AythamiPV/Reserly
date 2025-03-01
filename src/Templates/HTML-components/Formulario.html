@@ -5,43 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Form</title>
   <link rel="stylesheet" href="../CSS/styleFormulario.css">
+  <script src="../JS/FormularioScript.js" defer></script>
 </head>
 <body>
-
-<button class="top-button">Button</button>
-
-<div class="form-container">
-  <h2>Form</h2>
-  <form action="#" method="post">
-    <input type="text" placeholder="Full Name" required>
-    <input type="email" placeholder="Email Address" required>
-    <input type="password" placeholder="Password" required>
-    <input type="password" placeholder="Confirm Password" required>
-
-    <div class="phone-group">
-      <div class="custom-select">
-        <div class="selected-option">
-          <img id="selected-flag" src="flags/us.png" alt="Flag">
-          <span id="selected-code">+1</span>
-        </div>
-        <ul class="dropdown">
-          <li data-code="+1" data-flag="us.png">🇺🇸 +1 (USA)</li>
-          <li data-code="+44" data-flag="uk.png">🇬🇧 +44 (UK)</li>
-          <li data-code="+34" data-flag="es.png">🇪🇸 +34 (Spain)</li>
-          <li data-code="+33" data-flag="fr.png">🇫🇷 +33 (France)</li>
-          <li data-code="+49" data-flag="de.png">🇩🇪 +49 (Germany)</li>
-          <li data-code="+52" data-flag="mx.png">🇲🇽 +52 (Mexico)</li>
-          <li data-code="+55" data-flag="br.png">🇧🇷 +55 (Brazil)</li>
-        </ul>
+<div class="formulario">
+  <div class="form-container">
+    <button class="top-button">Sign your company</button>
+    <h2>User Sign</h2>
+    <form action="#" method="post">
+      <div class="field-container">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
       </div>
-      <input type="tel" placeholder="Phone Number" required>
-    </div>
+      <div class="phone-group">
+        <div class="custom-select">
+          <div class="selected-option">
+            <img id="selected-flag" src="../Pictures/us.png" alt="Flag">
+            <span id="selected-code">+1</span>
+          </div>
+          <ul class="dropdown">
+            <li data-code="+1" data-flag="us.png">🇺🇸 +1 (USA)</li>
+            <li data-code="+44" data-flag="uk.png">🇬🇧 +44 (UK)</li>
+            <li data-code="+34" data-flag="es.png">🇪🇸 +34 (Spain)</li>
+            <li data-code="+33" data-flag="fr.png">🇫🇷 +33 (France)</li>
+            <li data-code="+49" data-flag="de.png">🇩🇪 +49 (Germany)</li>
+            <li data-code="+52" data-flag="mx.png">🇲🇽 +52 (Mexico)</li>
+            <li data-code="+55" data-flag="br.png">🇧🇷 +55 (Brazil)</li>
+          </ul>
+        </div>
+        <input type="tel" placeholder="Phone Number" required>
+      </div>
 
-    <button type="submit">Sign in</button>
-  </form>
-  <a href="#" class="login-link">Do you already have an account?</a>
+      <button type="submit">Sign in</button>
+    </form>
+    <a href="../HTML/InicioSesion.html" class="login-link">Do you already have an account?</a>
+  </div>
 </div>
-<script src="../JS/scriptFormulario.js"></script>
 </body>
 </html>
 

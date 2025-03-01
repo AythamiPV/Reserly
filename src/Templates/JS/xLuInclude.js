@@ -74,4 +74,8 @@ async function loadScript(scriptPath) {
 }
 
 // Ejecutar cuando el DOM esté cargado
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", xLuIncludeFile);
+=======
+document.addEventListener("DOMContentLoaded", xLuIncludeFile);
+>>>>>>> Pancho

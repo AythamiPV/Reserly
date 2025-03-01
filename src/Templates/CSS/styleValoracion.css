@@ -8,6 +8,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(128, 128, 128, 0.4);
     margin: auto;
 }
 
@@ -21,7 +22,7 @@ body {
 
 .text {
     font-size: 14px;
-    color: #666;
+    color: white;
     margin: 10px 0;
 }
 
@@ -30,13 +31,13 @@ body {
 }
 
 .name {
-    color: #666666;
+    color: white;
     font-weight: bold;
     text-decoration: none;
 }
 
 .role {
     font-size: 12px;
-    color: #333;
+    color: white;
     font-weight: bold;
 }

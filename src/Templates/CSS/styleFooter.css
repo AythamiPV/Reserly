@@ -1,6 +1,6 @@
 /* Estilos generales del footer */
 footer {
-    background-color: #333; /* Fondo oscuro */
+    background-color: #23334a; /* Fondo oscuro */
     color: #fff; /* Texto blanco */
     padding: 30px 0; /* Espaciado superior e inferior */
     text-align: center;
@@ -9,13 +9,17 @@ footer {
 
 /* Contenedor principal del footer */
 .footer-container {
+    border-radius: 5px;
     max-width: 1200px;
     margin: 0 auto; /* Centrado del contenido */
+    padding: 0 40px; /* Agrega margen a los lados */
     display: flex;
     justify-content: space-between; /* Espacio entre el logo, contacto y redes sociales */
     align-items: center; /* Centrado vertical */
     flex-wrap: wrap; /* Asegura que en pantallas pequeñas se acomode en columnas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
 
 /* Estilos para el logo */
 .logo img {
