@@ -44,6 +44,7 @@ header {
     background-color: rgba(0, 0, 0, 0.1); /* Fondo gris oscuro translúcido */
     color: white; /* Texto blanco para contraste */
     outline: none;
+    font-weight: bold;
 }
 
 .search-container input::placeholder {
