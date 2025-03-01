@@ -7,9 +7,41 @@
   <link rel="stylesheet" href="../CSS/CompanyMainStyles.css">
   <script src="../JS/xLuInclude.js" defer></script>
 </head>
-<header id="CompanyMain_header" xlu-include-file="LoggedHeader.html"></header>
 <body>
-<div id="Calendar" xlu-include-file="Calendar_template.html"></div>
-<div id="ReservationsList" xlu-include-file="List_template.html"></div>
+
+<header id="CompanyMain_header" xlu-include-file="LoggedHeader.html"></header>
+
+<div class="main-container">
+
+  <div class="company-profile">
+    <img src="../Pictures/UserDefault-icon.png" alt="Company Profile" class="company-logo">
+    <span class="company-name">Company Name</span>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="content-container">
+      <!-- Template Calendar -->
+      <div id="Calendar" xlu-include-file="Calendar_template.html"></div>
+
+      <div class="separator"></div>
+
+      <!-- Template List -->
+      <div id="ReservationsList" xlu-include-file="List_template.html"></div>
+    </div>
+  </div>
+
+  <div class="information-container">
+    <div class="info-header">
+      <img src="../Pictures/Info-icon.png" alt="Information" class="info-icon">
+      <span class="info-title">Manage account</span>
+    </div>
+    <p class="info-description">
+      Here you can modify service prices, schedules, account name, business type.
+    </p>
+  </div>
+
+
+</div>
+
 </body>
 </html>
