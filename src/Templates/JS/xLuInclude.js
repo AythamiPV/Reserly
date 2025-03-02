@@ -12,6 +12,7 @@ const scriptMap = {
     "FormularioInicio.html": "FormularioInicioScript.js",
     "Header1.html": "Header1Script.js",
     "Valoracion.html" : "ValoracionScript.js",
+    "Locartion.html": "LocartionScript.js",
 };
 
 async function xLuIncludeFile() {
