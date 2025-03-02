@@ -15,8 +15,6 @@ Nuestra página web ofrece una solución rápida y sencilla para reservar servic
 Para los negocios, nuestra plataforma optimiza la gestión de reservas con recordatorios automáticos y herramientas de organización, reduciendo cancelaciones y mejorando la productividad. Además, permite crear un perfil profesional con reseñas y promociones para atraer nuevos clientes.
 
 Con un diseño moderno y funcional, nuestra web digitaliza el sector de la belleza y el bienestar, ofreciendo comodidad y eficiencia a todos.
-![image](https://github.com/user-attachments/assets/1da13cfb-9b73-4429-8cb9-d90546b53341)
-
 
 # Requisitos Funcionales - Reserly
 
