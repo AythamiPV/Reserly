@@ -10,7 +10,13 @@
 
 # Descripcion del proyecto - Reserly.
 
-Reserly es una aplicación de gestión de reservas diseñada para optimizar la administración de citas en negocios. La plataforma permite a las empresas gestionar sus agendas de manera eficiente, mientras que los clientes pueden explorar y reservar servicios de forma sencilla e intuitiva. Con Reserly, tanto negocios como usuarios disfrutan de una experiencia fluida y organizada en la planificación de citas.
+Nuestra página web ofrece una solución rápida y sencilla para reservar servicios de peluquería, barbería, manicura, masajes y más. Con una interfaz intuitiva y accesible desde cualquier dispositivo, los clientes pueden encontrar profesionales cercanos, ver su disponibilidad y agendar citas en segundos, sin llamadas ni esperas.
+
+Para los negocios, nuestra plataforma optimiza la gestión de reservas con recordatorios automáticos y herramientas de organización, reduciendo cancelaciones y mejorando la productividad. Además, permite crear un perfil profesional con reseñas y promociones para atraer nuevos clientes.
+
+Con un diseño moderno y funcional, nuestra web digitaliza el sector de la belleza y el bienestar, ofreciendo comodidad y eficiencia a todos.
+![image](https://github.com/user-attachments/assets/1da13cfb-9b73-4429-8cb9-d90546b53341)
+
 
 # Requisitos Funcionales - Reserly
 
