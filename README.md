@@ -42,7 +42,7 @@ Con un diseño moderno y funcional, nuestra web digitaliza el sector de la belle
 - Visualización de opiniones y valoraciones en los perfiles de negocios.
 
 
-# Listado de Templates 
+# Listado de Templates - Reserly
 
 -AboutYou_template.html:
   Se carga en ManageCompany.html
@@ -86,7 +86,7 @@ Con un diseño moderno y funcional, nuestra web digitaliza el sector de la belle
 -Valoracion.html:
   Se carga en index.html
   
-# Listado de paginas html
+# Listado de páginas html - Reserly
 
   -CompanyMain.html corresponde al mockup Principal empresa
   
@@ -108,7 +108,7 @@ Con un diseño moderno y funcional, nuestra web digitaliza el sector de la belle
   
   -Tus_Reservas.html corresponde al mockup Mis Reservas / Historial
 
-# Ruta de PDF y PowerPoint
+# Rutas de PDF y PowerPoint del proyecto
 - PDF: Documento/MOCKUPS RESERLY.pdf
 - PowerPoint: Documento/PresentaciónSprint1PWM.pptx
 
