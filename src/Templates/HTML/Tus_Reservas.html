@@ -6,8 +6,9 @@
   <title>Reserly - Mis Reservas</title>
   <link rel="stylesheet" href="../CSS/LoggedHeaderStyles.css">
   <link rel="stylesheet" href="../CSS/styleFooter.css">
-  <link rel="stylesheet" href="../CSS/Tus_Reservas.css">
+  <link rel="stylesheet" href="../CSS/Tus_ReservasStyle.css">
   <script src="../JS/xLuInclude.js" defer></script>
+  <script src="../JS/LocationScript.js" defer></script>
 </head>
 <body>
 
@@ -19,24 +20,61 @@
     <p>Aquí podrás gestionar tus reservas y consultar el historial e información adicional</p>
   </div>
 
-  <div class="content-wrapper">
-    <div class="content-container">
-      <div id="SearchService" xlu-include-file="Buscar_Servicio.html"></div>
-
-      <div class="separator"></div>
-
-      <div id="VisitedBefore" xlu-include-file="Visitado_Anteriormente.html"></div>
+  <div class="search-visited-container">
+    <div id="SearchService" class="search-service" xlu-include-file="Buscar_Servicio.html">
+      <h3>Buscar por servicio</h3>
+      <input type="text" placeholder="Buscar">
+      <select>
+        <option>Categoría</option>
+      </select>
+      <select>
+        <option>Lugar</option>
+      </select>
+      <button class="search-button">Buscar</button>
+    </div>
+    <div id="VisitedBefore" class="visited-before" xlu-include-file="Visitado_Anteriormente.html">
+      <h3>Visitado anteriormente</h3>
+      <div class="visited-box"></div>
+      <p><strong>Lugar</strong><br>Servicio contratado, fecha... Texto...</p>
+      <button class="reserve-again">Reservar de nuevo</button>
     </div>
   </div>
 
   <div class="accordion-container">
-    <div id="AccordionSection" xlu-include-file="Acordeon_Reservas.html"></div>
+    <button class="accordion">Acordeón toggle top</button>
+    <div class="panel"><p>Contenido del acordeón.</p></div>
+
+    <button class="accordion">Acordeón toggle middle</button>
+    <div class="panel"><p>Contenido del acordeón.</p></div>
+
+    <button class="accordion">Acordeón expanded area</button>
+    <div class="panel"><p>Contenido del acordeón.</p></div>
+
+    <button class="accordion">Acordeón toggle bottom</button>
+    <div class="panel"><p>Contenido del acordeón.</p></div>
   </div>
 </div>
 
 <footer id="main_footer" xlu-include-file="Footer.html"></footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    xLuIncludeFile(); // Asegurar que los componentes se cargan correctamente
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
+
+
 
 
 
