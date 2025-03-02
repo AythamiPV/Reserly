@@ -41,9 +41,6 @@ Con un diseño moderno y funcional, nuestra web digitaliza el sector de la belle
 - Posibilidad de que los clientes dejen reseñas y califiquen los servicios.
 - Visualización de opiniones y valoraciones en los perfiles de negocios.
 
-# Enlaces a Figma y Trello
-- Trello: https://trello.com/invite/b/67a62f6bffa16fc46760a77b/ATTI9789d2d7db6ffa16c1a8e1291604a1999397688E/reserly
-- Figma: https://www.figma.com/design/M87p0PfJuhE1bq51WpVQs4/Reserly?node-id=0-1&t=6vBebie4Pjv9fZOe-1
 
 # Listado de Templates 
 
@@ -111,5 +108,12 @@ Con un diseño moderno y funcional, nuestra web digitaliza el sector de la belle
   
   -Tus_Reservas.html corresponde al mockup Mis Reservas / Historial
 
+# Ruta de PDF y PowerPoint
+- PDF: Documento/MOCKUPS RESERLY.pdf
+- PowerPoint: Documento/PresentaciónSprint1PWM.pptx
+
+# Enlaces a Figma y Trello
+- Trello: https://trello.com/invite/b/67a62f6bffa16fc46760a77b/ATTI9789d2d7db6ffa16c1a8e1291604a1999397688E/reserly
+- Figma: https://www.figma.com/design/M87p0PfJuhE1bq51WpVQs4/Reserly?node-id=0-1&t=6vBebie4Pjv9fZOe-1
 
   
