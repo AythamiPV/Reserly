@@ -13,3 +13,17 @@
 </div>
 </body>
 </html>
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        setTimeout(() => {
+            const submitButton = document.querySelector(".form-container form button[type='submit']");
+            if (submitButton) {
+                submitButton.textContent = "Sign in";
+                submitButton.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    window.location.href = "Tu_Cuenta.html";
+                });
+            }
+        }, 1000);
+    });
+</script>
