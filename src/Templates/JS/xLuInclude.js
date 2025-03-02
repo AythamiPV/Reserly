@@ -46,6 +46,12 @@ async function xLuIncludeFile() {
                                 manageLink.remove();
                             }
                         }
+                        if (currentPage !== "Tu_Cuenta.html") {
+                            const manageLink = document.querySelector(".dropdown-menu a[href*='Tus_Reservas.html']");
+                            if (manageLink) {
+                                manageLink.remove();
+                            }
+                        }
                     }
                 }
                 await xLuIncludeFile();

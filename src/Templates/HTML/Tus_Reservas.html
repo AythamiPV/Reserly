@@ -21,7 +21,7 @@
   </div>
 
   <div class="search-visited-container">
-    <div id="SearchService" class="search-service" xlu-include-file="Buscar_Servicio.html">
+    <div id="SearchService" class="search-service">
       <h3>Buscar por servicio</h3>
       <input type="text" placeholder="Buscar">
       <select>
@@ -32,44 +32,30 @@
       </select>
       <button class="search-button">Buscar</button>
     </div>
-    <div id="VisitedBefore" class="visited-before" xlu-include-file="Visitado_Anteriormente.html">
+    <div id="VisitedBefore" class="visited-before">
       <h3>Visitado anteriormente</h3>
       <div class="visited-box"></div>
       <p><strong>Lugar</strong><br>Servicio contratado, fecha... Texto...</p>
-      <button class="reserve-again">Reservar de nuevo</button>
+      <a href="Completar_Reserva.html"><button class="reserve-again">Reservar de nuevo</button></a>
     </div>
   </div>
 
   <div class="accordion-container">
-    <button class="accordion">Acordeón toggle top</button>
+    <a href="CompanyWebsite.html"><button class="accordion">Acordeón toggle top</button></a>
     <div class="panel"><p>Contenido del acordeón.</p></div>
 
-    <button class="accordion">Acordeón toggle middle</button>
+    <a href="CompanyWebsite.html"><button class="accordion">Acordeón toggle middle</button></a>
     <div class="panel"><p>Contenido del acordeón.</p></div>
 
-    <button class="accordion">Acordeón expanded area</button>
+    <a href="CompanyWebsite.html"><button class="accordion">Acordeón expanded area</button></a>
     <div class="panel"><p>Contenido del acordeón.</p></div>
 
-    <button class="accordion">Acordeón toggle bottom</button>
+    <a href="CompanyWebsite.html"><button class="accordion">Acordeón toggle bottom</button></a>
     <div class="panel"><p>Contenido del acordeón.</p></div>
   </div>
 </div>
 
 <footer id="main_footer" xlu-include-file="Footer.html"></footer>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    xLuIncludeFile(); // Asegurar que los componentes se cargan correctamente
-    var acc = document.getElementsByClassName("accordion");
-    for (var i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        panel.style.display = panel.style.display === "block" ? "none" : "block";
-      });
-    }
-  });
-</script>
 
 </body>
 </html>
