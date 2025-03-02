@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserly - Mis Reservas</title>
+  <link rel="stylesheet" href="../CSS/LoggedHeaderStyles.css">
+  <link rel="stylesheet" href="../CSS/styleFooter.css">
+  <link rel="stylesheet" href="../CSS/Tus_Reservas.css">
+  <script src="../JS/xLuInclude.js" defer></script>
+</head>
+<body>
+
+<header id="TusReservas_header" xlu-include-file="LoggedHeader.html"></header>
+
+<div class="main-container">
+  <div class="reservations-header">
+    <h1>Tus Reservas</h1>
+    <p>Aquí podrás gestionar tus reservas y consultar el historial e información adicional</p>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="content-container">
+      <div id="SearchService" xlu-include-file="Buscar_Servicio.html"></div>
+
+      <div class="separator"></div>
+
+      <div id="VisitedBefore" xlu-include-file="Visitado_Anteriormente.html"></div>
+    </div>
+  </div>
+
+  <div class="accordion-container">
+    <div id="AccordionSection" xlu-include-file="Acordeon_Reservas.html"></div>
+  </div>
+</div>
+
+<footer id="main_footer" xlu-include-file="Footer.html"></footer>
+</body>
+</html>
+
+
+
