@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservation Form</title>
+  <link rel="stylesheet" href="../CSS/LoggedHeaderStyles.css">
+  <link rel="stylesheet" href="../CSS/styleFooter.css">
+  <link rel="stylesheet" href="../CSS/Completar_ReservaStyle.css">
+  <script src="../JS/xLuInclude.js" defer></script>
+</head>
+<body>
+
+<header id="ReservationForm_header" xlu-include-file="LoggedHeader.html"></header>
+
+<main>
+  <!-- Title section -->
+  <section class="reservation-header">
+    <h1>Complete Your Reservation</h1>
+    <p>Select the available options below:</p>
+  </section>
+
+  <!-- Form container -->
+  <section class="reservation-container">
+    <div class="date-selection">
+      <h3>Available Dates:</h3>
+      <div class="calendar-container">
+        <div class="calendar">Date<br>Oct 12, 2018</div>
+        <input type="date">
+      </div>
+    </div>
+
+    <div class="service-selection">
+      <h3>Select Service:</h3>
+      <button class="service-button">Service 1</button>
+      <button class="service-button">Service 2</button>
+      <button class="service-button">Service 3</button>
+    </div>
+  </section>
+
+  <section class="reservation-submit">
+    <a href="Your_Account.html"><button class="reserve-button">Book Now</button></a>
+  </section>
+</main>
+
+<footer id="main_footer" xlu-include-file="Footer.html"></footer>
+
+</body>
+</html>
+

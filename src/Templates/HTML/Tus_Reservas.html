@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserly - My Reservations</title>
+  <link rel="stylesheet" href="../CSS/LoggedHeaderStyles.css">
+  <link rel="stylesheet" href="../CSS/styleFooter.css">
+  <link rel="stylesheet" href="../CSS/Tus_ReservasStyle.css">
+  <script src="../JS/xLuInclude.js" defer></script>
+  <script src="../JS/LocationScript.js" defer></script>
+</head>
+<body>
+
+<header id="MyReservations_header" xlu-include-file="LoggedHeader.html"></header>
+
+<div class="main-container">
+  <div class="reservations-header">
+    <h1>Your Reservations</h1>
+    <p>Here you can manage your reservations and check history and additional information.</p>
+  </div>
+
+  <div class="search-visited-container">
+    <div id="SearchService" class="search-service">
+      <h3>Search by Service</h3>
+      <input type="text" placeholder="Search">
+      <select>
+        <option>Category</option>
+      </select>
+      <select>
+        <option>Location</option>
+      </select>
+      <button class="search-button">Search</button>
+    </div>
+    <div id="VisitedBefore" class="visited-before">
+      <h3>Previously Visited</h3>
+      <div class="visited-box"></div>
+      <p><strong>Location</strong><br>Service booked, date... Text...</p>
+      <a href="Completar_Reserva.html"><button class="reserve-again">Book Again</button></a>
+    </div>
+  </div>
+
+  <div class="accordion-container">
+    <a href="CompanyWebsite.html"><button class="accordion">Accordion toggle top</button></a>
+    <div class="panel"><p>Accordion content.</p></div>
+
+    <a href="CompanyWebsite.html"><button class="accordion">Accordion toggle middle</button></a>
+    <div class="panel"><p>Accordion content.</p></div>
+
+    <a href="CompanyWebsite.html"><button class="accordion">Accordion expanded area</button></a>
+    <div class="panel"><p>Accordion content.</p></div>
+
+    <a href="CompanyWebsite.html"><button class="accordion">Accordion toggle bottom</button></a>
+    <div class="panel"><p>Accordion content.</p></div>
+  </div>
+</div>
+
+<footer id="main_footer" xlu-include-file="Footer.html"></footer>
+
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selector de Fecha</title>
+  <link rel="stylesheet" href="../CSS/CalendarStyles.css">
+</head>
+<body>
+<div class="date-picker-container">
+  <label for="date-input">Date</label>
+  <input type="text" id="date-input" class="date-input" placeholder="MM/DD/YYYY" readonly>
+  <div class="calendar">
+    <div class="calendar-header">
+      <button class="prev-month">&lt;</button>
+      <span class="month-year"></span>
+      <button class="next-month">&gt;</button>
+    </div>
+    <div class="calendar-days"></div>
+  </div>
+</div>
+<script src="../JS/CalendarScript.js"></script>
+</body>
+</html>

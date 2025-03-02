@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #568d93;
+    margin: 0;
+    padding: 0;
+}
+
+.form-container {
+    width: 500px;
+    margin: 100px auto;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #23334a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+form input {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+    display: block;
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+form input::placeholder {
+    color: white;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4FC3F7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+form button:hover {
+    background-color: #0097a7;
+}
+
+.or-text {
+    margin: 15px 0;
+    font-size: 14px;
+    color: white;
+}
+
+.google-login {
+    width: 100%;
+    padding: 10px;
+    background-color: #4FC3F7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.google-login:hover {
+    background-color: #0097a7;
+}
+
+.no-account{
+    color: white;
+}
+
+.link{
+    color: white;
+}

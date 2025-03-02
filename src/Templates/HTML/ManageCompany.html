@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserly - Manage Company</title>
+    <link rel="stylesheet" href="../CSS/ManageCompanyStyles.css">
+    <script src="../JS/xLuInclude.js" defer></script>
+</head>
+<body>
+
+<header id="CompanyMain_header" xlu-include-file="LoggedHeader.html"></header>
+
+<div class="main-container">
+
+    <div class="company-profile">
+        <img src="../Pictures/UserDefault-icon.png" alt="Company Profile" class="company-logo">
+        <span class="company-name">Company Name</span>
+        <img src="../Pictures/PencilEdit-icon.png" alt="Edit Icon" class="edit-icon">
+    </div>
+    <div class="template-container">
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div id="Schedule" xlu-include-file="Schedule_template.html"></div>
+            </div>
+            <div class="content-container">
+                <div id="ScheduleList" xlu-include-file="List_template.html"></div>
+            </div>
+            <div class="content-container">
+                <div id="Calendar" xlu-include-file="Calendar_template.html"></div>
+                <div class="button-container">
+                    <button class="add-festive">Add festive</button>
+                    <button class="remove-festive">Remove festive</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="template-container">
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div id="Service" xlu-include-file="Service_template.html"></div>
+            </div>
+            <div class="content-container">
+                <div id="ServiceList" xlu-include-file="List_template.html"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="template-container">
+        <div xlu-include-file="AboutYou_template.html"></div>
+    </div>
+
+    <div class="template-container">
+        <div xlu-include-file="Location.html"></div>
+    </div>
+
+    <a href="CompanyMain.html">
+        <button id="save-changes">Save changes</button>
+    </a>
+
+</div>
+
+<footer id="main_footer" xlu-include-file="Footer.html"></footer>
+
+</body>
+</html>

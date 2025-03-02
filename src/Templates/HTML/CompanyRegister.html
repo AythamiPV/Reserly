@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="../JS/xLuInclude.js" defer></script>
+  <link rel="stylesheet" href="../CSS/Registro.css">
+</head>
+<body>
+<div class="ImagenInicio"><img src="../Pictures/ImagenPrincipal.png" alt="ImagenInicio"></div>
+<div class="Formulario" xlu-include-file="Formulario.html"></div>
+</body>
+</html>
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    setTimeout(() => {
+
+      const topButton = document.querySelector(".top-button");
+      if (topButton) {
+        topButton.textContent = "User sign";
+        topButton.style.left = "10px";
+        topButton.style.right = "unset";
+        topButton.addEventListener("click", function() {
+          window.location.href = "Registro.html";
+        });
+      }
+
+      const heading = document.querySelector(".form-container h2");
+      if (heading) {
+        heading.textContent = "Company Registration";
+      }
+
+      const inputs = document.querySelectorAll(".form-container form input");
+      if (inputs.length >= 4) {
+        inputs[0].placeholder = "Company Name";
+        inputs[1].placeholder = "Company Email";
+        inputs[2].placeholder = "Password";
+        inputs[3].placeholder = "Confirm Password";
+      }
+
+      // Cambiar el placeholder del input de teléfono
+      const phoneInput = document.querySelector(".phone-group input[type='tel']");
+      if (phoneInput) {
+        phoneInput.placeholder = "Contact Number";
+      }
+
+      const submitButton = document.querySelector(".form-container form button[type='submit']");
+      if (submitButton) {
+        submitButton.textContent = "Sign in";
+        submitButton.addEventListener("click", function(e) {
+          e.preventDefault();
+          window.location.href = "CompanyMain.html";
+        });
+      }
+
+      const loginLink = document.querySelector(".form-container .login-link");
+      if (loginLink) {
+        loginLink.textContent = "Already have an account?";
+      }
+    }, 1000);
+  });
+</script>
+
+

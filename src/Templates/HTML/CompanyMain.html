@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserly - My company</title>
+  <link rel="stylesheet" href="../CSS/CompanyMainStyles.css">
+  <script src="../JS/xLuInclude.js" defer></script>
+</head>
+<body>
+
+<header id="CompanyMain_header" xlu-include-file="LoggedHeader.html"></header>
+
+<div class="main-container">
+
+  <div class="company-profile">
+    <img src="../Pictures/UserDefault-icon.png" alt="Company Profile" class="company-logo">
+    <span class="company-name">Company Name</span>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="content-container">
+      <div id="Calendar" xlu-include-file="Calendar_template.html"></div>
+
+      <div class="separator"></div>
+
+      <div id="ReservationsList" xlu-include-file="List_template.html"></div>
+    </div>
+  </div>
+
+  <div class="information-container">
+    <div class="info-header">
+      <img src="../Pictures/Info-icon.png" alt="Information" class="info-icon">
+      <span class="info-title">Manage account</span>
+    </div>
+    <p class="info-description">
+      Here you can modify service prices, schedules, account name, business type.
+    </p>
+  </div>
+
+
+</div>
+<footer id="main_footer" xlu-include-file="Footer.html"></footer>
+</body>
+</html>
