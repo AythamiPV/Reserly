@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: #3a4b5c;
+    min-height: 100vh;
+}
+
+.company-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 20px;
+    width: 100%;
+}
+
+.company-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+}
+
+.company-name {
+    font-size: 32px;
+    color: white;
+    font-weight: bold;
+}
+
+.company-details {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    background-color: #2C3E50;
+}
+
+.Reserve{
+    background-color: #4FC3F7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-top: 50px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.Reserve:hover {
+    background-color: #0097a7;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+}
+
+#ServiceList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+}
+
