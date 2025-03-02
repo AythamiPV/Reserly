@@ -44,3 +44,72 @@ Con un diseño moderno y funcional, nuestra web digitaliza el sector de la belle
 # Enlaces a Figma y Trello
 - Trello: https://trello.com/invite/b/67a62f6bffa16fc46760a77b/ATTI9789d2d7db6ffa16c1a8e1291604a1999397688E/reserly
 - Figma: https://www.figma.com/design/M87p0PfJuhE1bq51WpVQs4/Reserly?node-id=0-1&t=6vBebie4Pjv9fZOe-1
+
+# Listado de Templates 
+
+-AboutYou_template.html:
+  Se carga en ManageCompany.html
+  
+-Calendar_template.html:
+  Se carga en CompanyMain.html, ManageCompany.html, CompletarReserva.html
+  
+-Footer.html
+  Se carga en todos menos InicioSesion.html, Registro.html, CompanyRegister.html
+  
+-Formulario.html:
+  Se carga en CompanyRegister.html
+  
+-FormularioInicio.html: 
+  Se carga en index.html
+
+-Gestionar_Cuenta.html:
+  Se carga en MainCompany.html y Tu_Cuenta.html
+
+-Header1.html:
+  Se carga en index.html
+  
+-List_template.html:
+  Se carga en CompanyMain.html, CompanyRegister.html
+  
+-Location.html:
+  Se carga en Tu_Cuenta.html, ManageCompany.html
+
+-LoggedHeader.html
+  Se carga en Tus_Resrvas.html, Tu_Cuenta.html, ManageCompany.html, Completar_Reseva.html,        CompanyMain.html, CompanyWebsite.html
+  
+-Schedule_template.html:
+  Se carga en CompanyMain.html
+
+-Service_template.html:
+  Se carga en CompanyMain.html
+  
+-Servicios.html
+  Se carga en Tu_Cuenta.html
+
+-Valoracion.html:
+  Se carga en index.html
+  
+# Listado de paginas html
+
+  -CompanyMain.html corresponde al mockup Principal empresa
+  
+  -CompanyRegister.html corresponde al mockup Formulario empresa
+  
+  -CompanyWebsite.html corresponde al mockup a Principal empresa
+  
+  -Completar_Reserva.html corresponde al mockup Formulario Reserva
+  
+  -index.html (Página de inicio) corresponde al mockup Principal
+  
+  -InicioSesion.html corresponde al mockup inicio sesion
+  
+  -ManageCompany.html corresponde al mockup Modificar horarios/servicios
+  
+  -Registro.html corresponde al mockup Formulario cliente
+  
+  -Tu_Cuenta.html corresponde al mockup Principal cliente
+  
+  -Tus_Reservas.html corresponde al mockup Mis Reservas / Historial
+
+
+  
