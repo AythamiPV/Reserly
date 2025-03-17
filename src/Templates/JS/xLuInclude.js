@@ -11,8 +11,9 @@ const scriptMap = {
     "Footer.html": "FooterScript.js",
     "FormularioInicio.html": "FormularioInicioScript.js",
     "Header1.html": "Header1Script.js",
-    "Valoracion.html" : "ValoracionScript.js",
+    "Valoracion.html": "ValoracionScript.js",
     "Locartion.html": "LocartionScript.js",
+    "Map_template.html": "MapScript.js",
 };
 
 async function xLuIncludeFile() {
@@ -24,63 +25,55 @@ async function xLuIncludeFile() {
 
         try {
             let response = await fetch(filePath);
-            if (response.ok) {
-                let content = await response.text();
-                elem.innerHTML = content;
-                elem.removeAttribute("xlu-include-file");
+            if (!response.ok) throw new Error(`Error cargando ${filePath}`);
 
-                let scriptFile = scriptMap[file];
-                if (scriptFile) {
-                    await loadScript(`../JS/${scriptFile}`);
-                    
-                    if (file === "Calendar_template.html" && typeof initCalendar === "function") {
-                        initCalendar();
-                    }
+            let content = await response.text();
+            elem.innerHTML = content;
+            elem.removeAttribute("xlu-include-file");
 
-                    if (file === "LoggedHeader.html" && typeof initDropdown === "function") {
-                        initDropdown();
-                        const currentPage = window.location.pathname.split("/").pop();
-                        if (currentPage !== "CompanyMain.html") {
-                            const manageLink = document.querySelector(".dropdown-menu a[href*='ManageCompany.html']");
-                            if (manageLink) {
-                                manageLink.remove();
-                            }
-                        }
-                        if (currentPage !== "Tu_Cuenta.html") {
-                            const manageLink = document.querySelector(".dropdown-menu a[href*='Tus_Reservas.html']");
-                            if (manageLink) {
-                                manageLink.remove();
-                            }
-                        }
-                    }
-                }
-                await xLuIncludeFile();
+            let scriptFile = scriptMap[file];
+            if (scriptFile) {
+                await loadScript(`../JS/${scriptFile}`);
+                executeDynamicFunctions(file);
             }
         } catch (error) {
-            console.error(`Error cargando ${filePath}:`, error);
+            console.error(error);
         }
     }
 }
 
 async function loadScript(scriptPath) {
-    return new Promise(async (resolve, reject) => {
-        try {
-            let response = await fetch(scriptPath);
-            if (response.ok) {
-                let scriptText = await response.text();
-                let scriptElement = document.createElement("script");
-                scriptElement.textContent = scriptText;
-                document.body.appendChild(scriptElement);
-                resolve();
-            } else {
-                console.warn(`No se encontró el script para ${scriptPath}`);
-                reject();
-            }
-        } catch (error) {
-            console.error(`Error cargando script: ${scriptPath}`, error);
-            reject();
-        }
-    });
+    try {
+        let response = await fetch(scriptPath);
+        if (!response.ok) throw new Error(`No se encontró el script para ${scriptPath}`);
+
+        let scriptText = await response.text();
+        let scriptElement = document.createElement("script");
+        scriptElement.textContent = scriptText;
+        document.body.appendChild(scriptElement);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+function executeDynamicFunctions(file) {
+    if (file === "Calendar_template.html" && typeof initCalendar === "function") {
+        initCalendar();
+    }
+    if (file === "LoggedHeader.html" && typeof initDropdown === "function") {
+        initDropdown();
+        adjustHeaderLinks();
+    }
+}
+
+function adjustHeaderLinks() {
+    const currentPage = window.location.pathname.split("/").pop();
+    if (currentPage !== "CompanyMain.html") {
+        document.querySelector(".dropdown-menu a[href*='ManageCompany.html']")?.remove();
+    }
+    if (currentPage !== "Tu_Cuenta.html") {
+        document.querySelector(".dropdown-menu a[href*='Tus_Reservas.html']")?.remove();
+    }
 }
 
 document.addEventListener("DOMContentLoaded", xLuIncludeFile);
