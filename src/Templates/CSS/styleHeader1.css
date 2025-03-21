@@ -14,7 +14,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 70px;
+    height: 110px;
     background-color: #23334a;
     display: flex;
     align-items: center;
@@ -22,6 +22,7 @@ header {
     padding: 0 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    flex-wrap: wrap;
 }
 
 .logo img {
@@ -34,10 +35,12 @@ header {
     flex-grow: 1;
     justify-content: center;
     color: transparent;
+    flex-wrap: wrap;
 }
 
 .search-container input {
-    width: 200px;
+    width: 100%;
+    max-width: 500px;
     padding: 8px;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 5px;
@@ -51,10 +54,10 @@ header {
     color: rgb(255, 255, 255);
 }
 
-
 .auth-buttons {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .auth-buttons button {
@@ -91,4 +94,53 @@ header {
     background-color: #0097a7;
 }
 
+@media (max-width: 1024px) {
+    header {
+        padding: 10px;
+    }
+    .search-container input {
+        max-width: 250px;
+    }
+    .auth-buttons {
+        gap: 5px;
+    }
+}
 
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        text-align: center;
+    }
+    .search-container {
+        width: 100%;
+        justify-content: center;
+    }
+    .search-container input {
+        width: 80%;
+        max-width: 250px;
+    }
+    .auth-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .search-container input {
+        width: 90%;
+        max-width: 200px;
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}

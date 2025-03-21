@@ -2,6 +2,8 @@ body {
     display: flex;
     height: 100vh;
     margin: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .FormularioInicio {
@@ -19,4 +21,36 @@ body {
     height: 100%;
     object-fit: cover;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1024px) {
+    body {
+        flex-direction: column-reverse;
+        height: auto;
+    }
+    .ImagenInicio {
+        width: 100%;
+        height: 50vh;
+    }
+    .FormularioInicio {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ImagenInicio {
+        height: 40vh;
+    }
+    .FormularioInicio {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ImagenInicio {
+        height: 30vh;
+    }
+    .FormularioInicio {
+        padding: 5px;
+    }
 }
