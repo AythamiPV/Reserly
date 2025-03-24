@@ -119,6 +119,9 @@ header {
     display: block;
 }
 
-
-
-
+/* Media Query para pantallas de 480px o menos */
+@media (max-width: 600px) {
+    .username {
+        display: none;
+    }
+}
