@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1f2a3a;
+    padding: 10px 20px;
+    position: relative; /* Necesario para posicionar el logo */
+    z-index: 5;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-left: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.icon img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+.search-container {
+    display: none; /* Inicialmente oculto */
+    position: fixed; /* Fija el contenedor respecto a la ventana completa */
+    top: 25px; /* Centrado en la parte superior de la pantalla */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translateX(-50%); /* Ajuste para centrar el contenedor */
+    background: white;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* Asegura que el buscador esté por encima de otros elementos */
+    width: 300px; /* Puedes ajustar el tamaño según prefieras */
+}
+
+.search-container input {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%; /* El input ocupará todo el ancho del contenedor */
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.search-icon {
+    cursor: pointer; /* Para que el cursor cambie al hacer hover sobre el icono */
+}
+
+.search-container.show {
+    display: block; /* Cuando se activa la clase 'show', se muestra el campo de búsqueda */
+}
+
+.menu-container {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.menu-container a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 5px 0;
+}
+
+.show {
+    display: block !important;
+}
