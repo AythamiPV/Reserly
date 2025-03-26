@@ -1,3 +1,9 @@
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("✅ DOM cargado");
+
+    initCalendar();
+})
+
 function initCalendar() {
     console.log("✅ initCalendar ejecutado");
 
@@ -18,7 +24,6 @@ function initCalendar() {
         const lastDay = new Date(selectedDate.getFullYear(), selectedDate.getMonth() + 1, 0);
         const prevLastDay = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 0);
 
-        // Cambié "es-ES" por "en-US" para mostrar los meses en inglés
         monthYear.textContent = firstDay.toLocaleString("en-US", { month: "long", year: "numeric" });
         calendarDays.innerHTML = "<div class='day'>M</div><div class='day'>T</div><div class='day'>W</div><div class='day'>T</div><div class='day'>F</div><div class='day'>S</div><div class='day'>S</div>";
 
