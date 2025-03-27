@@ -1,0 +1,41 @@
+{
+  "reservations": [
+    {
+      "service": "Haircut",
+      "date": "2025-04-02",
+      "time": "16:00",
+      "location": "Gran Canaria Salon",
+      "icon": "../Pictures/haircut-icon.png"
+    },
+    {
+      "service": "Massage",
+      "date": "2025-04-10",
+      "time": "11:30",
+      "location": "Relax Spa",
+      "icon": "../Pictures/massage-icon.png"
+    }
+  ],
+  "recentSearches": [
+    {
+      "service": "Haircut",
+      "date": "02 Apr",
+      "icon": "../Pictures/haircut-icon.png"
+    },
+    {
+      "service": "Massage",
+      "date": "10 Apr",
+      "icon": "../Pictures/massage-icon.png"
+    },
+    {
+      "service": "Nails",
+      "date": "15 Mar",
+      "icon": "../Pictures/nails-icon.png"
+    },
+    {
+      "service": "Facial",
+      "date": "28 Feb",
+      "icon": "../Pictures/facial-icon.png"
+    }
+  ]
+}
+

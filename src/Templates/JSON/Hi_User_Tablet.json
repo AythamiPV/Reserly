@@ -1,0 +1,27 @@
+{
+  "user": {
+    "name": "Nicolás ,
+    "profileImage": "../Pictures/user-icon.png"
+  },
+  "lastVisited": {
+    "title": "Haircut",
+    "button": "View History",
+    "image": "../Pictures/haircut.jpg"
+  },
+  "mostPopular": {
+    "title": "Massage",
+    "button": "Explore",
+    "image": "../Pictures/massage.jpg"
+  },
+  "location": "Gran Canaria - Tafira",
+  "quickInfo": [
+    {
+      "title": "📄 Personal Information",
+      "text": "Manage your personal data, preferences and notifications."
+    },
+    {
+      "title": "🛠️ Report an Error",
+      "text": "Tell us if something went wrong. We'll fix it quickly."
+    }
+  ]
+}

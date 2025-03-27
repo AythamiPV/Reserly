@@ -1,0 +1,24 @@
+{
+  "services": [
+    {
+      "name": "Haircut",
+      "icon": "../Pictures/haircut-icon.png"
+    },
+    {
+      "name": "Massage",
+      "icon": "../Pictures/massage-icon.png"
+    },
+    {
+      "name": "Facial",
+      "icon": "../Pictures/facial-icon.png"
+    },
+    {
+      "name": "Nails",
+      "icon": "../Pictures/nails-icon.png"
+    },
+    {
+      "name": "Makeup",
+      "icon": "../Pictures/makeup-icon.png"
+    }
+  ]
+}
