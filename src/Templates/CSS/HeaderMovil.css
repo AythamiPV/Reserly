@@ -9,7 +9,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #1f2a3a;
+    background-color: #23334a;
     padding: 10px 20px;
     position: relative; /* Necesario para posicionar el logo */
     z-index: 5;
@@ -43,21 +43,29 @@ body {
     top: 25px; /* Centrado en la parte superior de la pantalla */
     left: 50%; /* Centrado horizontalmente */
     transform: translateX(-50%); /* Ajuste para centrar el contenedor */
-    background: white;
     padding: 5px;
     border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 10; /* Asegura que el buscador esté por encima de otros elementos */
     width: 300px; /* Puedes ajustar el tamaño según prefieras */
 }
 
 .search-container input {
-    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.3);
     padding: 10px;
-    width: 100%; /* El input ocupará todo el ancho del contenedor */
+    width: 100%;
     font-size: 16px;
     box-sizing: border-box;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px); /* Desenfoque para un efecto más elegante */
+    color: white; /* Color del texto */
+    outline: none;
 }
+
+.search-container input::placeholder {
+    color: white;
+}
+
 
 .search-icon {
     cursor: pointer; /* Para que el cursor cambie al hacer hover sobre el icono */
@@ -65,6 +73,7 @@ body {
 
 .search-container.show {
     display: block; /* Cuando se activa la clase 'show', se muestra el campo de búsqueda */
+    color: white;
 }
 
 .menu-container {
