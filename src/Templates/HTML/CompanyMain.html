@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reserly - My company</title>
   <link rel="stylesheet" href="../CSS/CompanyMainStyles.css">
-  <script src="../JS/xLuInclude.js" defer></script>
 </head>
-<header class="Header" xlu-include-file="LoggedHeader.html"></header>
+<header id="header" class="Header"></header>
 <body>
   <div class="company-profile">
     <img src="../Pictures/UserDefault-icon.png" alt="Company Profile" class="company-logo">
@@ -16,11 +15,11 @@
 
   <div class="content-wrapper">
     <div class="content-container">
-      <div id="Calendar" xlu-include-file="Calendar_template.html"></div>
+      <div id="Calendar"></div>
 
       <div class="separator"></div>
 
-      <div id="ReservationsList" xlu-include-file="List_template.html"></div>
+      <div id="ReservationsList"></div>
     </div>
   </div>
 
@@ -34,5 +33,10 @@
     </p>
   </div>
 </body>
-<footer id="main_footer" xlu-include-file="Footer.html"></footer>
+<footer id="main_footer"></footer>
+
+<script src="../JS/LoadTemplates.js"></script>
+<script src="../JS/CalendarScript.js"></script>
+<script src="../JS/LoggedHeaderScript.js"></script>
+
 </html>
