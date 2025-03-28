@@ -37,4 +37,5 @@ function init() {
     loadTemplate('../HTML-components/Service_template.html', document.getElementById('Service'));
     loadTemplate('../HTML-components/AboutYou_template.html', document.getElementById('AboutYou'));
     loadTemplate('../HTML-components/Location.html', document.getElementById('Location'));
+    loadTemplate('../HTML-components/Valoracion.html', document.getElementById('Reseña'));
     }

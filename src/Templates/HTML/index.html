@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="../JS/LoadComponent.js" defer></script>
+    <script src="../JS/LoadTemplates.js" defer></script>
     <link rel="stylesheet" href="../CSS/index.css">
 </head>
 <body>
 <div class="wrapper">
-    <header id="main_header" xlu-include-file="Header1.html"></header>
+    <header id="main_header"></header>
     <div class="main_content">
         <div class="Imagen_Principal">
             <img src="../Pictures/ImagenPrincipal.png" alt="ImagenPrincipal">
@@ -22,12 +22,12 @@
             </div>
             <div class="article-container">
                 <!-- UNA SOLA plantilla de reseña que se clonará para cada entrada del JSON -->
-                <article class="article" xlu-include-file="Valoracion.html"></article>
+                <article class="article" id = "Reseña"></article>
             </div>
         </div>
     </div>
     <div class="footer">
-        <footer id="main_footer" xlu-include-file="Footer.html"></footer>
+        <footer id="main_footer"></footer>
     </div>
 </div>
 
