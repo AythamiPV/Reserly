@@ -30,7 +30,9 @@ function init() {
     loadTemplate('../HTML-components/List_template.html', document.getElementById('ReservationsList'));
     loadTemplate('../HTML-components/List_template.html', document.getElementById('ServiceList'));
     loadTemplate('../HTML-components/List_template.html', document.getElementById('ScheduleList'));
-    loadTemplate('../HTML-components/Formulario.html', document.getElementById('Formulario'));
+    loadTemplate('../HTML-components/Formulario.html', document.getElementById('Formulario'), function() {
+        initFormulario();
+    });
     loadTemplate('../HTML-components/Header1.html', document.getElementById('main_header'));
     loadTemplate('../HTML-components/FormularioInicio.html', document.getElementById('FormularioInicio'));
     loadTemplate('../HTML-components/Shedule_template.html', document.getElementById('Schedule'));
