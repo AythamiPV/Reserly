@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reserly - My company</title>
   <link rel="stylesheet" href="../CSS/CompanyMainStyles.css">
-  <script src="../JS/LoadComponent.js" defer></script>
 </head>
 <header id="header" class="Header"></header>
 <body>
@@ -36,40 +35,7 @@
 </body>
 <footer id="main_footer"></footer>
 
-<script>
-  document.addEventListener('DOMContentLoaded', init);
-
-  function loadTemplate(fileName, element, callback) {
-    fetch(fileName)
-            .then((res) => {
-              if (!res.ok) {
-                throw new Error(`Error cargando ${fileName}: ${res.status}`);
-              }
-              return res.text();
-            })
-            .then((text) => {
-              element.innerHTML = text;
-              if (callback) {
-                callback();
-              }
-            })
-            .catch((error) => {
-              console.error("Error al cargar componente:", error);
-            });
-  }
-
-  function init() {
-    loadTemplate('../HTML-components/LoggedHeader.html', document.getElementById('header'), function() {
-      initDropdown();
-    });
-    loadTemplate('../HTML-components/Footer.html', document.getElementById('main_footer'));
-    loadTemplate('../HTML-components/Calendar_template.html', document.getElementById('Calendar'), function() {
-      initCalendar();
-    });
-    loadTemplate('../HTML-components/List_template.html', document.getElementById('ReservationsList'));
-  }
-</script>
-
+<script src="../JS/LoadTemplates.js"></script>
 <script src="../JS/CalendarScript.js"></script>
 <script src="../JS/LoggedHeaderScript.js"></script>
 
