@@ -2,43 +2,114 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="../JS/xLuInclude.js" defer></script>
+    <script src="../JS/LoadTemplates.js" defer></script>
     <link rel="stylesheet" href="../CSS/index.css">
 </head>
 <body>
 <div class="wrapper">
-    <header id="main_header" xlu-include-file="Header1.html"></header>
+    <header id="main_header"></header>
     <div class="main_content">
         <div class="Imagen_Principal">
             <img src="../Pictures/ImagenPrincipal.png" alt="ImagenPrincipal">
         </div>
         <div class="Informacion">
             <h1>About us</h1>
-            <p>Easy booking, no hassle. At Reserly, we connect customers with the best beauty and wellness businesses: barbershops, hair salons, nail artists, massage therapists, and more. Our online booking system lets you schedule your appointment in seconds—no calls, no waiting.
-
-                Whether you're a customer looking for quality service or a business wanting to optimize your schedule, we offer an intuitive and efficient platform. Discover nearby professionals, choose the time that suits you best, and receive automatic confirmations.
-
-                For businesses, we simplify appointment management, reducing cancellations and maximizing productivity. Plus, we provide visibility and new growth opportunities.
-
-                Join the new way of booking and offering services. With Reserly, convenience and efficiency are just one click away. Book your next appointment today!</p>
+            <p></p>
         </div>
         <div class="Valoracion">
             <div class="header_valoracion">
                 <h1>Featured businesses</h1>
             </div>
             <div class="article-container">
-                <article class="article" xlu-include-file="Valoracion.html"></article>
-                <article class="article" xlu-include-file="Valoracion.html"></article>
-                <article class="article" xlu-include-file="Valoracion.html"></article>
-                <article class="article" xlu-include-file="Valoracion.html"></article>
-                <article class="article" xlu-include-file="Valoracion.html"></article>
+                <!-- UNA SOLA plantilla de reseña que se clonará para cada entrada del JSON -->
+                <article class="article" id = "Reseña"></article>
             </div>
         </div>
     </div>
     <div class="footer">
-        <footer id="main_footer" xlu-include-file="Footer.html"></footer>
+        <footer id="main_footer"></footer>
     </div>
 </div>
 
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Cargar AboutUs.json
+        fetch("../Data/AboutUs.json")
+            .then(response => response.json())
+            .then(data => {
+                const infoContainer = document.querySelector(".Informacion p");
+                if (infoContainer) {
+                    infoContainer.textContent = data.Informacion;
+                }
+            })
+            .catch(error => console.error("Error cargando la información:", error));
+
+        // Esperar a que xLuInclude cargue los archivos antes de cargar reseñas
+        const observer = new MutationObserver(() => {
+            const templateArticle = document.querySelector(".article");
+
+            if (templateArticle && templateArticle.querySelector(".review-card")) {
+                observer.disconnect(); // Detener la observación
+                cargarValoraciones(templateArticle); // Cargar las reseñas usando la plantilla
+            }
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+    });
+
+    function cargarValoraciones(templateArticle) {
+        fetch("../Data/Reseña.json")
+            .then(response => response.json())
+            .then(data => {
+                const container = document.querySelector(".article-container");
+                container.innerHTML = ""; // Limpiar reseñas anteriores
+
+                data.Reseñas.forEach(review => {
+                    let newArticle = templateArticle.cloneNode(true); // Clonamos la plantilla
+                    newArticle.style.display = "block";
+
+                    let profileImage = newArticle.querySelector(".profile-image");
+                    let text = newArticle.querySelector(".text");
+                    let stars = newArticle.querySelector(".stars");
+                    let name = newArticle.querySelector(".name");
+                    let role = newArticle.querySelector(".role");
+
+                    // Asignar imagen desde la URL del JSON o usar una por defecto
+                    if (profileImage && review.image) {
+                        profileImage.src = review.image;
+                    } else {
+                        profileImage.src = "../Pictures/UserDefault-icon.png"; // Imagen por defecto
+                    }
+
+                    if (text) text.textContent = review.decripcion;
+                    if (stars) stars.innerHTML = generateStars(review.value);
+                    if (name) name.textContent = review.name;
+                    if (role) role.textContent = review.type;
+
+                    container.appendChild(newArticle); // Agregar el nuevo artículo
+                });
+            })
+            .catch(error => console.error("Error cargando las valoraciones:", error));
+    }
+
+    function generateStars(rating) {
+        let fullStars = Math.floor(rating / 2);
+        let halfStar = (rating % 2) >= 1 ? 1 : 0;
+        let emptyStars = 5 - fullStars - halfStar;
+
+        let starsHTML = "";
+        for (let i = 0; i < fullStars; i++) {
+            starsHTML += '<span class="star full">★</span>';
+        }
+        if (halfStar) {
+            starsHTML += '<span class="star"><span class="half">★</span><span class="empty">★</span></span>';
+        }
+        for (let i = 0; i < emptyStars; i++) {
+            starsHTML += '<span class="star empty">★</span>';
+        }
+        return starsHTML;
+    }
+</script>
+
 </html>

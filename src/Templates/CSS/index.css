@@ -4,9 +4,10 @@
     box-sizing: border-box;
 }
 
-.main_content{
+.main_content {
     background-color: #3a4b5c;
 }
+
 .Imagen_Principal {
     width: 100%;
     height: 100vh;
@@ -30,15 +31,15 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: white;
-}
-
-.Informacion {
     background-color: #1b2a41;
 }
 
 .Valoracion {
     background-color: #1b2a41;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
 }
 
 .Informacion h1, .Valoracion h1 {
@@ -55,7 +56,45 @@
     gap: 20px;
 }
 
-.footer{
+.footer {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    background-color: #1b2a41;
 }
 
+@media (max-width: 1024px) {
+    .Imagen_Principal {
+        height: 70vh;
+    }
+    .Informacion, .Valoracion {
+        padding: 30px;
+        margin: 30px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .Imagen_Principal {
+        height: 50vh;
+    }
+    .Informacion, .Valoracion {
+        padding: 20px;
+    }
+    .article-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .Imagen_Principal {
+        height: 40vh;
+    }
+    .Informacion, .Valoracion {
+        padding: 15px;
+        margin: 20px auto;
+    }
+    .Informacion h1, .Valoracion h1 {
+        font-size: 1.5rem;
+    }
+}

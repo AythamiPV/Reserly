@@ -7,8 +7,9 @@ body {
 }
 
 .form-container {
-    width: 500px;
-    margin: 100px auto;
+    width: 90%;
+    max-width: 500px;
+    margin: 10vh auto;
     text-align: center;
     padding: 20px;
     border-radius: 10px;
@@ -84,4 +85,38 @@ form button:hover {
 
 .link{
     color: white;
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        width: 95%;
+        padding: 15px;
+    }
+    form input {
+        font-size: 14px;
+        padding: 8px;
+    }
+    form button, .google-login {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        width: 100%;
+        margin: 5vh auto;
+        padding: 10px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    form input {
+        font-size: 14px;
+        padding: 6px;
+    }
+    form button, .google-login {
+        font-size: 14px;
+        padding: 6px;
+    }
 }

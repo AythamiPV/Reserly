@@ -27,9 +27,27 @@ body {
 }
 
 .stars {
-    color: #f4a261;
+    font-size: 30px;
+    color: gold;
 }
-
+.star {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+.full {
+    color: gold;
+}
+.half {
+    position: absolute;
+    width: 42%;
+    overflow: hidden;
+    color: gold;
+}
+.empty {
+    color: lightgray;
+}
 .name {
     color: white;
     font-weight: bold;

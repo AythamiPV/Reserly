@@ -2,16 +2,16 @@ body {
     display: flex;
     height: 100vh;
     margin: 0;
+    flex-direction: row; /* Por defecto, la imagen y el formulario estarán en fila */
 }
 
 .Formulario {
     flex: 1;
     padding: 20px;
-}
-
-.ImagenInicio {
-    width: 50%;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .ImagenInicio img {
@@ -19,4 +19,45 @@ body {
     height: 100%;
     object-fit: cover;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Media query para pantallas más pequeñas (tabletas y móviles) */
+@media (max-width: 1024px) {
+    body {
+        flex-direction: column; /* En pantallas más pequeñas, la imagen y el formulario estarán uno encima del otro */
+    }
+
+    .ImagenInicio {
+        width: 100%; /* La imagen ocupa todo el ancho de la pantalla */
+        height: 50vh; /* La imagen ocupa solo la mitad del alto de la pantalla */
+        order: -1; /* Cambia el orden para que la imagen esté arriba */
+    }
+
+    .Formulario {
+        width: 100%; /* El formulario también ocupa todo el ancho */
+        padding: 15px; /* Reducción del padding en pantallas más pequeñas */
+    }
+}
+
+/* Media query para pantallas de teléfonos móviles más pequeños */
+@media (max-width: 768px) {
+    .ImagenInicio {
+        height: 40vh; /* La imagen ocupa menos espacio en pantallas muy pequeñas */
+    }
+
+    .Formulario {
+        padding: 10px; /* Ajuste del padding */
+    }
+}
+
+/* Media query para pantallas extremadamente pequeñas */
+@media (max-width: 480px) {
+    .ImagenInicio {
+        height: 30vh; /* La imagen ocupa aún menos espacio en dispositivos muy pequeños */
+    }
+
+    .Formulario {
+        padding: 10px;
+        font-size: 14px; /* Ajuste de tamaño de fuente para pantallas muy pequeñas */
+    }
 }

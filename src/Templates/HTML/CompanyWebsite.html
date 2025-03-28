@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>Reserly - Company Name</title>
     <link rel="stylesheet" href="../CSS/CompanyWebsiteStyles.css">
-    <script src="../JS/xLuInclude.js" defer></script>
+    <script src="../JS/LoadTemplates.js" defer></script>
 </head>
 <body>
-<header id="CompanyMain_header" xlu-include-file="LoggedHeader.html"></header>
+<header id="header"></header>
 <div class="company-profile">
     <img src="../Pictures/UserDefault-icon.png" alt="Company Profile" class="company-logo">
     <span class="company-name">Company Name</span>
@@ -26,10 +26,12 @@
             <a href="Completar_Reserva.html"><button class="Reserve">Make a reservation</button></a>
         </div>
         <div class="content-container">
-            <div id="ServiceList" xlu-include-file="List_template.html"></div>
+            <div id="ServiceList"></div>
         </div>
     </div>
 </div>
-<footer id="main_footer" xlu-include-file="Footer.html"></footer>
+<footer id="main_footer"></footer>
+
+<script src="../JS/LoggedHeaderScript.js" defer></script>
 </body>
 </html>
