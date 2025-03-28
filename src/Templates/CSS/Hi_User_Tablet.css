@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0e1c2f;
+    color: white;
+}
+
+.client-home {
+    padding: 1.5rem;
+    max-width: 1024px;
+    margin: auto;
+}
+
+/* Header usuario */
+.user-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1c2a40;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.settings-button {
+    background-color: transparent;
+    color: #90caf9;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Main content (cards + location) */
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Info cards */
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 2;
+}
+
+.info-card {
+    background: #1c2a40;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.info-card h3 {
+    color: #90caf9;
+    margin-bottom: 1rem;
+}
+
+.img-placeholder {
+    background: #22324e;
+    height: 120px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Location section */
+.location-box {
+    background: #1c2a40;
+    padding: 1rem;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 240px;
+}
+
+.location-box p {
+    color: #90caf9;
+    margin-bottom: 0.5rem;
+}
+
+.map-placeholder {
+    background-color: #22324e;
+    height: 140px;
+    border-radius: 8px;
+}
+
+/* Quick info section */
+.quick-info {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.quick-card {
+    flex: 1;
+    background-color: #1c2a40;
+    padding: 1rem;
+    border-radius: 10px;
+    min-width: 240px;
+}
+
+.quick-card h4 {
+    color: #90caf9;
+    margin-bottom: 0.5rem;
+}
+
+.quick-card p {
+    color: #dce3ea;
+    font-size: 0.95rem;
+}
+
+/* Buttons */
+.btn {
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn.small {
+    font-size: 0.9rem;
+}
+
+.btn:hover {
+    background-color: #1565c0;
+}
+.img-placeholder {
+    background-color: #22324e;
+    height: 120px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    background-size: cover;
+    background-position: center;
+}
