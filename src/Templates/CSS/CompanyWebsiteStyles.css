@@ -1,18 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3a4b5c;
+    margin: 0;
+    padding: 0;
+}
+
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none;
     font-family: Arial, sans-serif;
-}
-
-html, body {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-body {
-    background-color: #3a4b5c;
-    min-height: 100vh;
 }
 
 .company-profile {
@@ -38,7 +35,11 @@ body {
     font-weight: bold;
 }
 
+/* Contenedor principal en formato fila */
 .company-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     max-width: 1200px;
     margin: 50px auto;
     padding: 40px;
@@ -46,49 +47,53 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: white;
     background-color: #2C3E50;
+    gap: 40px;
 }
 
-.Reserve{
+.about-us {
+    flex: 1;
+    text-align: left;
+    max-width: 50%;
+}
+
+.registration {
+    flex: 1;
+    text-align: left;
+    max-width: 50%;
+}
+
+.Reserve {
     background-color: #4FC3F7;
     color: white;
     border: none;
     border-radius: 10px;
-    margin-top: 50px;
+    margin-top: 20px;
     padding: 10px;
     cursor: pointer;
     font-weight: bold;
     transition: 0.3s;
+    width: 100%;
 }
 
 .Reserve:hover {
     background-color: #0097a7;
 }
 
-.content-wrapper {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+#Reservations{
+    display: none;
 }
+@media (max-width: 768px) {
+    .company-details {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-.content-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 50%;
+    .about-us, .registration {
+        max-width: 100%;
+    }
+
+    .Reserve {
+        width: 100%;
+    }
 }
-
-#ServiceList {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 10px;
-}
-
-footer {
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-    margin-top: auto;
-}
-

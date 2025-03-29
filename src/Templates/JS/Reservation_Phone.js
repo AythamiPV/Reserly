@@ -1,7 +1,7 @@
 let allReservations = [];
 
 // Cargar datos desde el JSON
-fetch('../JSON/Reservation_Phone.json')
+fetch('../Data/Reservation_Phone.json')
     .then(res => res.json())
     .then(data => {
         const list = document.querySelector('.reservations-list');

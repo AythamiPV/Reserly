@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reserly - My company</title>
   <link rel="stylesheet" href="../CSS/CompanyMainStyles.css">
 </head>
-<header id="header" class="Header"></header>
 <body>
+<header id="header" class="Header"></header>
+<main>
   <div class="company-profile">
     <img src="../Pictures/UserDefault-icon.png" alt="Company Profile" class="company-logo">
     <span class="company-name">Company Name</span>
@@ -16,13 +17,10 @@
   <div class="content-wrapper">
     <div class="content-container">
       <div id="Calendar"></div>
-
       <div class="separator"></div>
-
-      <div id="ReservationsList"></div>
+      <div class="ReservationList" id="ReservationsList"></div>
     </div>
   </div>
-
   <div class="information-container">
     <div class="info-header">
       <img src="../Pictures/Info-icon.png" alt="Information" class="info-icon">
@@ -32,11 +30,12 @@
       Here you can modify service prices, schedules, account name, business type.
     </p>
   </div>
+</main>
 </body>
 <footer id="main_footer"></footer>
 
 <script src="../JS/LoadTemplates.js"></script>
 <script src="../JS/CalendarScript.js"></script>
 <script src="../JS/LoggedHeaderScript.js"></script>
-
+<script src="../JS/CompanyMainLoadData.js"></script>
 </html>
