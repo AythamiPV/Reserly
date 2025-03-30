@@ -15,9 +15,17 @@
     padding-right: 15px;
 }
 
+/* styleLocation.css */
 .location-box {
-    width: 80%;
-    height: 150px;
-    background-color: #16202A;
+    width: 100%; /* 100% de ancho para ocupar el contenedor */
+    height: 500px; /* Asigna un alto fijo para el mapa */
+    background-color: #f4f4f4; /* Color de fondo por si algo sale mal */
+    border-radius: 5px;
+    position: relative;
+}
+
+#map {
+    width: 100%; /* Asegura que el mapa ocupe todo el ancho disponible */
+    height: 100%; /* El mapa ocupará toda la altura disponible de .location-box */
     border-radius: 5px;
 }

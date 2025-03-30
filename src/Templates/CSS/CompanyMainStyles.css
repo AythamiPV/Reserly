@@ -1,159 +1,175 @@
-*, *::before, *::after {
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    text-decoration: none;
     font-family: Arial, sans-serif;
 }
 
-html, body {
-    height: 100%;
-    display: block;
-    flex-direction: column;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-body {
-    padding: 0;
+.main {
+    width: 100%;
 }
 
 .company-profile {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 30px 20px;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    margin-top: 25%;
+    gap: 3em;
+    padding: 20px;
+    /* width: 100%; */
+    /* flex-wrap: wrap; */
+    justify-content: left;
+    text-align: left;
+    margin: 6%;
+    margin-left: 13%;
 }
 
 .company-logo {
-    width: 100px;
-    height: 100px;
+    width: 10em;
+    /* height: 80px; */
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid white;
 }
 
 .company-name {
-    font-size: 32px;
-    color: white;
+    font-size: 3em;
     font-weight: bold;
+    text-align: center;
+    color: white;
 }
 
 .content-wrapper {
     display: flex;
-    justify-content: center;
-    width: 100%;
+    align-items: center;
+    flex-direction: column;
 }
 
 .content-container {
     display: flex;
-    align-items: stretch;
-    gap: 30px;
-    padding: 20px;
-    max-width: 900px;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 7em;
+    flex-direction: row;
 }
 
-#Calendar, #ReservationsList {
-    flex: 1;
-    min-width: 300px;
-    max-width: 100%;
-}
-
+/* Ajuste para el separador */
 .separator {
     width: 3px;
     background-color: #ccc;
-    display: none;
+    height: auto;
+    display: block;
+    margin: 0 10px;
 }
 
+/* Información */
 .information-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     background-color: rgba(128, 128, 128, 0.4);
-    padding: 20px;
+    padding: 4em;
     border-radius: 10px;
-    margin-top: 20px;
+    /* width: 100%; */
+    /* max-width: 800px; */
+    margin-top: 9em;
+    text-align: center;
 }
 
 .info-header {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 15px;
     flex-wrap: wrap;
 }
 
 .info-icon {
-    width: 60px;
-    height: 60px;
+    width: 3em;
+    /* height: 50px; */
     border-radius: 50%;
-    object-fit: cover;
+    /* object-fit: cover; */
 }
 
 .info-title {
-    font-size: 28px;
-    color: white;
+    font-size: 2em;
     font-weight: bold;
 }
 
 .info-description {
     font-size: 16px;
     margin-top: 10px;
-    max-width: 600px;
+    /* max-width: 600px; */
     color: #d5c4c4;
     font-weight: bold;
+    /* align-items: center; */
 }
 
 footer {
     width: 100%;
     background-color: #23334a;
-    color: white;
     text-align: center;
     padding: 10px;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media screen and (max-width: 800px) {
     .content-container {
-        margin-top: 20%;
         flex-direction: column;
         align-items: center;
-    }
-
-    .company-profile {
-        text-align: center;
+        gap: 20px;
     }
 
     .separator {
         display: none;
     }
-}
 
-@media (max-width: 600px) {
-    .content-container {
-        margin-top: 52%;
+    h1 {
+        font-size: 1.5em;
+    }
+
+    #Calendar, #ReservationsList {
+        width: 100%;
+        margin-top: 3em;
+    }
+
+    .company-profile {
         flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        margin-left: 0;
+        margin: 0%;
+        margin-top: 6%;
     }
 
-    #Calendar {
-        order: 1;
-    }
-
-    #ReservationsList {
-        order: 2;
+    .company-logo {
+        width: 6em;
     }
 
     .company-name {
-        font-size: 24px;
+        font-size: 2em;
     }
+
+}
+
+@media screen and (max-width: 400px) {
+    .company-profile {
+        display: none;
+    }
+
     .info-title {
-        font-size: 22px;
+        font-size: 20px;
     }
+
     .info-description {
         font-size: 14px;
+    }
+
+    .content-container {
+        justify-content: center;
+    }
+
+    #Calendar, #ReservationsList {
+        width: 100%;
+        min-width: auto;
     }
 }
