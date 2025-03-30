@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="eN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,15 +10,18 @@
 <body>
 <div class="formulario">
   <div class="form-container">
-    <a href="../HTML/CompanyRegister.html"><button class="top-button">Sign your company</button></a>
+    <a href="../HTML/CompanyRegister.html">
+      <button class="top-button">Sign your company</button>
+    </a>
     <h2>User Sign</h2>
-    <form action="#" method="post">
+    <form id="signupForm">
       <div class="field-container">
-        <input type="text" placeholder="Full Name">
-        <input type="email" placeholder="Email Address">
-        <input type="password" placeholder="Password">
-        <input type="password" placeholder="Confirm Password">
+        <input type="text" id="fullName" placeholder="Full Name">
+        <input type="email" id="email" placeholder="Email Address">
+        <input type="password" id="password" placeholder="Password">
+        <input type="password" id="confirmPassword" placeholder="Confirm Password">
       </div>
+
       <div class="phone-group">
         <div class="custom-select">
           <div class="selected-option">
@@ -35,14 +38,23 @@
             <li data-code="+55" data-flag="br.png">🇧🇷 +55 (Brazil)</li>
           </ul>
         </div>
-        <input type="tel" placeholder="Phone Number">
+        <input type="tel" id="phone" placeholder="Phone Number">
       </div>
+
       <button type="submit">Sign in</button>
     </form>
     <a href="../HTML/InicioSesion.html" class="login-link">Do you already have an account?</a>
   </div>
 </div>
+
+<!-- 🔹 Popup Modal -->
+<div id="errorModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Error en el formulario</h3>
+    <ul id="errorList"></ul>
+  </div>
+</div>
+
 </body>
 </html>
-
-

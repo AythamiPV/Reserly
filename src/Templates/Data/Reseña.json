@@ -1,0 +1,36 @@
+{
+  "Reseñas": [
+    {
+      "id" : 1,
+      "name" : "Yezzy",
+      "type" : "Barberia",
+      "value" : 7,
+      "decripcion": "Asesoramiento masculino personal",
+      "image": "https://d375139ucebi94.cloudfront.net/region2/es/61742/biz_photo/9ca87bd31ac945238de9ce3ae3b251-yezzy-male-image-el-doctoral-biz-photo-c1ab33fad83445b38eab6f199a3e52-booksy.jpeg?size=640x427"
+    },
+    {
+      "id" : 2,
+      "name" : "Zenith",
+      "type" : "Barberia",
+      "value" : 10,
+      "decripcion": "Consigue tu estilo con nosotros",
+      "image": "https://d375139ucebi94.cloudfront.net/region2/es/104982/biz_photo/c86a2bb9fd2f4a16a8ee3298894318-zentih-men-las-palmas-biz-photo-02879134a2f74e3d9bb3bc56823176-booksy.jpeg?size=640x427"
+    },
+    {
+      "id" : 3,
+      "name" : "Gironda Studio",
+      "type" : "Manicura",
+      "value" : 9,
+      "decripcion": "Realización de manicura y pedicura",
+      "image": "https://d375139ucebi94.cloudfront.net/region2/es/10654/biz_photo/3496c5e4c4f448f3b0f4ff94c7c4ee-gironda-studio-biz-photo-a3a0c52e01f748cfa234cc01780c11-booksy.jpeg?size=640x427"
+    },
+    {
+      "id" : 4,
+      "name" : "Centro Martha Güiza",
+      "type" : "Peluqueria",
+      "value" : 5,
+      "decripcion": "Peluqueria y estética a buen precio",
+      "image": "https://d375139ucebi94.cloudfront.net/region2/es/85725/biz_photo/06e04c29f75347c590d2dc4064f3b3-peluqueria-martha-guiza-biz-photo-a29df645f0604247b8673e3d3fbe2d-booksy.jpeg?size=640x427"
+    }
+  ]
+}

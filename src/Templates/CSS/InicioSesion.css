@@ -2,21 +2,81 @@ body {
     display: flex;
     height: 100vh;
     margin: 0;
+    flex-direction: row;
+    width: 100%;
 }
 
 .FormularioInicio {
     flex: 1;
-    padding: 20px;
+    padding: 60px; /* Aumentamos el padding para agrandar el formulario */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    max-width: 800px; /* Duplicamos el tamaño máximo del formulario */
+    min-width: 600px; /* Asegura que no sea demasiado pequeño */
 }
 
+/* Imagen ocupando el 50% derecho en pantalla grande */
 .ImagenInicio {
     width: 50%;
     height: 100vh;
+    overflow: hidden;
 }
 
 .ImagenInicio img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive: Imagen como fondo en toda la pantalla */
+@media (max-width: 1024px) {
+    body {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ImagenInicio {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+
+    .ImagenInicio img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .FormularioInicio {
+        width: 90%;
+        max-width: 450px;
+        min-width: auto;
+        padding: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .FormularioInicio {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .FormularioInicio {
+        width: 95%;
+        padding: 15px;
+    }
 }

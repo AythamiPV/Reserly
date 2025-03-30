@@ -32,6 +32,62 @@ function initFormulario() {
     }
 }
 
+document.getElementById("signupForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let errors = [];
+
+    const fullName = document.getElementById("fullName").value.trim();
+    if (fullName.split(" ").length < 2) {
+        errors.push("Debe incluir al menos un nombre y un apellido.");
+    }
+
+    const email = document.getElementById("email").value.trim();
+    if (!email.endsWith("@gmail.com")) {
+        errors.push("El correo debe terminar en @gmail.com.");
+    }
+
+    const password = document.getElementById("password").value;
+    if (!/(?=.*[A-Z])(?=.*\d)/.test(password)) {
+        errors.push("La contraseña debe incluir al menos una mayúscula y un número.");
+    }
+
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    if (password !== confirmPassword) {
+        errors.push("Las contraseñas no coinciden.");
+    }
+
+    const phone = document.getElementById("phone").value.trim();
+    if (!/^\d{9}$/.test(phone)) {
+        errors.push("El número de teléfono debe tener exactamente 9 dígitos.");
+    }
+
+    if (errors.length > 0) {
+        showModal(errors);
+    } else {
+        alert("Formulario enviado correctamente.");
+        // Aquí podrías hacer un envío con fetch()
+    }
+});
+
+function showModal(errors) {
+    const modal = document.getElementById("errorModal");
+    const errorList = document.getElementById("errorList");
+    errorList.innerHTML = "";
+
+    errors.forEach(error => {
+        let li = document.createElement("li");
+        li.textContent = error;
+        errorList.appendChild(li);
+    });
+
+    modal.style.display = "block";
+
+    document.querySelector(".close").addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+}
+
 if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initFormulario);
 } else {

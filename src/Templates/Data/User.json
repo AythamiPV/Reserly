@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "type": "client",
+      "username": "cliente123",
+      "email": "cliente@gmail.com",
+      "password": "1234"
+    },
+    {
+      "type": "company",
+      "username": "empresaXYZ",
+      "email": "empresa@gmail.com",
+      "password": "1234",
+      "AboutUs": "Somos una empresa dedicada a ofrecer soluciones tecnológicas innovadoras.",
+      "Schedule": [
+        { "days": ["Monday", "Tuesday", "Wednesday"], "hours": "09:00-18:00" },
+        { "days": ["Thursday", "Friday"], "hours": "10:00-16:00" }
+      ],
+      "Service": [
+        { "name": "Desarrollo Web", "price": 1200,
+          "time": 60
+        },
+        { "name": "Consultoría IT", "price": 800 ,
+          "time": 30
+        }
+      ],
+      "Localization": {
+        "coord": [28.09973, -15.41343]
+      },
+      "Reservations": [
+        { "username": "cliente123", "service": "Desarrollo Web", "time": "10:30", "date": "04/01/2025" },
+        { "username": "cliente456", "service": "Consultoría IT", "time": "14:00", "date": "04/02/2025" },
+        { "username": "cliente789", "service": "Desarrollo Web", "time": "09:00", "date": "04/03/2025" },
+        { "username": "cliente321", "service": "Consultoría IT", "time": "11:30", "date": "04/04/2025" },
+        { "username": "cliente555", "service": "Desarrollo Web", "time": "15:00", "date": "04/05/2025" },
+        { "username": "cliente777", "service": "Consultoría IT", "time": "13:00", "date": "04/06/2025" },
+        { "username": "cliente888", "service": "Desarrollo Web", "time": "17:30", "date": "04/07/2025" },
+        { "username": "cliente666", "service": "Consultoría IT", "time": "10:00", "date": "04/08/2025" }
+      ]
+    }
+  ]
+}

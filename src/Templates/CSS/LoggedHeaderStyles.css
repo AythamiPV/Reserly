@@ -5,84 +5,78 @@
     font-family: Arial, sans-serif;
 }
 
-body {
-    padding-top: 70px;
-}
-
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 70px;
     background-color: #23334a;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
+    gap: 18%;
+    justify-content: center;
+    /* padding: 0 20px; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    /* z-index: 1000; */
 }
 
+/* Logo */
 .logo img {
-    height: 50px;
+    height: 45px;
     width: auto;
     max-width: 100%;
     object-fit: contain;
 }
 
+/* Contenedor de búsqueda */
 .search-container {
     display: flex;
-    gap: 10px;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     justify-content: center;
+    width: 30%;
 }
 
 .search-container input {
-    width: 200px;
+    width: 100%;
     padding: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     color: white;
-    outline: none;
+    /* outline: none; */
     font-weight: bold;
 }
 
 .search-container input::placeholder {
-    color: rgb(255, 255, 255);
+    color: rgba(255, 255, 255, 0.7);
 }
 
+/* Usuario */
 .user-info {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 2em;
 }
 
 .username {
     font-weight: bold;
     color: white;
+    font-size: 1.2em;
 }
 
+/* Imagen de perfil */
 .profile-pic {
-    width: 40px;
-    height: 40px;
+    width: 4em;
     border-radius: 50%;
-    object-fit: cover;
     border: 2px solid white;
 }
 
 .dropdown {
-    position: relative;
     display: inline-block;
 }
 
 .dropdown-menu {
     display: none;
-    position: absolute;
     top: 50px;
     right: 0;
-    background-color: #80D8FF;
+    background-color: #1d607e;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     min-width: 150px;
@@ -99,14 +93,14 @@ header {
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 10px solid #80D8FF;
+    border-bottom: 10px solid #1d607e;
 }
 
 .dropdown-menu a {
     display: block;
     padding: 8px 12px;
     text-decoration: none;
-    color: black;
+    color: white;
     font-weight: bold;
     white-space: nowrap;
 }
@@ -119,6 +113,36 @@ header {
     display: block;
 }
 
+/* Diseño Responsive */
+@media (max-width: 768px) {
+    header {
+        height: 65px;
+        padding: 0 10px;
+    }
 
+    .search-container input {
+        width: 150px;
+    }
+}
 
+@media (max-width: 800px) {
+    .username {
+        display: none;
+    }
 
+    .search-container {
+        justify-content: flex-end;
+    }
+
+    .search-container input {
+        display: none;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .profile-pic {
+        width: 3em;
+    }
+}

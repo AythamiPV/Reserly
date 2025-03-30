@@ -1,3 +1,9 @@
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("✅ DOM cargado");
+
+    initCalendar();
+})
+
 function initCalendar() {
     console.log("✅ initCalendar ejecutado");
 
@@ -18,7 +24,6 @@ function initCalendar() {
         const lastDay = new Date(selectedDate.getFullYear(), selectedDate.getMonth() + 1, 0);
         const prevLastDay = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 0);
 
-        // Cambié "es-ES" por "en-US" para mostrar los meses en inglés
         monthYear.textContent = firstDay.toLocaleString("en-US", { month: "long", year: "numeric" });
         calendarDays.innerHTML = "<div class='day'>M</div><div class='day'>T</div><div class='day'>W</div><div class='day'>T</div><div class='day'>F</div><div class='day'>S</div><div class='day'>S</div>";
 
@@ -36,6 +41,20 @@ function initCalendar() {
             calendarDays.innerHTML += `<div class='date inactive' data-disabled='true'>${i}</div>`;
         }
 
+        // Seleccionar el día actual si está en el mes actual
+        const today = new Date();
+        if (today.getFullYear() === selectedDate.getFullYear() && today.getMonth() === selectedDate.getMonth()) {
+            const todayDate = today.getDate();
+            const todayElement = Array.from(calendarDays.children).find(day => day.textContent == todayDate);
+            if (todayElement && !todayElement.classList.contains("inactive")) {
+                todayElement.classList.add("selected");
+                const day = todayDate.toString().padStart(2, '0');
+                const month = (selectedDate.getMonth() + 1).toString().padStart(2, '0');
+                const year = selectedDate.getFullYear();
+                dateInput.value = `${month}/${day}/${year}`;
+            }
+        }
+
         document.querySelectorAll(".date").forEach(date => {
             if (!date.classList.contains("inactive")) {
                 date.addEventListener("click", function () {
@@ -45,6 +64,8 @@ function initCalendar() {
                     const month = (selectedDate.getMonth() + 1).toString().padStart(2, '0');
                     const year = selectedDate.getFullYear();
                     dateInput.value = `${month}/${day}/${year}`;
+
+                    loadCompanyData();
                 });
             }
         });

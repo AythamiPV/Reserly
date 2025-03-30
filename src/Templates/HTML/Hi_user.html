@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Principal Cliente</title>
+    <link rel="stylesheet" href="../CSS/Hi_user.css">
+    <script src="../JS/Hi_user.js" defer></script>
+</head>
+<body>
+
+<main>
+    <section class="profile">
+        <img id="profileImage" src="../Pictures/user.png" alt="User Icon">
+        <div class="greeting">
+            <p>Hi,<br><span id="userName">Your name HERE</span></p>
+            <button class="settings-btn">⚙️</button>
+        </div>
+    </section>
+
+    <section class="location">
+        <p>📍 Location:</p>
+        <div class="location-map"></div>
+    </section>
+
+    <section class="services">
+        <div class="service"></div>
+        <div class="service"></div>
+        <div class="service"></div>
+    </section>
+
+    <section class="login-form">
+        <h2>Log In</h2>
+        <form id="form" action="#">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required minlength="6">
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</main>
+
+</body>
+</html>
