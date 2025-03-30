@@ -3,14 +3,14 @@
     {
       "type": "client",
       "username": "cliente123",
-      "email": "cliente123@gmail.com",
-      "password": "password123"
+      "email": "cliente@gmail.com",
+      "password": "1234"
     },
     {
       "type": "company",
       "username": "empresaXYZ",
-      "email": "empresaXYZ@gmail.com",
-      "password": "securePass456",
+      "email": "empresa@gmail.com",
+      "password": "1234",
       "AboutUs": "Somos una empresa dedicada a ofrecer soluciones tecnológicas innovadoras.",
       "Schedule": [
         { "days": ["Monday", "Tuesday", "Wednesday"], "hours": "09:00-18:00" },
