@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="../CSS/LoggedHeaderStyles.css">
   <link rel="stylesheet" href="../CSS/styleFooter.css">
   <link rel="stylesheet" href="../CSS/Tu_CuentaStyle.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="../CSS/MapStyles.css">
   <script src="../JS/LoadTemplates.js" defer></script>
 </head>
 <body>
@@ -24,7 +26,13 @@
     </div>
   </section>
 
-  <section id="Location"></section>
+  <!-- Sección de Location debajo de ambas columnas -->
+  <section>
+    <div class="template-container">
+      <h2>Location</h2>
+      <div id="Location"></div>
+    </div>
+  </section>
 
   <section class="highlights">
     <div class="highlight-item">
@@ -60,6 +68,8 @@
 <footer id="main_footer"></footer>
 
 <script src="../JS/LoggedHeaderScript.js" defer></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="../JS/MapScript.js" defer></script>
 </body>
 </html>
 
