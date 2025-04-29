@@ -1,0 +1,35 @@
+<h1>CRUD con Angular 19 y Firebase</h1>
+<div *ngIf="user$ | async as user">
+  <div *ngIf="user">
+    <p>¡Bienvenido, usuario!</p>
+    <button (click)="logout()">Cerrar Sesión</button>
+    <app-data-list></app-data-list>
+  </div>
+  <div *ngIf="!user">
+    <p>Por favor, inicia sesión o regístrate.</p>
+    <button (click)="login()">Iniciar Sesión (Simulado)</button>
+    <button (click)="register()">Registrarse (Simulado)</button>
+  </div>
+</div>
+<router-outlet></router-outlet> ```
+
+Si por ahora no estás utilizando el enrutamiento y no necesitas navegar a otros componentes desde `AppComponent`, puedes simplemente eliminar `RouterOutlet` del array `imports` en `app.component.ts`. Sin embargo, es probable que lo necesites en el futuro para las páginas de login y registro.
+
+**2. Advertencia: `Pipe AsyncPipe is never used in a component template`**
+
+Similar a la advertencia anterior, has importado `AsyncPipe` pero no lo estás utilizando en el template de `AppComponent`. En el código que proporcionaste anteriormente, sí se estaba utilizando con `*ngIf="user$ | async as user"`. Si has eliminado esa parte del template, entonces la advertencia es correcta.
+
+**Solución:**
+
+Asegúrate de que estás utilizando `AsyncPipe` en tu template para suscribirte al `Observable` `user$`. Si planeas seguir usando la lógica condicional basada en el estado del usuario en el `AppComponent`, necesitas el `AsyncPipe`. Si no lo necesitas, puedes eliminarlo del array `imports`.
+
+**3. Error: `TS2729: Property 'firebaseService' is used before its initialization.`**
+
+Este error indica que estás intentando acceder a la propiedad `firebaseService` antes de que se le haya asignado un valor en el constructor. Esto generalmente ocurre cuando declaras la propiedad y la utilizas en el constructor al mismo tiempo, sin que Angular haya tenido la oportunidad de inyectar la dependencia.
+
+**Solución:**
+
+La forma correcta de inyectar dependencias en Angular es declarando el servicio como un parámetro en el constructor con el modificador de acceso (`private`, `public`, `protected`). Angular se encargará de inicializarlo. Tu código ya debería estar haciendo esto correctamente:
+
+```typescript
+constructor(private firebaseService: FirebaseService) {}
