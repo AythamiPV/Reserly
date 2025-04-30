@@ -22,7 +22,6 @@ h1 {
 .list-item {
   display: flex;
   align-items: center;
-  padding: 10px;
   border-radius: 5px;
   margin-bottom: 1em;
   gap: 1em;
