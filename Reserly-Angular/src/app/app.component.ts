@@ -2,19 +2,20 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FirebaseService } from './firebase.service';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, CommonModule } from '@angular/common'; // Importa CommonModule si lo usas
 import { Subscription } from 'rxjs';
-import { User } from 'firebase/auth'; // Importa el tipo User
+import { User } from 'firebase/auth';
+import { CompanyMainComponent } from './pages/company-main/company-main.component'; // Importa CompanyMainComponent
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AsyncPipe],
+  imports: [CommonModule, CompanyMainComponent], // Añade CompanyMainComponent a los imports
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  user$: any; // Podrías tipar esto como Observable<User | null> si lo prefieres
+  user$: any;
   private userSubscription: Subscription | undefined;
   private firebaseService: FirebaseService;
 
@@ -24,9 +25,8 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.userSubscription = this.user$.subscribe((user: User | null) => { // Especifica el tipo User | null
+    this.userSubscription = this.user$.subscribe((user: User | null) => {
       console.log('Estado del usuario en AppComponent:', user);
-      // Aquí podrías realizar otras acciones basadas en el estado del usuario
     });
   }
 
@@ -43,14 +43,12 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   login() {
-    // Simulación de inicio de sesión para pruebas rápidas
     this.firebaseService.loginUser('test@example.com', 'password123')
       .then((user) => console.log('Usuario logueado:', user))
       .catch(error => console.error('Error al iniciar sesión:', error));
   }
 
   register() {
-    // Simulación de registro para pruebas rápidas
     this.firebaseService.registerUser('test@example.com', 'password123')
       .then((user) => console.log('Usuario registrado:', user))
       .catch(error => console.error('Error al registrar:', error));
