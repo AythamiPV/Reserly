@@ -15,7 +15,8 @@ export class CalendarComponent implements OnInit, OnDestroy, AfterViewInit {
   private nextMonthBtn: HTMLElement | null = null;
   private calendarDays: HTMLElement | null = null;
   private dateInput: HTMLInputElement | null = null;
-  private selectedDate: Date = new Date();
+  private currentDate: Date = new Date(); // Para controlar el mes y año mostrados
+  private selectedDate: Date | null = null; // Para almacenar la fecha seleccionada por el usuario
 
   constructor(private renderer: Renderer2, private el: ElementRef) { }
 
@@ -39,12 +40,12 @@ export class CalendarComponent implements OnInit, OnDestroy, AfterViewInit {
     this.renderCalendar();
 
     this.renderer.listen(this.prevMonthBtn, 'click', () => {
-      this.selectedDate.setMonth(this.selectedDate.getMonth() - 1);
+      this.currentDate.setMonth(this.currentDate.getMonth() - 1);
       this.renderCalendar();
     });
 
     this.renderer.listen(this.nextMonthBtn, 'click', () => {
-      this.selectedDate.setMonth(this.selectedDate.getMonth() + 1);
+      this.currentDate.setMonth(this.currentDate.getMonth() + 1);
       this.renderCalendar();
     });
   }
@@ -60,9 +61,9 @@ export class CalendarComponent implements OnInit, OnDestroy, AfterViewInit {
       return;
     }
 
-    const firstDay = new Date(this.selectedDate.getFullYear(), this.selectedDate.getMonth(), 1);
-    const lastDay = new Date(this.selectedDate.getFullYear(), this.selectedDate.getMonth() + 1, 0);
-    const prevLastDay = new Date(this.selectedDate.getFullYear(), this.selectedDate.getMonth(), 0);
+    const firstDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), 1);
+    const lastDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 0);
+    const prevLastDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), 0);
 
     this.monthYear.textContent = firstDay.toLocaleString("en-US", { month: "long", year: "numeric" });
     this.calendarDays.innerHTML = "<div class='day'>M</div><div class='day'>T</div><div class='day'>W</div><div class='day'>T</div><div class='day'>F</div><div class='day'>S</div><div class='day'>S</div>";
@@ -89,13 +90,23 @@ export class CalendarComponent implements OnInit, OnDestroy, AfterViewInit {
         this.calendarDays?.querySelectorAll(".date").forEach(d => this.renderer.removeClass(d, "selected"));
         this.renderer.addClass(dateElement, "selected");
         const day = i.toString().padStart(2, '0');
-        const month = (this.selectedDate.getMonth() + 1).toString().padStart(2, '0');
-        const year = this.selectedDate.getFullYear();
+        const month = (this.currentDate.getMonth() + 1).toString().padStart(2, '0');
+        const year = this.currentDate.getFullYear();
         if (this.dateInput) {
           this.dateInput.value = `${month}/${day}/${year}`;
+          this.selectedDate = new Date(year, parseInt(month, 10) - 1, parseInt(day, 10)); // Almacena la fecha seleccionada
+          this.renderCalendar(); // Volvemos a renderizar para actualizar la selección visual
           this.loadCompanyData();
         }
       });
+
+      // Marcar la fecha previamente seleccionada
+      if (this.selectedDate &&
+        this.selectedDate.getFullYear() === this.currentDate.getFullYear() &&
+        this.selectedDate.getMonth() === this.currentDate.getMonth() &&
+        this.selectedDate.getDate() === i) {
+        this.renderer.addClass(dateElement, "selected");
+      }
     }
 
     let remainingDays = (7 - (this.calendarDays.children.length % 7)) % 7;
@@ -109,24 +120,35 @@ export class CalendarComponent implements OnInit, OnDestroy, AfterViewInit {
       this.renderer.appendChild(this.calendarDays, dateElement);
     }
 
-    // Seleccionar el día actual si está en el mes actual
+    // Marcar el día actual solo si no hay una fecha seleccionada en este mes
     const today = new Date();
-    if (today.getFullYear() === this.selectedDate.getFullYear() && today.getMonth() === this.selectedDate.getMonth()) {
-      const todayDate = today.getDate();
-      Array.from(this.calendarDays.children)
-        .filter(day => day.textContent === todayDate.toString() && !day.classList.contains("inactive"))
-        .forEach(day => this.renderer.addClass(day, "selected"));
-      const day = todayDate.toString().padStart(2, '0');
-      const month = (this.selectedDate.getMonth() + 1).toString().padStart(2, '0');
-      const year = this.selectedDate.getFullYear();
-      if (this.dateInput && this.calendarDays.querySelector('.selected')) {
-        this.dateInput.value = `${month}/${day}/${year}`;
+    if (!this.selectedDate ||
+      this.selectedDate.getFullYear() !== this.currentDate.getFullYear() ||
+      this.selectedDate.getMonth() !== this.currentDate.getMonth()) {
+      if (today.getFullYear() === this.currentDate.getFullYear() && today.getMonth() === this.currentDate.getMonth()) {
+        const todayDate = today.getDate();
+        Array.from(this.calendarDays.children)
+          .filter(day => day.textContent === todayDate.toString() && !day.classList.contains("inactive"))
+          .forEach(day => this.renderer.removeClass(day, "selected")); // Removemos la clase 'selected' del día actual si hay una fecha seleccionada en otro mes
+        const todayElement = Array.from(this.calendarDays.children).find(day => day.textContent === todayDate.toString() && !day.classList.contains("inactive"));
+        if (todayElement && !this.selectedDate) {
+          this.renderer.addClass(todayElement, "selected");
+          const day = todayDate.toString().padStart(2, '0');
+          const month = (this.currentDate.getMonth() + 1).toString().padStart(2, '0');
+          const year = this.currentDate.getFullYear();
+          if (this.dateInput) {
+            this.dateInput.value = `${month}/${day}/${year}`;
+          }
+        }
       }
     }
   }
 
   loadCompanyData() {
     console.log("📅 loadCompanyData() llamado desde el Calendar");
-    // Aquí iría la lógica para cargar los datos de la compañía para la fecha seleccionada
+    if (this.selectedDate) {
+      console.log("Fecha seleccionada:", this.selectedDate);
+      // Puedes emitir un evento con this.selectedDate al componente padre
+    }
   }
 }

@@ -12,6 +12,9 @@ h1 {
   text-align: center;
 }
 
+p{
+  margin-right: 1em;
+}
 
 .list-container {
   padding: 1em;
