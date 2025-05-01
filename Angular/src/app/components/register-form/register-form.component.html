@@ -1,0 +1,52 @@
+<div class="formulario">
+  <div class="form-container">
+    <a href="">
+      <button class="top-button">Sign your company</button>
+    </a>
+    <h2>User Sign</h2>
+    <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+      <div class="field-container">
+        <input type="text" id="fullName" name="fullName" placeholder="Full Name" [(ngModel)]="formData.nombreCompleto" required>
+        <input type="email" id="email" name="email" placeholder="Email Address" [(ngModel)]="formData.email" required email>
+        <input type="password" id="password" name="password" placeholder="Password" [(ngModel)]="formData.password" required minlength="6">
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" [(ngModel)]="formData.confirmPassword" required>
+      </div>
+
+      <div class="phone-group">
+        <div class="custom-select" (click)="toggleDropdown()">
+          <div class="selected-option">
+            <img id="selected-flag" [src]="selectedFlag" alt="Flag">
+            <span id="selected-code">{{ selectedCode }}</span>
+          </div>
+          <ul class="dropdown" *ngIf="isDropdownOpen">
+            <li *ngFor="let country of countries" (click)="selectCountry(country)" [attr.data-code]="country.code" [attr.data-flag]="country.flag">
+              <img [src]="country.flag" alt="Flag"> {{ country.name }} {{ country.code }}
+            </li>
+          </ul>
+        </div>
+        <input type="tel" id="phone" name="telefono" placeholder="Phone Number" [(ngModel)]="formData.telefono" required pattern="[0-9]{9}">
+      </div>
+
+      <button type="submit" [disabled]="!signupForm.form.valid || formData.password !== formData.confirmPassword">Sign in</button>
+    </form>
+    <a href="" class="login-link">Do you already have an account?</a>
+  </div>
+</div>
+
+<div id="errorModal" class="modal" *ngIf="errorMessage">
+  <div class="modal-content">
+    <span class="close" (click)="closeErrorModal()">&times;</span>
+    <h3>Error en el formulario</h3>
+    <ul id="errorList">
+      <li>{{ errorMessage }}</li>
+    </ul>
+  </div>
+</div>
+
+<div id="successModal" class="modal" *ngIf="successMessage">
+  <div class="modal-content">
+    <span class="close" (click)="closeSuccessModal()">&times;</span>
+    <h3>Registro exitoso</h3>
+    <p>{{ successMessage }}</p>
+  </div>
+</div>
