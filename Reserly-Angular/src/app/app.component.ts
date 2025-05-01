@@ -1,16 +1,15 @@
-// src/app/app.component.ts
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FirebaseService } from './firebase.service';
-import { AsyncPipe, CommonModule } from '@angular/common'; // Importa CommonModule si lo usas
+import { AsyncPipe, CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { User } from 'firebase/auth';
-import { CompanyMainComponent } from './pages/company-main/company-main.component'; // Importa CompanyMainComponent
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, CompanyMainComponent], // Añade CompanyMainComponent a los imports
+  imports: [CommonModule, RouterOutlet], // Importa RouterOutlet en lugar de CompanyMainComponent
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -18,6 +17,7 @@ export class AppComponent implements OnInit, OnDestroy {
   user$: any;
   private userSubscription: Subscription | undefined;
   private firebaseService: FirebaseService;
+  private router: any;
 
   constructor(firebaseService: FirebaseService) {
     this.firebaseService = firebaseService;
@@ -38,7 +38,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   logout() {
     this.firebaseService.logoutUser()
-      .then(() => console.log('Sesión cerrada'))
+      .then(() => this.router.navigate(['/index'])) // Redirige a '/index' después de cerrar sesión
       .catch(error => console.error('Error al cerrar sesión:', error));
   }
 
