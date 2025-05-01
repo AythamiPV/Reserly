@@ -67,7 +67,7 @@ form input::placeholder {
 }
 
 .custom-select {
-  position: relative;
+  position: relative; /* Asegura que el desplegable se posicione dentro de este contenedor */
   width: 120px;
   cursor: pointer;
 }
@@ -88,20 +88,24 @@ form input::placeholder {
 }
 
 .dropdown {
-  position: absolute;
-  width: 100%;
+  position: absolute; /* Permite posicionarlo fuera del flujo normal */
+  top: 100%; /* Lo coloca justo debajo del contenedor .custom-select */
+  left: 0;
+  width: 100%; /* O ajusta el ancho según necesites */
   list-style: none;
   background: white;
-  border: 2px solid #999;
+  border: 1px solid #999; /* Un borde más ligero */
   padding: 0;
   margin: 0;
-  display: none;
   max-height: 150px;
   overflow-y: auto;
+  z-index: 10; /* Asegura que esté por encima de otros elementos */
+  border-radius: 5px; /* Opcional: bordes redondeados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Opcional: sombra */
 }
 
 .dropdown.open {
-  display: block;
+  display: block; /* Muestra el desplegable */
 }
 
 .dropdown li {
@@ -109,21 +113,18 @@ form input::placeholder {
   cursor: pointer;
   display: flex;
   align-items: center;
-  background-color: #215268;
+  background-color: white; /* Fondo blanco para las opciones */
+  color: black; /* Texto negro para las opciones */
 }
 
 .dropdown li:hover {
-  background-color: #184153;
+  background-color: #f0f0f0; /* Un ligero gris al pasar el ratón */
 }
 
 .dropdown li img {
   width: 24px;
   height: 16px;
   margin-right: 8px;
-}
-
-.phone-group input {
-  flex: 1;
 }
 
 form button {
@@ -158,7 +159,6 @@ form button:hover {
   background-color: #0097a7;
 }
 
-
 /* 🔹 Estilos para el Popup Modal */
 .modal {
   display: none;
@@ -183,6 +183,22 @@ form button:hover {
   border-radius: 10px;
   width: 300px;
   text-align: left;
+}
+
+/* Estilos para el mensaje de error directamente en el formulario */
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center; /* Opcional: centrar el texto */
+}
+
+/* Estilos para el mensaje de éxito directamente en el formulario (opcional) */
+.success-message {
+  color: green;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center; /* Opcional: centrar el texto */
 }
 
 .close {

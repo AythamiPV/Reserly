@@ -18,7 +18,7 @@ export class FirebaseService {
     try {
       const usersCollection = collection(this.firestore, 'Users');
       await addDoc(usersCollection, userData);
-      console.log('Usuario creado con ID: ', (await addDoc(usersCollection, userData)).id);
+      console.log('Usuario creado con ID: ');
     } catch (error) {
       console.error('Error al añadir documento: ', error);
       throw error;

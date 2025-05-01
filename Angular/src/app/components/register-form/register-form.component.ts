@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef, ApplicationRef } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { FirebaseService } from '../../firebase.service';
 import { CommonModule } from '@angular/common';
 
@@ -27,29 +27,43 @@ export class RegisterFormComponent {
   errorMessage = '';
   successMessage = '';
   isDropdownOpen = false;
-  selectedFlag = '../Pictures/us.png'; // Asegúrate de que la ruta sea correcta
+  selectedFlag = '/us.png';
   selectedCode = '+1';
   countries: Country[] = [
-    { code: '+1', name: 'USA', flag: '../Pictures/us.png' }, // Ajusta las rutas de las banderas si es necesario
-    { code: '+44', name: 'UK', flag: '../Pictures/uk.png' },
-    { code: '+34', name: 'Spain', flag: '../Pictures/es.png' },
-    { code: '+33', name: 'France', flag: '../Pictures/fr.png' },
-    { code: '+49', name: 'Germany', flag: '../Pictures/de.png' },
-    { code: '+52', name: 'Mexico', flag: '../Pictures/mx.png' },
-    { code: '+55', name: 'Brazil', flag: '../Pictures/br.png' }
+    { code: '+1', name: 'USA', flag: '/us.png' },
+    { code: '+44', name: 'UK', flag: '/uk.png' },
+    { code: '+34', name: 'Spain', flag: '/es.png' },
+    { code: '+33', name: 'France', flag: '/fr.png' },
+    { code: '+49', name: 'Germany', flag: '/de.png' },
+    { code: '+52', name: 'Mexico', flag: '/mx.png' },
+    { code: '+55', name: 'Brazil', flag: '/br.png' }
   ];
 
-  @ViewChild('signupForm') signupForm: NgForm;
-
-  constructor(private firebaseService: FirebaseService) { }
+  constructor(private firebaseService: FirebaseService, private cdr: ChangeDetectorRef, private appRef: ApplicationRef) { }
 
   onSubmit() {
     this.errorMessage = '';
     this.successMessage = '';
 
+
+    if(this.formData.nombreCompleto === '' || this.formData.email === '' || this.formData.password === '' || this.formData.confirmPassword === '' || this.formData.telefono === '' ) {
+      this.errorMessage = 'Todos los campos deben estár completos';
+      this.openErrorModal();
+      this.cdr.detectChanges();
+      return;
+    }
+
+    if(this.formData.password.length < 6) {
+      this.errorMessage = 'La contraseña debe tener un mínimo de 6 caracteres!';
+      this.openErrorModal();
+      this.cdr.detectChanges();
+      return;
+    }
+
     if (this.formData.password !== this.formData.confirmPassword) {
       this.errorMessage = 'Las contraseñas no coinciden.';
-      this.openErrorModal();
+      this.openErrorModal(); // También mostramos el modal
+      this.cdr.detectChanges(); // Forzar la detección de cambios
       return;
     }
 
@@ -58,26 +72,31 @@ export class RegisterFormComponent {
     this.firebaseService.createUser(userData)
       .then(() => {
         this.successMessage = 'Usuario registrado con éxito.';
-        this.openSuccessModal();
-        if (this.signupForm) {
-          this.signupForm.resetForm();
-        }
+        this.openSuccessModal(); // También mostramos el modal
+        this.formData = { nombreCompleto: '', email: '', password: '', confirmPassword: '', telefono: '' };
+        this.cdr.detectChanges(); // Forzar la detección de cambios
       })
       .catch((error) => {
         this.errorMessage = 'Error al registrar el usuario: ' + error;
-        this.openErrorModal();
+        this.openErrorModal(); // También mostramos el modal
         console.error('Error al registrar usuario:', error);
+        this.cdr.detectChanges(); // Forzar la detección de cambios
       });
   }
 
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
+    this.cdr.detectChanges();
   }
 
   selectCountry(country: Country) {
+    console.log('Opción seleccionada:', country.name);
     this.selectedFlag = country.flag;
     this.selectedCode = country.code;
     this.isDropdownOpen = false;
+    console.log('isDropdownOpen después de selección:', this.isDropdownOpen)
+    this.cdr.detectChanges();
+    this.appRef.tick();
   }
 
   openErrorModal() {

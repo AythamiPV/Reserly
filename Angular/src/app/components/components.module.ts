@@ -3,15 +3,18 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { LoggedHeaderComponent } from './logged-header/logged-header.component';
+import { RegisterFormComponent } from './register-form/register-form.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    LoggedHeaderComponent
+    LoggedHeaderComponent,
+    RegisterFormComponent,
   ],
   exports: [
-    LoggedHeaderComponent
+    LoggedHeaderComponent,
+    RegisterFormComponent,
   ],
 
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

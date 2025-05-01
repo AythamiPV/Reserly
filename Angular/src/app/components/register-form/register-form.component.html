@@ -4,7 +4,11 @@
       <button class="top-button">Sign your company</button>
     </a>
     <h2>User Sign</h2>
-    <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+
+    <form (ngSubmit)="onSubmit()">
       <div class="field-container">
         <input type="text" id="fullName" name="fullName" placeholder="Full Name" [(ngModel)]="formData.nombreCompleto" required>
         <input type="email" id="email" name="email" placeholder="Email Address" [(ngModel)]="formData.email" required email>
@@ -27,7 +31,7 @@
         <input type="tel" id="phone" name="telefono" placeholder="Phone Number" [(ngModel)]="formData.telefono" required pattern="[0-9]{9}">
       </div>
 
-      <button type="submit" [disabled]="!signupForm.form.valid || formData.password !== formData.confirmPassword">Sign in</button>
+      <button type="submit">Sign in</button>
     </form>
     <a href="" class="login-link">Do you already have an account?</a>
   </div>
