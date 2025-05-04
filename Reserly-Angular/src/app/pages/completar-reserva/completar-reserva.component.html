@@ -1,0 +1,33 @@
+<app-logged-header class="Header"></app-logged-header>
+
+<main>
+  <!-- Title section -->
+  <section class="reservation-header">
+    <h1>Complete Your Reservation</h1>
+    <p>Select the available options below:</p>
+  </section>
+
+  <!-- Form container -->
+  <section class="reservation-container">
+    <div class="date-selection">
+      <h3>Available Dates:</h3>
+      <div class="calendar-container">
+        <div class="calendar">Date<br>Oct 12, 2018</div>
+        <input type="date">
+      </div>
+    </div>
+
+    <div class="service-selection">
+      <h3>Select Service:</h3>
+      <button class="service-button">Service 1</button>
+      <button class="service-button">Service 2</button>
+      <button class="service-button">Service 3</button>
+    </div>
+  </section>
+
+  <section class="reservation-submit">
+    <button class="reserve-button" routerLink="/tu-cuenta">Book Now</button>
+  </section>
+</main>
+
+<app-footer></app-footer>

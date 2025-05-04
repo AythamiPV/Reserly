@@ -11,6 +11,8 @@
       <img class="profile-pic" src="/UserDefault-icon.png" alt="Imagen de perfil">
       <div class="dropdown-menu">
         <a *ngIf="isInCompanyMain" (click)="navigateTo('/manage-company')" style="cursor: pointer;">Manage company</a>
+        <a *ngIf="isTuCuentaMain" (click)="navigateTo('/tus-reservas')"> Books</a>
+        <a *ngIf="isTusReservasMain" (click)="navigateTo('/tu-cuenta')"> Your Account</a>
         <a (click)="logout()" style="cursor: pointer;">Log out</a>
       </div>
     </div>

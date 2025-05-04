@@ -34,7 +34,7 @@ export class LoginFormComponent {
             if (userData && userData['company']) {
               this.router.navigate(['/company-main']); // Redirige a la página de empresa
             } else {
-              this.router.navigate(['/company-main']); // Redirige a la página de usuario normal
+              this.router.navigate(['/tu-cuenta']); // Redirige a la página de usuario normal
             }
           }, error => {
             console.error('Error al obtener los datos del usuario:', error);
