@@ -5,13 +5,13 @@ import { FirebaseService } from './firebase.service';
 import { AsyncPipe, CommonModule } from '@angular/common'; // Importa CommonModule si lo usas
 import { Subscription } from 'rxjs';
 import { User } from 'firebase/auth';
-import {PrincipalComponent} from './pages/principal/principal.component';
+
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, PrincipalComponent], // Añade CompanyMainComponent a los imports
+  imports: [CommonModule, RouterOutlet], // Añade CompanyMainComponent a los imports
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

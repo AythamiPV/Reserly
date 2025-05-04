@@ -13,17 +13,17 @@ interface Review {
 }
 
 @Component({
-  selector: 'app-principal',
+  selector: 'app-index',
   imports: [
     FooterComponent,
     HeaderComponent,
     NgForOf,
     CommonModule // Asegúrate de importar CommonModule aquí
   ],
-  templateUrl: './principal.component.html',
-  styleUrl: './principal.component.css',
+  templateUrl: './index.component.html',
+  styleUrl: './index.component.css',
 })
-export class PrincipalComponent implements OnInit, AfterViewInit {
+export class IndexComponent implements OnInit, AfterViewInit {
   reviews: Review[] = [];
   @ViewChild('articleContainer') articleContainer!: ElementRef;
   private reviewsCollection: CollectionReference<Review>; // Referencia a la colección 'resenas'
