@@ -1,4 +1,4 @@
-<header>
+<header class="logged-header">
   <div class="logo">
     <img src="/logo.png" alt="Logo de la empresa">
   </div>
@@ -6,12 +6,12 @@
     <input type="text" placeholder="Search...">
   </div>
   <div class="user-info">
-    <span class="username">User name</span>
+    <span class="username">{{ userName ? userName : 'Cargando...' }}</span>
     <div class="dropdown">
       <img class="profile-pic" src="/UserDefault-icon.png" alt="Imagen de perfil">
       <div class="dropdown-menu">
         <a *ngIf="isInCompanyMain" (click)="navigateTo('/manage-company')" style="cursor: pointer;">Manage company</a>
-        <a (click)="navigateTo('/index')" style="cursor: pointer;">Log out</a>
+        <a (click)="logout()" style="cursor: pointer;">Log out</a>
       </div>
     </div>
   </div>

@@ -1,3 +1,4 @@
+// src/app/logged-header/logged-header.component.ts
 import {
   Component,
   OnInit,
@@ -9,7 +10,9 @@ import {
   ChangeDetectorRef
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router'; // Importa ActivatedRoute
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { FirebaseService } from '../../firebase.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-logged-header',
@@ -21,14 +24,17 @@ import { Router, NavigationEnd, ActivatedRoute } from '@angular/router'; // Impo
 })
 export class LoggedHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
   isInCompanyMain: boolean = false;
-  private routerSubscription: any;
+  userName: string | null = null;
+  private routerSubscription: Subscription | null = null;
+  private authSubscription: Subscription | null = null;
 
   constructor(
     private renderer: Renderer2,
     private el: ElementRef,
     private router: Router,
     private cdr: ChangeDetectorRef,
-    private route: ActivatedRoute // Inyecta ActivatedRoute
+    private route: ActivatedRoute,
+    private firebaseService: FirebaseService
   ) { }
 
   ngOnInit(): void {
@@ -41,6 +47,26 @@ export class LoggedHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
 
     // Comprobación inicial al cargar el componente
     this.checkIfInCompanyMain(this.router.url);
+
+    // Escucha los cambios en el usuario autenticado y carga el nombre
+    this.authSubscription = this.firebaseService.user$.subscribe(user => {
+      if (user) {
+        this.firebaseService.getDocumentData<{ nombreCompleto: string }>('Users', user.uid).subscribe(userData => {
+          console.log(userData);
+          if (userData && userData.nombreCompleto) {
+            this.userName = userData.nombreCompleto;
+            this.cdr.detectChanges();
+          } else {
+            this.userName = 'Usuario';
+            this.cdr.detectChanges();
+            console.log('No se encontró el nombre del usuario en Firestore.');
+          }
+        });
+      } else {
+        this.userName = null;
+        this.cdr.detectChanges();
+      }
+    });
   }
 
   ngAfterViewInit(): void {
@@ -51,6 +77,9 @@ export class LoggedHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
     this.removeDropdownListeners();
     if (this.routerSubscription) {
       this.routerSubscription.unsubscribe();
+    }
+    if (this.authSubscription) {
+      this.authSubscription.unsubscribe();
     }
   }
 
@@ -90,9 +119,19 @@ export class LoggedHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
+  logout() { // Nueva función para el logout
+    this.firebaseService.logoutUser().then(() => {
+      console.log('Sesión cerrada.');
+      this.router.navigate(['/index']);
+    }).catch(error => {
+      console.error('Error al cerrar sesión:', error);
+    });
+  }
+
   navigateTo(path: string) {
     if (path === '/index') {
       console.log('Cerrando sesión...');
+      // No necesitamos llamar a logout aquí, la función logout() se encargará
       this.router.navigate([path]);
     } else {
       this.router.navigate([path]);
