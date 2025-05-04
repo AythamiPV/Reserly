@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, ChangeDetectorRef, ApplicationRef }
 import { FormsModule } from '@angular/forms';
 import { FirebaseService } from '../../firebase.service';
 import { CommonModule } from '@angular/common';
-import {RouterLink} from "@angular/router";
+import { RouterLink, Router } from "@angular/router";
 
 interface Country {
   code: string;
@@ -42,7 +42,7 @@ export class RegisterFormCompanyComponent {
     { code: '+55', name: 'Brazil', flag: '/br.png' }
   ];
 
-  constructor(private firebaseService: FirebaseService, private cdr: ChangeDetectorRef, private appRef: ApplicationRef) { }
+  constructor(private firebaseService: FirebaseService, private cdr: ChangeDetectorRef, private appRef: ApplicationRef, private router: Router) { } // Importa Router
 
   async onSubmit() {
     this.errorMessage = '';
@@ -72,22 +72,22 @@ export class RegisterFormCompanyComponent {
     try {
       const user = await this.firebaseService.registerUser(this.formData.email, this.formData.password);
       const userData = {
-        uid: user.uid,
         nombreCompleto: this.formData.nombreCompleto,
         email: this.formData.email,
         telefono: this.formData.telefono,
         phoneCode: this.selectedCode,
-        company: true
+        company: true // Marcamos que este usuario es una compañía
       };
-      await this.firebaseService.createUser(userData);
-      this.successMessage = 'Usuario registrado con éxito.';
+      await this.firebaseService.setDocument('Users', user.uid, userData); // Usamos setDocument con el uid
+      this.successMessage = 'Compañía registrada con éxito.';
       this.openSuccessModal();
       this.formData = { nombreCompleto: '', email: '', password: '', confirmPassword: '', telefono: '', company: true };
       this.cdr.detectChanges();
+      this.router.navigate(['/login']); // Redirigir a la página de login
     } catch (error: any) {
-      this.errorMessage = 'Error al registrar el usuario: ' + error.message;
+      this.errorMessage = 'Error al registrar la compañía: ' + error.message;
       this.openErrorModal();
-      console.error('Error al registrar usuario:', error);
+      console.error('Error al registrar compañía:', error);
       this.cdr.detectChanges();
     }
   }

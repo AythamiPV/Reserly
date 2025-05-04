@@ -51,9 +51,10 @@ export class LoggedHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
     // Escucha los cambios en el usuario autenticado y carga el nombre
     this.authSubscription = this.firebaseService.user$.subscribe(user => {
       if (user) {
-        this.firebaseService.getDocumentData<{ name: string }>('users', user.uid).subscribe(userData => {
-          if (userData && userData.name) {
-            this.userName = userData.name;
+        this.firebaseService.getDocumentData<{ nombreCompleto: string }>('Users', user.uid).subscribe(userData => {
+          console.log(userData);
+          if (userData && userData.nombreCompleto) {
+            this.userName = userData.nombreCompleto;
             this.cdr.detectChanges();
           } else {
             this.userName = 'Usuario';
@@ -118,9 +119,19 @@ export class LoggedHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
+  logout() { // Nueva función para el logout
+    this.firebaseService.logoutUser().then(() => {
+      console.log('Sesión cerrada.');
+      this.router.navigate(['/index']);
+    }).catch(error => {
+      console.error('Error al cerrar sesión:', error);
+    });
+  }
+
   navigateTo(path: string) {
     if (path === '/index') {
       console.log('Cerrando sesión...');
+      // No necesitamos llamar a logout aquí, la función logout() se encargará
       this.router.navigate([path]);
     } else {
       this.router.navigate([path]);

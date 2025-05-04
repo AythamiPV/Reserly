@@ -15,7 +15,7 @@ interface Country {
   standalone: true,
   imports: [FormsModule, CommonModule, RouterLink],
   templateUrl: './register-form-user.component.html',
-  styleUrl: './register-form-user.component.css',
+  styleUrl: './register-form-user.component.css', // <--- Comilla doble faltante aquí
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RegisterFormUserComponent {
@@ -73,14 +73,13 @@ export class RegisterFormUserComponent {
     try {
       const user = await this.firebaseService.registerUser(this.formData.email, this.formData.password);
       const userData = {
-        uid: user.uid,
         nombreCompleto: this.formData.nombreCompleto,
         email: this.formData.email,
         telefono: this.formData.telefono,
         phoneCode: this.selectedCode,
         company: false
       };
-      await this.firebaseService.createUser(userData);
+      await this.firebaseService.createUser(userData, user.uid); // Llama a la función modificada y pasa el uid
       this.successMessage = 'Usuario registrado con éxito.';
       this.openSuccessModal();
       this.formData = { nombreCompleto: '', email: '', password: '', confirmPassword: '', telefono: '', company: false };
@@ -137,4 +136,3 @@ export class RegisterFormUserComponent {
     }
   }
 }
-//Código

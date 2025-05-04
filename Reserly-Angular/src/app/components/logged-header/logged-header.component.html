@@ -1,25 +1,17 @@
 <header class="logged-header">
-  <div class="container">
-    <div class="logo">
-      <a routerLink="/index">Reserly</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a routerLink="/index">Home</a></li>
-        <li><a routerLink="/search">Search</a></li>
-        <li *ngIf="isInCompanyMain"><a routerLink="/manage-company">Manage Company</a></li>
-      </ul>
-    </nav>
-    <div class="profile">
-      <div class="profile-pic">
-        <img src="/Pictures/UserDefault-icon.png" alt="Profile Picture">
-      </div>
-      <div class="dropdown">
-        <div class="dropdown-content">
-          <span class="user-name">{{ userName ? userName : 'Cargando...' }}</span>
-          <a routerLink="/manage-company">Manage Company</a>
-          <a (click)="navigateTo('/index')">Logout</a>
-        </div>
+  <div class="logo">
+    <img src="/logo.png" alt="Logo de la empresa">
+  </div>
+  <div class="search-container">
+    <input type="text" placeholder="Search...">
+  </div>
+  <div class="user-info">
+    <span class="username">{{ userName ? userName : 'Cargando...' }}</span>
+    <div class="dropdown">
+      <img class="profile-pic" src="/UserDefault-icon.png" alt="Imagen de perfil">
+      <div class="dropdown-menu">
+        <a *ngIf="isInCompanyMain" (click)="navigateTo('/manage-company')" style="cursor: pointer;">Manage company</a>
+        <a (click)="logout()" style="cursor: pointer;">Log out</a>
       </div>
     </div>
   </div>
