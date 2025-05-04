@@ -35,7 +35,7 @@ body {
     font-weight: bold;
 }
 
-/* Contenedor principal en formato fila */
+/* Contenedor index en formato fila */
 .company-details {
     display: flex;
     flex-direction: row;
