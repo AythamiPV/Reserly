@@ -44,6 +44,7 @@ header {
   color: white;
   outline: none;
   font-weight: bold;
+  text-align: center;
 }
 
 .search-container input::placeholder {
