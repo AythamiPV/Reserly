@@ -24,6 +24,8 @@ import { Subscription } from 'rxjs';
 })
 export class LoggedHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
   isInCompanyMain: boolean = false;
+  isTuCuentaMain: boolean = false;
+  isTusReservasMain: boolean = false;
   userName: string | null = null;
   private routerSubscription: Subscription | null = null;
   private authSubscription: Subscription | null = null;
@@ -40,13 +42,17 @@ export class LoggedHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnInit(): void {
     this.routerSubscription = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
+        this.checkIfTuCuenta(event.url);
         this.checkIfInCompanyMain(event.url);
+        this.checkIfTusReservas(event.url);
         this.cdr.detectChanges();
       }
     });
 
     // Comprobación inicial al cargar el componente
     this.checkIfInCompanyMain(this.router.url);
+    this.checkIfTuCuenta(this.router.url);
+    this.checkIfTusReservas(this.router.url);
 
     // Escucha los cambios en el usuario autenticado y carga el nombre
     this.authSubscription = this.firebaseService.user$.subscribe(user => {
@@ -85,6 +91,14 @@ export class LoggedHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private checkIfInCompanyMain(url: string): void {
     this.isInCompanyMain = url === '/company-main';
+  }
+
+  private checkIfTuCuenta(url: string): void {
+    this.isTuCuentaMain = url === '/tu-cuenta';
+  }
+
+  private checkIfTusReservas(url: string): void {
+    this.isTusReservasMain = url === '/tus-reservas';
   }
 
   private dropdownClickListener: (() => void) | null = null;

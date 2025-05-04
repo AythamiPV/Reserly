@@ -26,34 +26,34 @@ main {
 /* Contenedor de formulario */
 .reservation-container {
     display: flex;
-    justify-content: space-between;
-    margin: 20px auto;
-    max-width: 80%;
-}
-
-.date-selection, .service-selection {
-    flex: 1;
-    margin: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
     padding: 20px;
-    background-color: #2C3E50;
-    border-radius: 10px;
-    min-height: 200px;
 }
 
+.date-selection,
+.service-selection {
+    background-color: #223344;
+    border-radius: 12px;
+    padding: 20px;
+    color: white;
+    min-width: 250px;
+    width: 40%;
+    box-sizing: border-box;
+}
+/* Contenedor de calendario */
 .calendar-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
 }
-
 .calendar {
-    width: 100%;
+    background-color: #111a22;
     padding: 10px;
+    border-radius: 6px;
     text-align: center;
-    background-color: #16202A;
-    border: 1px solid #34495E;
-    border-radius: 5px;
-    margin-bottom: 10px;
 }
 
 input[type="date"] {
@@ -65,17 +65,18 @@ input[type="date"] {
     border-radius: 5px;
 }
 
+/* Botones */
 .service-button {
+    display: block;
     width: 100%;
-    padding: 15px;
-    background-color: #34495E;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #34495e;
     color: white;
     border: none;
-    margin-bottom: 10px;
-    text-align: center;
-    font-size: 16px;
+    border-radius: 6px;
     cursor: pointer;
-    border-radius: 5px;
+    transition: background-color 0.2s ease;
 }
 
 .service-button:hover {
@@ -108,4 +109,20 @@ footer {
     background-color: #16202A;
     padding: 20px;
     text-align: center;
+}
+
+/* Responsive para tablets */
+@media (max-width: 900px) {
+    .date-selection,
+    .service-selection {
+        width: 80%;
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+    .date-selection,
+    .service-selection {
+        width: 100%;
+    }
 }

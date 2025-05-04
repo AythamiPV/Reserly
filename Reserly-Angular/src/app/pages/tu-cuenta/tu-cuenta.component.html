@@ -1,24 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Account</title>
-  <link rel="stylesheet" href="../CSS/LoggedHeaderStyles.css">
-  <link rel="stylesheet" href="../CSS/styleFooter.css">
-  <link rel="stylesheet" href="../CSS/Tu_CuentaStyle.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <link rel="stylesheet" href="../CSS/MapStyles.css">
-  <script src="../JS/LoadTemplates.js" defer></script>
-</head>
-<body>
-
-<header id="header"></header>
+<app-logged-header></app-logged-header>
 
 <main>
   <section class="account-header">
     <div class="profile-image">
-      <img src="../Pictures/UserDefault-icon.png" alt="Profile Image">
+      <img src="/UserDefault-icon.png" alt="Profile Image">
     </div>
     <div class="account-info">
       <h1>Your Account</h1>
@@ -26,11 +11,10 @@
     </div>
   </section>
 
-  <!-- Sección de Location debajo de ambas columnas -->
   <section>
     <div class="template-container">
       <h2>Location</h2>
-      <div id="Location"></div>
+      <img src="/Map.PNG" alt="map">
     </div>
   </section>
 
@@ -64,18 +48,4 @@
     </div>
   </section>
 </main>
-
-<footer id="main_footer"></footer>
-
-<script src="../JS/LoggedHeaderScript.js" defer></script>
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="../JS/MapScript.js" defer></script>
-</body>
-</html>
-
-
-
-
-
-
-
+<app-footer></app-footer>

@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reservation Form</title>
-  <link rel="stylesheet" href="../CSS/LoggedHeaderStyles.css">
-  <link rel="stylesheet" href="../CSS/styleFooter.css">
-  <link rel="stylesheet" href="../CSS/Completar_ReservaStyle.css">
-  <script src="../JS/LoadTemplates.js" defer></script>
-</head>
-<body>
-
-
-<header id="header"></header>
-
+<app-logged-header class="Header"></app-logged-header>
 
 <main>
   <!-- Title section -->
@@ -41,13 +26,8 @@
   </section>
 
   <section class="reservation-submit">
-    <a href="Tu_Cuenta.html"><button class="reserve-button">Book Now</button></a>
+    <button class="reserve-button" routerLink="/tu-cuenta">Book Now</button>
   </section>
 </main>
 
-<footer id="main_footer"></footer>
-
-<script src="../JS/LoggedHeaderScript.js" defer></script>
-</body>
-</html>
-
+<app-footer></app-footer>

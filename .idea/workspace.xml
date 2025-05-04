@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ff39e854-ea02-4c31-b237-33041db1324b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="tsconfig.json" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Angular/src/app/app.component.html" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2tMCAVd4XdykotqyZTrgdXnp1Zr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.Body_Tu_cuenta.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.CompanyMain.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.CompanyRegister.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.CompanyWebsite.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Completar.html.executor&quot;: &quot;Debug&quot;,
+    &quot;JavaScript Debug.Completar_Reserva.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.CompleteSuReserva_Body.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Confirmation_Phone.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Confirmation_Tablet.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Footer.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Formulario.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.FormularioInicio.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Gestionar_Cuenta.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Header.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Header1.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Hi_User_Tablet.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Hi_user.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.List_template.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Location.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.ManageCompany.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Optionsbar_profile.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Registro.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Reserva.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Reservation_Phone.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Reservation_Tablet.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Service_template.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Servicios.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Tu_Cuenta.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Tu_Cuenta_Body.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Tu_Cuenta_Header.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Tus_Reservas.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Tus_Reservas_Body.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.asfda.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.completar-reseva.component.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Debug&quot;,
+    &quot;JavaScript Debug.logged-header.component.html.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.Hi_user.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.Optionsbar_profile.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.Tu_Cuenta.html.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.Tu_Cuenta_Body.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.logged-header.component.ts.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Niko&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nicol/OneDrive/Escritorio/PWM/JD Sports Website with Angular&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\nicol\\OneDrive\\Documentos\\Reserly\\Angular\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nicol\OneDrive\Documentos\Reserly\Angular\public\assets" />
+      <recent name="C:\Users\nicol\OneDrive\Documentos\Reserly\Angular\src\app\pages" />
+      <recent name="C:\Users\nicol\OneDrive\Documentos\Reserly\src\Templates\Pictures" />
+      <recent name="C:\Users\nicol\OneDrive\Documentos\Reserly\src\Templates\HTML" />
+      <recent name="C:\Users\nicol\OneDrive\Documentos\Reserly\src\Templates\CSS" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-WS-243.24978.60" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ff39e854-ea02-4c31-b237-33041db1324b" name="Changes" comment="" />
+      <created>1740152413404</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1740152413404</updated>
+      <workItem from="1740152415181" duration="2284000" />
+      <workItem from="1740419937005" duration="2287000" />
+      <workItem from="1740756182821" duration="6427000" />
+      <workItem from="1740852524665" duration="336000" />
+      <workItem from="1740852873158" duration="1392000" />
+      <workItem from="1740854359262" duration="15583000" />
+      <workItem from="1740919253445" duration="1733000" />
+      <workItem from="1740921908957" duration="100000" />
+      <workItem from="1740922024420" duration="455000" />
+      <workItem from="1742231540658" duration="2612000" />
+      <workItem from="1742569385693" duration="458000" />
+      <workItem from="1742569860963" duration="5553000" />
+      <workItem from="1742837070272" duration="3590000" />
+      <workItem from="1743094472649" duration="371000" />
+      <workItem from="1743111158910" duration="5551000" />
+      <workItem from="1743438422352" duration="1514000" />
+      <workItem from="1743613655985" duration="137000" />
+      <workItem from="1743775507581" duration="576000" />
+      <workItem from="1743776155471" duration="53000" />
+      <workItem from="1743776220251" duration="3757000" />
+      <workItem from="1743780350986" duration="1928000" />
+      <workItem from="1744042836962" duration="84000" />
+      <workItem from="1744045328200" duration="1056000" />
+      <workItem from="1744380293817" duration="2617000" />
+      <workItem from="1745162069873" duration="1188000" />
+      <workItem from="1745251786315" duration="5436000" />
+      <workItem from="1745333785545" duration="87000" />
+      <workItem from="1745491579777" duration="444000" />
+      <workItem from="1745513802169" duration="12000" />
+      <workItem from="1745589828037" duration="2400000" />
+      <workItem from="1745592288790" duration="2922000" />
+      <workItem from="1745775411298" duration="23000" />
+      <workItem from="1745842911594" duration="300000" />
+      <workItem from="1745937485207" duration="1011000" />
+      <workItem from="1746127781674" duration="66000" />
+      <workItem from="1746354452405" duration="649000" />
+      <workItem from="1746355150513" duration="4108000" />
+      <workItem from="1746369791890" duration="1029000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
