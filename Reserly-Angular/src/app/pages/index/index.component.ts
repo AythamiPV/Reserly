@@ -1,23 +1,25 @@
-import { Component} from '@angular/core';
-import { FooterComponent } from '../../components/footer/footer.component';
-import { HeaderComponent } from '../../components/main-header/main-header.component';
-import { CommonModule } from "@angular/common";
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-// import { Firestore, collection, collectionData } from '@angular/fire/firestore';
-// import { Observable } from 'rxjs';
+import {FooterComponent} from '../../components/footer/footer.component';
+import {LoggedHeaderComponent} from '../../components/logged-header/logged-header.component';
 
 @Component({
   selector: 'app-index',
   standalone: true,
-  imports: [
-    FooterComponent,
-    HeaderComponent,
-    CommonModule
-  ],
+  imports: [CommonModule, FooterComponent, LoggedHeaderComponent],
   templateUrl: './index.component.html',
-  styleUrl: './index.component.css',
+  styleUrls: ['./index.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class IndexComponent{
-  constructor( private router: Router) {
+export class IndexComponent implements OnInit {
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {
+    console.log('✅ IndexComponent ngOnInit ejecutado');
+  }
+
+  navigateToCompanyMain() {
+    this.router.navigate(['/company-main']);
   }
 }
