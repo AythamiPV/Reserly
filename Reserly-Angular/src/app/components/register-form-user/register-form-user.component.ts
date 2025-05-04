@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy, ChangeDetectorRef, ApplicationRef }
 import { FormsModule } from '@angular/forms';
 import { FirebaseService } from '../../firebase.service';
 import { CommonModule } from '@angular/common';
+import { RouterLink, Router } from "@angular/router";
 
 interface Country {
   code: string;
@@ -10,19 +11,21 @@ interface Country {
 }
 
 @Component({
-  selector: 'app-register-form',
+  selector: 'app-register-user-form',
   standalone: true,
-  imports: [FormsModule, CommonModule],
-  templateUrl: './register-form.component.html',
-  styleUrl: './register-form.component.css'
+  imports: [FormsModule, CommonModule, RouterLink],
+  templateUrl: './register-form-user.component.html',
+  styleUrl: './register-form-user.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RegisterFormComponent {
+export class RegisterFormUserComponent {
   formData = {
     nombreCompleto: '',
     email: '',
     password: '',
     confirmPassword: '',
-    telefono: ''
+    telefono: '',
+    company: false
   };
   errorMessage = '';
   successMessage = '';
@@ -39,21 +42,21 @@ export class RegisterFormComponent {
     { code: '+55', name: 'Brazil', flag: '/br.png' }
   ];
 
-  constructor(private firebaseService: FirebaseService, private cdr: ChangeDetectorRef, private appRef: ApplicationRef) { }
+  constructor(private firebaseService: FirebaseService, private cdr: ChangeDetectorRef, private appRef: ApplicationRef, private router: Router) {
+  }
 
-  onSubmit() {
+  async onSubmit() {
     this.errorMessage = '';
     this.successMessage = '';
 
-
-    if(this.formData.nombreCompleto === '' || this.formData.email === '' || this.formData.password === '' || this.formData.confirmPassword === '' || this.formData.telefono === '' ) {
-      this.errorMessage = 'Todos los campos deben estár completos';
+    if (this.formData.nombreCompleto === '' || this.formData.email === '' || this.formData.password === '' || this.formData.confirmPassword === '' || this.formData.telefono === '') {
+      this.errorMessage = 'Todos los campos deben estar completos';
       this.openErrorModal();
       this.cdr.detectChanges();
       return;
     }
 
-    if(this.formData.password.length < 6) {
+    if (this.formData.password.length < 6) {
       this.errorMessage = 'La contraseña debe tener un mínimo de 6 caracteres!';
       this.openErrorModal();
       this.cdr.detectChanges();
@@ -62,26 +65,33 @@ export class RegisterFormComponent {
 
     if (this.formData.password !== this.formData.confirmPassword) {
       this.errorMessage = 'Las contraseñas no coinciden.';
-      this.openErrorModal(); // También mostramos el modal
-      this.cdr.detectChanges(); // Forzar la detección de cambios
+      this.openErrorModal();
+      this.cdr.detectChanges();
       return;
     }
 
-    const userData = { ...this.formData, phoneCode: this.selectedCode };
-
-    this.firebaseService.createUser(userData)
-      .then(() => {
-        this.successMessage = 'Usuario registrado con éxito.';
-        this.openSuccessModal(); // También mostramos el modal
-        this.formData = { nombreCompleto: '', email: '', password: '', confirmPassword: '', telefono: '' };
-        this.cdr.detectChanges(); // Forzar la detección de cambios
-      })
-      .catch((error) => {
-        this.errorMessage = 'Error al registrar el usuario: ' + error;
-        this.openErrorModal(); // También mostramos el modal
-        console.error('Error al registrar usuario:', error);
-        this.cdr.detectChanges(); // Forzar la detección de cambios
-      });
+    try {
+      const user = await this.firebaseService.registerUser(this.formData.email, this.formData.password);
+      const userData = {
+        uid: user.uid,
+        nombreCompleto: this.formData.nombreCompleto,
+        email: this.formData.email,
+        telefono: this.formData.telefono,
+        phoneCode: this.selectedCode,
+        company: false
+      };
+      await this.firebaseService.createUser(userData);
+      this.successMessage = 'Usuario registrado con éxito.';
+      this.openSuccessModal();
+      this.formData = { nombreCompleto: '', email: '', password: '', confirmPassword: '', telefono: '', company: false };
+      this.cdr.detectChanges();
+      this.router.navigate(['/login']);
+    } catch (error: any) {
+      this.errorMessage = 'Error al registrar el usuario: ' + error.message;
+      this.openErrorModal();
+      console.error('Error al registrar usuario:', error);
+      this.cdr.detectChanges();
+    }
   }
 
   toggleDropdown() {
@@ -94,7 +104,7 @@ export class RegisterFormComponent {
     this.selectedFlag = country.flag;
     this.selectedCode = country.code;
     this.isDropdownOpen = false;
-    console.log('isDropdownOpen después de selección:', this.isDropdownOpen)
+    console.log('isDropdownOpen después de selección:', this.isDropdownOpen);
     this.cdr.detectChanges();
     this.appRef.tick();
   }
@@ -127,3 +137,4 @@ export class RegisterFormComponent {
     }
   }
 }
+//Código
