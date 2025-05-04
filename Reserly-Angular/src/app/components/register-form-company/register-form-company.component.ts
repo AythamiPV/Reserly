@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, ChangeDetectorRef, ApplicationRef }
 import { FormsModule } from '@angular/forms';
 import { FirebaseService } from '../../firebase.service';
 import { CommonModule } from '@angular/common';
-import {RouterLink} from "@angular/router";
+import {RouterLink, Router} from "@angular/router";
 
 interface Country {
   code: string;
@@ -42,7 +42,7 @@ export class RegisterFormCompanyComponent {
     { code: '+55', name: 'Brazil', flag: '/br.png' }
   ];
 
-  constructor(private firebaseService: FirebaseService, private cdr: ChangeDetectorRef, private appRef: ApplicationRef) { }
+  constructor(private firebaseService: FirebaseService, private cdr: ChangeDetectorRef, private appRef: ApplicationRef, private router: Router) { }
 
   async onSubmit() {
     this.errorMessage = '';
@@ -84,6 +84,7 @@ export class RegisterFormCompanyComponent {
       this.openSuccessModal();
       this.formData = { nombreCompleto: '', email: '', password: '', confirmPassword: '', telefono: '', company: true };
       this.cdr.detectChanges();
+      this.router.navigate(['/login']);
     } catch (error: any) {
       this.errorMessage = 'Error al registrar el usuario: ' + error.message;
       this.openErrorModal();
