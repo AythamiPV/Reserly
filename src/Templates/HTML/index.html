@@ -20,9 +20,13 @@
             <div class="header_valoracion">
                 <h1>Featured businesses</h1>
             </div>
-            <div class="article-container">
-                <!-- UNA SOLA plantilla de reseña que se clonará para cada entrada del JSON -->
-                <article class="article" id = "Reseña"></article>
+            <div class="scroll-container">
+                <button class="scroll-left">❮</button>
+                <div class="article-container">
+                    <!-- Plantilla de reseña que se clonará para cada entrada del JSON -->
+                    <article class="article" id="Reseña"></article>
+                </div>
+                <button class="scroll-right">❯</button>
             </div>
         </div>
     </div>
@@ -56,6 +60,19 @@
         });
 
         observer.observe(document.body, { childList: true, subtree: true });
+
+        // Agregar funcionalidad a los botones de desplazamiento
+        const container = document.querySelector(".article-container");
+        const btnLeft = document.querySelector(".scroll-left");
+        const btnRight = document.querySelector(".scroll-right");
+
+        btnLeft.addEventListener("click", () => {
+            container.scrollBy({ left: -300, behavior: "smooth" });
+        });
+
+        btnRight.addEventListener("click", () => {
+            container.scrollBy({ left: 300, behavior: "smooth" });
+        });
     });
 
     function cargarValoraciones(templateArticle) {
@@ -111,5 +128,4 @@
         return starsHTML;
     }
 </script>
-
 </html>

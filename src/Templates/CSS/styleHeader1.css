@@ -108,39 +108,55 @@ header {
 
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
         height: auto;
-        align-items: center;
-        text-align: center;
+        height: 100px;
+    }
+    .logo img {
+        display: none;
     }
     .search-container {
-        width: 100%;
-        justify-content: center;
+        width: auto;
+        justify-content: flex-start; /* Alinea el buscador a la izquierda */
+        padding: 0;
     }
+
     .search-container input {
-        width: 80%;
+        width: 250px; /* Ajusta el tamaño del input */
         max-width: 250px;
     }
+
     .auth-buttons {
-        width: 100%;
-        justify-content: center;
+        width: auto;
+        justify-content: flex-end; /* Alinea los botones a la derecha */
+        display: flex;
     }
 }
 
 @media (max-width: 480px) {
-    .search-container {
-        flex-direction: column;
+    header {
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        width: 100%;
+        padding: 10px;
+    }
+    .logo img {
+        display: none;
+    }
+    .search-container {
+        justify-content: flex-start;
+        width: auto;
     }
 
     .search-container input {
-        width: 90%;
-        max-width: 200px;
+        width: 200px; /* Ajusta el tamaño del input en pantallas más pequeñas */
     }
 
     .auth-buttons {
-        flex-direction: column;
-        align-items: center;
+        justify-content: flex-end;
+        width: auto;
     }
 }
+

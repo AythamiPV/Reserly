@@ -1,12 +1,12 @@
 // src/app/firebase.service.ts
 import { Injectable } from '@angular/core';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, doc, addDoc, updateDoc, deleteDoc, onSnapshot } from 'firebase/firestore';
+import { getFirestore, collection, doc, addDoc, updateDoc, deleteDoc, onSnapshot, getDoc } from 'firebase/firestore';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, User } from 'firebase/auth';
 import { environment } from '../environments/environment';
-import { Observable } from 'rxjs';
-import { BehaviorSubject } from 'rxjs';
-
+import { BehaviorSubject, Observable } from 'rxjs';
+import { from, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -79,7 +79,7 @@ export class FirebaseService {
    */
   registerUser(email: string, password: string): Promise<User> {
     return createUserWithEmailAndPassword(this.auth, email, password)
-      .then((userCredential) => userCredential.user);
+        .then((userCredential) => userCredential.user);
   }
 
   /**
@@ -90,9 +90,37 @@ export class FirebaseService {
    */
   loginUser(email: string, password: string): Promise<User> {
     return signInWithEmailAndPassword(this.auth, email, password)
-      .then((userCredential) => userCredential.user);
+        .then((userCredential) => userCredential.user);
   }
-
+  /**
+   * Inicia sesión de un usuario existente con email y contraseña.
+   * @param email El email del usuario.
+   * @param password La contraseña del usuario.
+   * @returns Una promesa con la información del usuario autenticado.
+   */
+  signInWithEmailAndPassword(email: string, password: string): Promise<User | null> {
+    return signInWithEmailAndPassword(this.auth, email, password)
+        .then((userCredential) => userCredential.user)
+        .catch((error) => {
+          console.error('Error signing in with email and password:', error);
+          throw error;
+        });
+  }
+  getUserData(uid: string): Observable<any> {
+    if (!uid) {
+      return of(undefined); // Devuelve un observable vacío si no hay UID
+    }
+    const userDocRef = doc(this.db, 'Users', uid);
+    return from(getDoc(userDocRef)).pipe(
+        switchMap(docSnapshot => {
+          if (docSnapshot.exists()) {
+            return of(docSnapshot.data());
+          } else {
+            return of(undefined);
+          }
+        })
+    );
+  }
   /**
    * Cierra la sesión del usuario actual.
    * @returns Una promesa que se resuelve cuando la sesión se cierra.
@@ -107,5 +135,16 @@ export class FirebaseService {
    */
   getCurrentUser(): User | null {
     return this.auth.currentUser;
+  }
+
+  async createUser(userData: any): Promise<void> {
+    try {
+      const usersCollection = collection(this.db, 'Users');
+      await addDoc(usersCollection, userData);
+      console.log('Usuario creado con ID: ');
+    } catch (error) {
+      console.error('Error al añadir documento: ', error);
+      throw error;
+    }
   }
 }

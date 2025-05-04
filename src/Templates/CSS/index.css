@@ -1,3 +1,7 @@
+body{
+    background-color: #3a4b5c;
+}
+
 .article {
     flex: 1 1 200px;
     padding: 10px;
@@ -7,10 +11,13 @@
 .main_content {
     background-color: #3a4b5c;
 }
-
+.header_valoracion{
+    color: white;
+}
 .Imagen_Principal {
     width: 100%;
-    height: 100vh;
+    height: auto;
+    max-height: 100vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -19,10 +26,12 @@
 
 .Imagen_Principal img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain; /* Usa "cover" si prefieres que llene el espacio sin distorsionarse */
     display: block;
 }
+
 
 .Informacion {
     max-width: 1200px;
@@ -42,59 +51,55 @@
     margin: 20px;
 }
 
-.Informacion h1, .Valoracion h1 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: white;
+.scroll-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* Evita que se desborde el contenido */
 }
 
 .article-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
+    flex-wrap: nowrap; /* No permitir salto de línea */
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 10px;
+    padding: 10px;
+    width: 100%;
 }
 
-.footer {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    text-align: center;
-    background-color: #1b2a41;
+/* Ocultar barra de desplazamiento en navegadores */
+.article-container::-webkit-scrollbar {
+    display: none;
 }
 
-@media (max-width: 1024px) {
-    .Imagen_Principal {
-        height: 70vh;
-    }
-    .Informacion, .Valoracion {
-        padding: 30px;
-        margin: 30px auto;
-    }
+.article {
+    min-width: 300px;
+    flex-shrink: 0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 768px) {
-    .Imagen_Principal {
-        height: 50vh;
-    }
-    .Informacion, .Valoracion {
-        padding: 20px;
-    }
-    .article-container {
-        flex-direction: column;
-        align-items: center;
-    }
+/* Botones de desplazamiento */
+.scroll-left, .scroll-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
 }
 
-@media (max-width: 480px) {
-    .Imagen_Principal {
-        height: 40vh;
-    }
-    .Informacion, .Valoracion {
-        padding: 15px;
-        margin: 20px auto;
-    }
-    .Informacion h1, .Valoracion h1 {
-        font-size: 1.5rem;
-    }
+.scroll-left {
+    left: 10px;
 }
+
+.scroll-right {
+    right: 10px;
+}
+
