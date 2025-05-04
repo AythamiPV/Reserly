@@ -1,12 +1,19 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ChangeDetectionStrategy,
+  ElementRef,
+  ViewChild,
+  Renderer2
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoggedHeaderComponent } from '../../components/logged-header/logged-header.component';
 import { CalendarComponent } from '../../components/calendar/calendar.component';
 import { ListComponent } from '../../components/list/list.component';
 import { FooterComponent } from '../../components/footer/footer.component';
-import { Router } from '@angular/router';
-import {ScheduleComponent} from '../../components/schedule/schedule.component';
-import {ServiceComponent} from '../../components/service/service.component';
+import { ScheduleComponent } from '../../components/schedule/schedule.component';
+import { ServiceComponent } from '../../components/service/service.component';
 
 @Component({
   selector: 'app-manage-company',
@@ -17,7 +24,16 @@ import {ServiceComponent} from '../../components/service/service.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ManageCompanyComponent implements OnInit, OnDestroy {
-  constructor(private router: Router) { } // Inyecta el Router
+  @ViewChild('editableText') editableTextRef!: ElementRef;
+  @ViewChild('companyName', { static: false }) companyNameRef!: ElementRef; // Referencia al span del nombre de la compañía
+
+  aboutYouText: string = 'Click the pencil to edit this text.';
+  companyName: string = 'Company Name';
+  isCompanyNameEditing: boolean = false;
+  private blurListener: (() => void) | null = null;
+  private companyNameBlurListener: (() => void) | null = null;
+
+  constructor(private renderer: Renderer2) { }
 
   ngOnInit(): void {
     console.log("✅ ManageCompanyComponent ngOnInit ejecutado");
@@ -27,14 +43,53 @@ export class ManageCompanyComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     console.log("❌ ManageCompanyComponent ngOnDestroy ejecutado");
+    this.removeBlurListener();
+    this.removeCompanyNameBlurListener();
+  }
+
+  enableEditing() {
+    if (this.editableTextRef) {
+      const element = this.editableTextRef.nativeElement;
+      this.renderer.setAttribute(element, 'contenteditable', 'true');
+      element.focus();
+      this.blurListener = this.renderer.listen(element, 'blur', () => {
+        this.renderer.setAttribute(element, 'contenteditable', 'false');
+        this.removeBlurListener();
+        console.log('Texto "About you" editado:', element.innerText);
+        this.aboutYouText = element.innerText;
+      });
+    }
+  }
+
+  removeBlurListener() {
+    if (this.blurListener) {
+      this.blurListener();
+      this.blurListener = null;
+    }
+  }
+
+  enableCompanyNameEditing() {
+    this.isCompanyNameEditing = true;
+    if (this.companyNameRef) {
+      this.companyNameRef.nativeElement.focus();
+      this.companyNameBlurListener = this.renderer.listen(this.companyNameRef.nativeElement, 'blur', () => {
+        this.isCompanyNameEditing = false;
+        this.removeCompanyNameBlurListener();
+        console.log('Nombre de la compañía editado:', this.companyNameRef.nativeElement.innerText);
+        this.companyName = this.companyNameRef.nativeElement.innerText;
+      });
+    }
+  }
+
+  removeCompanyNameBlurListener() {
+    if (this.companyNameBlurListener) {
+      this.companyNameBlurListener();
+      this.companyNameBlurListener = null;
+    }
   }
 
   saveChanges() {
-    // Aquí iría la lógica para guardar los cambios realizados por el usuario
+    // Lógica para guardar todos los cambios realizados en la página
     console.log('Guardando cambios...');
-
-    // Después de guardar los cambios (o si la acción del botón es solo para volver),
-    // navega a la página CompanyMain
-    this.router.navigate(['/company-main']);
   }
 }

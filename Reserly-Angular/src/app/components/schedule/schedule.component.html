@@ -1,18 +1,21 @@
 <div id="ScheduleContainer">
-  <h1>Services</h1>
+    <h1>Schedule</h1>
+    <label for="day">Day:</label>
+    <select id="day">
+        <option value="monday">Monday</option>
+        <option value="tuesday">Tuesday</option>
+        <option value="wednesday">Wednesday</option>
+        <option value="thursday">Thursday</option>
+        <option value="friday">Friday</option>
+        <option value="saturday">Saturday</option>
+        <option value="sunday">Sunday</option>
+    </select>
 
-  <label for="service-name">Name of service:</label>
-  <input type="text" id="service-name" placeholder="Enter service name">
+    <label for="from">From:</label>
+    <input type="time" id="from">
 
-  <label for="cost">Cost (€):</label>
-  <input type="number" id="cost" placeholder="Enter cost" step="0.01">
+    <label for="to">To:</label>
+    <input type="time" id="to">
 
-  <div class="time-inputs">
-    <div>
-      <label for="time-cost">Time cost:</label>
-      <input type="time" id="time-cost">
-    </div>
-  </div>
-
-  <button id="add-service">Add to services</button>
+    <button id="add-schedule">Add at schedule</button>
 </div>
