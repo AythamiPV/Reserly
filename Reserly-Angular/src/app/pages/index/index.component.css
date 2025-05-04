@@ -4,6 +4,11 @@ body {
 
 .main_content {
   background-color: #3a4b5c;
+  align-content: center;
+}
+
+.main_content {
+  background-color: #3a4b5c;
 }
 
 .header_valoracion {
@@ -36,6 +41,8 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: white;
   background-color: #1b2a41;
+  align-items: center;
+  text-align: center;
 }
 
 .Valoracion {
@@ -44,6 +51,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   margin: 20px;
+  text-align: center;
 }
 
 .scroll-container {
@@ -74,20 +82,6 @@ body {
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Botones de desplazamiento */
-.scroll-left, .scroll-right {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
 }
 
 .scroll-left {

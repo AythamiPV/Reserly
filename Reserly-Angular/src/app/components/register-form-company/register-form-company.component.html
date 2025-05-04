@@ -3,7 +3,7 @@
     <a routerLink="/register-user">
       <button class="top-button">Sign your User</button>
     </a>
-    <h2>User Sign</h2>
+    <h2>Company Sign</h2>
 
     <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
     <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
@@ -33,7 +33,7 @@
 
       <button type="submit">Sign in</button>
     </form>
-    <a href="" class="login-link">Do you already have an account?</a>
+    <a routerLink="/login" class="login-link">Do you already have an account?</a>
   </div>
 </div>
 
