@@ -1,3 +1,4 @@
+// src/app/logged-header/logged-header.component.ts
 import {
   Component,
   OnInit,
@@ -9,7 +10,9 @@ import {
   ChangeDetectorRef
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router'; // Importa ActivatedRoute
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { FirebaseService } from '../../firebase.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-logged-header',
@@ -21,14 +24,17 @@ import { Router, NavigationEnd, ActivatedRoute } from '@angular/router'; // Impo
 })
 export class LoggedHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
   isInCompanyMain: boolean = false;
-  private routerSubscription: any;
+  userName: string | null = null;
+  private routerSubscription: Subscription | null = null;
+  private authSubscription: Subscription | null = null;
 
   constructor(
     private renderer: Renderer2,
     private el: ElementRef,
     private router: Router,
     private cdr: ChangeDetectorRef,
-    private route: ActivatedRoute // Inyecta ActivatedRoute
+    private route: ActivatedRoute,
+    private firebaseService: FirebaseService
   ) { }
 
   ngOnInit(): void {
@@ -41,6 +47,25 @@ export class LoggedHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
 
     // Comprobación inicial al cargar el componente
     this.checkIfInCompanyMain(this.router.url);
+
+    // Escucha los cambios en el usuario autenticado y carga el nombre
+    this.authSubscription = this.firebaseService.user$.subscribe(user => {
+      if (user) {
+        this.firebaseService.getDocumentData<{ name: string }>('users', user.uid).subscribe(userData => {
+          if (userData && userData.name) {
+            this.userName = userData.name;
+            this.cdr.detectChanges();
+          } else {
+            this.userName = 'Usuario';
+            this.cdr.detectChanges();
+            console.log('No se encontró el nombre del usuario en Firestore.');
+          }
+        });
+      } else {
+        this.userName = null;
+        this.cdr.detectChanges();
+      }
+    });
   }
 
   ngAfterViewInit(): void {
@@ -51,6 +76,9 @@ export class LoggedHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
     this.removeDropdownListeners();
     if (this.routerSubscription) {
       this.routerSubscription.unsubscribe();
+    }
+    if (this.authSubscription) {
+      this.authSubscription.unsubscribe();
     }
   }
 
