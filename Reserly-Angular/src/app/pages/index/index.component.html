@@ -1,4 +1,5 @@
 <app-header></app-header>
+
 <div class="main_content">
     <div class="Imagen_Principal">
         <img src="/ImagenPrincipal.png" alt="ImagenPrincipal">
@@ -16,19 +17,7 @@
         <div class="header_valoracion">
             <h1>Featured businesses</h1>
         </div>
-        <div class="scroll-container">
-            <button class="scroll-left" (click)="scrollLeft()">❮</button>
-            <div class="article-container" #articleContainer>
-                <article class="article" *ngFor="let review of reviews">
-                    <img class="profile-image" [src]="review.image ? review.image : '/UserDefault-icon.png'" alt="Profile">
-                    <div class="text">{{ review.decripcion }}</div>
-                    <div class="stars" [innerHTML]="generateStars(review.value)"></div>
-                    <div class="name">{{ review.name }}</div>
-                    <div class="role">{{ review.type }}</div>
-                </article>
-            </div>
-            <button class="scroll-right" (click)="scrollRight()">❯</button>
-        </div>
     </div>
 </div>
+
 <app-footer></app-footer>
