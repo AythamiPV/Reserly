@@ -14,6 +14,7 @@ import { ListComponent } from '../../components/list/list.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { ScheduleComponent } from '../../components/schedule/schedule.component';
 import { ServiceComponent } from '../../components/service/service.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manage-company',
@@ -33,7 +34,11 @@ export class ManageCompanyComponent implements OnInit, OnDestroy {
   private blurListener: (() => void) | null = null;
   private companyNameBlurListener: (() => void) | null = null;
 
-  constructor(private renderer: Renderer2) { }
+
+  constructor(
+    private renderer: Renderer2,
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
     console.log("✅ ManageCompanyComponent ngOnInit ejecutado");
@@ -91,5 +96,6 @@ export class ManageCompanyComponent implements OnInit, OnDestroy {
   saveChanges() {
     // Lógica para guardar todos los cambios realizados en la página
     console.log('Guardando cambios...');
+    this.router.navigate(['/company-main']);
   }
 }
