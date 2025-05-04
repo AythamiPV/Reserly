@@ -1,0 +1,139 @@
+body {
+  background-color: #3a4b5c;
+}
+
+.main_content {
+  background-color: #3a4b5c;
+  align-content: center;
+}
+
+.main_content {
+  background-color: #3a4b5c;
+}
+
+.header_valoracion {
+  color: white;
+}
+
+.Imagen_Principal {
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Imagen_Principal img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain; /* Usa "cover" si prefieres que llene el espacio sin distorsionarse */
+  display: block;
+}
+
+.Informacion {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+  background-color: #1b2a41;
+  align-items: center;
+  text-align: center;
+}
+
+.Valoracion {
+  background-color: #1b2a41;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  text-align: center;
+}
+
+.scroll-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* Evita que se desborde el contenido */
+}
+
+.article-container {
+  display: flex;
+  flex-wrap: nowrap; /* No permitir salto de línea */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+/* Ocultar barra de desplazamiento en navegadores */
+.article-container::-webkit-scrollbar {
+  display: none;
+}
+
+.article {
+  min-width: 300px;
+  flex-shrink: 0;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-left {
+  left: 10px;
+}
+
+.scroll-right {
+  right: 10px;
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.text {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.stars {
+  color: gold;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.stars .star.empty {
+  color: gray;
+}
+
+.stars .star .half {
+  position: absolute;
+  overflow: hidden;
+  width: 50%;
+}
+
+.stars .star .empty {
+  position: absolute;
+  left: 50%;
+  color: gray;
+}
+
+.name {
+  color: #4FC3F7;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.role {
+  color: lightgray;
+  font-size: 0.9em;
+}
