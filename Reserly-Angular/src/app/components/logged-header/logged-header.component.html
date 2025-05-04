@@ -10,9 +10,8 @@
     <div class="dropdown">
       <img class="profile-pic" src="/UserDefault-icon.png" alt="Imagen de perfil">
       <div class="dropdown-menu">
-        <a href="../HTML/ManageCompany.html">Manage company</a>
-        <a href="../HTML/Tus_Reservas.html">Make a reservation</a>
-        <a href="../HTML/index.html">Log out</a>
+        <a *ngIf="isInCompanyMain" (click)="navigateTo('/manage-company')" style="cursor: pointer;">Manage company</a>
+        <a (click)="navigateTo('/index')" style="cursor: pointer;">Log out</a>
       </div>
     </div>
   </div>
