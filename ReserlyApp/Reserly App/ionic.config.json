@@ -1,0 +1,7 @@
+{
+  "name": "ReserlyApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

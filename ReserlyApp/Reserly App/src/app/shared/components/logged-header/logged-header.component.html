@@ -1,0 +1,39 @@
+<header class="logged-header">
+  <div class="logo">
+    <img src="assets/logo.png" alt="Logo de la empresa" />
+  </div>
+
+  <div class="user-info">
+    <div class="search-container">
+      <input type="text" placeholder="Search..." />
+    </div>
+
+    <span class="username">{{ userName ? userName : "Cargando..." }}</span>
+
+    <div class="dropdown">
+      <img
+        class="profile-pic"
+        src="assets/UserDefault-icon.png"
+        alt="Imagen de perfil"
+      />
+      <div class="dropdown-menu">
+        <a
+          *ngIf="isInCompanyMain"
+          (click)="navigateTo('/manage-company')"
+          style="cursor: pointer"
+          >Manage company</a
+        >
+        <a (click)="navigateTo('/tus-reservas')">
+          Books</a
+        >
+        <a (click)="navigateTo('/tu-cuenta')">
+          Your Account</a
+        >
+        <a (click)="navigateTo('/mis-favoritos')" style="cursor: pointer"
+          >Mis favoritos</a
+        >
+        <a (click)="logout()" style="cursor: pointer">Log out</a>
+      </div>
+    </div>
+  </div>
+</header>

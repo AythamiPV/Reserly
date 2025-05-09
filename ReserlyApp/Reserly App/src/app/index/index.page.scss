@@ -1,0 +1,28 @@
+.imagen-principal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagen-principal img {
+  width: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.informacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.valoracion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}

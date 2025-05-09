@@ -1,0 +1,75 @@
+<app-logged-header class="Header"></app-logged-header>
+
+<main class="main-container">
+  <div class="company-profile">
+    <img
+      src="assets/UserDefault-icon.png"
+      alt="Company Profile"
+      class="company-logo"
+    />
+    <span
+      class="company-name"
+      id="companyName"
+      [contentEditable]="isCompanyNameEditing"
+      >{{ companyName }}</span
+    >
+    <img
+      src="assets/PencilEdit-icon.png"
+      alt="Edit Icon"
+      class="edit-icon"
+      (click)="enableCompanyNameEditing()"
+    />
+  </div>
+
+  <div class="content-layout">
+    <div class="column">
+      <div class="template-container">
+        <h2>Schedule</h2>
+        <app-schedule id="Schedule"></app-schedule>
+        <h2>Timetable:</h2>
+        <app-list id="scheduleList"></app-list>
+      </div>
+      <div class="template-container">
+        <h2>Select the holidays:</h2>
+        <app-calendar></app-calendar>
+        <div class="button-container">
+          <button class="add-festive">Add festive</button>
+          <button class="remove-festive">Remove festive</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="template-container">
+        <h2>Services</h2>
+        <app-service id="Service"></app-service>
+        <h2>List of services:</h2>
+        <app-list id="serviceList"></app-list>
+      </div>
+      <div class="template-container">
+        <h2>About you</h2>
+        <img
+          src="assets/PencilEdit-icon.png"
+          alt="Edit"
+          class="edit-icon"
+          id="edit-icon"
+          (click)="enableEditing()"
+        />
+        <div class="editable-area">
+          <div id="editable-text" contenteditable="false" class="text-area">
+            {{ aboutYouText }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="template-container">
+    <h2>Location</h2>
+    <img src="assets/Map.PNG" alt="Map" id="Location" />
+  </div>
+
+  <button id="save-changes" (click)="saveChanges()">Save changes</button>
+</main>
+
+<app-footer></app-footer>

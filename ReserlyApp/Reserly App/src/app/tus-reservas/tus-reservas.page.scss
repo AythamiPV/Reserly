@@ -1,0 +1,101 @@
+.reservations-header {
+  background-color: #223344;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+}
+.search-visited-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px;
+}
+.search-service,
+.visited-before {
+  background-color: #1a1f25;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 40%;
+  min-width: 280px;
+}
+.search-service input,
+.search-service select,
+.search-service .search-button,
+.reserve-again {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: none;
+  background-color: #2e3b4e;
+  color: white;
+}
+
+.visited-box {
+  height: 200px;
+  background-color: #ccc;
+  margin: 10px 0;
+  border-radius: 6px;
+}
+.reserve-again {
+  width: 100%;
+  padding: 10px;
+  background-color: #34495e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/* Accordion */
+.accordion-container {
+  margin: 20px;
+}
+.accordion {
+  width: 100%;
+  padding: 15px;
+  background-color: #2b3e50;
+  color: white;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+.accordion:hover {
+  background-color: #3e5670;
+}
+
+.panel {
+  display: none;
+  background-color: #1a1f25;
+  padding: 10px;
+  border-radius: 6px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* Responsive: tablet */
+@media (max-width: 900px) {
+  .search-service,
+  .visited-before {
+    width: 80%;
+  }
+}
+
+/* Responsive: móvil */
+@media (max-width: 600px) {
+  .search-service,
+  .visited-before {
+    width: 100%;
+  }
+
+  .accordion {
+    font-size: 16px;
+  }
+}

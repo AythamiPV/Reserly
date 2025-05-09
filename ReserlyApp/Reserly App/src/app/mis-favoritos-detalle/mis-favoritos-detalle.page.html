@@ -1,0 +1,25 @@
+<app-logged-header class="Header"></app-logged-header>
+
+@if (servicio) {
+<div class="detalle">
+  <img [src]="servicio.img" [alt]="servicio.name" />
+
+  <p class="title">{{ servicio.name }}</p>
+
+  <p class="price">Precio: {{ servicio.price }}€</p>
+
+  <p>{{ servicio.description }}</p>
+
+  <div class="buttons">
+    @if (servicio.isFavorite) {
+    <button class="delete" (click)="removeFavorite()">Remover favorito</button>
+    } @else{
+    <button (click)="addFavorite()">Agregar a favoritos</button>
+    }
+
+    <button (click)="back()">Regresar</button>
+  </div>
+</div>
+}
+
+<app-footer></app-footer>

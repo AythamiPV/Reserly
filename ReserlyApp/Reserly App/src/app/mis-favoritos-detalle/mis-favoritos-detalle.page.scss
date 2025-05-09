@@ -1,0 +1,48 @@
+.detalle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.detalle img {
+  width: 250px;
+  width: 250px;
+}
+
+p{
+  color: white;
+}
+
+.title{
+  font-weight: bold;
+  font-size: 32px;
+  margin: 12px 0;
+}
+
+.price{
+  font-weight: bold;
+  font-size: 18px;
+  margin: 6px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.buttons button {
+  width: 40%;
+  padding: 10px;
+  background-color: #4fc3f7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.delete {
+  background-color: #f44336 !important;
+}

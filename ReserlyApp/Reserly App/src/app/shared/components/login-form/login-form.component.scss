@@ -1,0 +1,128 @@
+.form-container {
+  width: 90%;
+  max-width: 500px; /* Aumentamos el ancho del formulario */
+  min-width: 450px; /* Evitamos que sea muy pequeño en pantallas grandes */
+  margin: 10vh auto;
+  text-align: center;
+  padding: 50px; /* Más espacio interno */
+  border-radius: 12px;
+  background-color: #23334a;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 32px; /* Aumentamos el tamaño del título */
+  margin-bottom: 25px;
+  color: white;
+}
+
+form input {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+  display: block;
+  width: calc(100% - 40px);
+  padding: 14px; /* Más espacio en los inputs */
+  margin: 15px auto;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  outline: none;
+  font-size: 20px; /* Aumentamos el tamaño del texto */
+  box-sizing: border-box;
+}
+
+form input::placeholder {
+  color: white;
+}
+
+form button {
+  width: 100%;
+  padding: 14px;
+  background-color: #4fc3f7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+form button:hover {
+  background-color: #0097a7;
+}
+
+.or-text {
+  margin: 20px 0;
+  font-size: 18px; /* Aumentamos el tamaño del texto */
+  color: white;
+}
+
+.google-login {
+  width: 100%;
+  padding: 14px;
+  background-color: #4fc3f7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.google-login:hover {
+  background-color: #0097a7;
+}
+
+.no-account {
+  color: white;
+}
+
+.link {
+  color: white;
+}
+
+/* Ajustes para tablets */
+@media (max-width: 1024px) {
+  .form-container {
+    max-width: 450px; /* Se ajusta para tablets */
+    min-width: auto;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    width: 95%;
+    max-width: 500px;
+    padding: 20px;
+  }
+  form input {
+    font-size: 16px;
+    padding: 10px;
+  }
+  form button,
+  .google-login {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+
+/* Ajustes para móviles */
+@media (max-width: 480px) {
+  .form-container {
+    width: 100%;
+    margin: 5vh auto;
+    padding: 15px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  form input {
+    font-size: 14px;
+    padding: 8px;
+  }
+  form button,
+  .google-login {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

@@ -1,0 +1,24 @@
+<app-logged-header class="Header"></app-logged-header>
+
+<div class="title">
+  <h2>Lista de Servicios</h2>
+</div>
+
+<div class="services">
+  @for (service of services; track service.id) {
+  <div (click)="openService(service)" class="service-card">
+    <div>
+      <p><b>{{service.name}}</b></p>
+      <p>Precio: {{service.price}}€</p>
+
+      @if (service.isFavorite){
+        <p>Favorito ⭐ </p>
+      }
+    </div>
+
+    <img [src]="service.img" alt="" />
+  </div>
+  }
+</div>
+
+<app-footer></app-footer>

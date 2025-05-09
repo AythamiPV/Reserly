@@ -1,0 +1,144 @@
+header {
+  width: 100%;
+  background-color: #23334a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  padding: 0 20px;
+}
+
+.logo img {
+  height: 45px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Contenedor de búsqueda */
+.search-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  /* outline: none; */
+  font-weight: bold;
+}
+
+.search-container input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Usuario */
+.user-info {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2em;
+  padding: 0 20px;
+}
+
+.username {
+  font-weight: bold;
+  color: white;
+  font-size: 1.2em;
+}
+
+/* Imagen de perfil */
+.profile-pic {
+  width: 4em;
+  border-radius: 50%;
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  top: 50px;
+  right: 0;
+  background-color: #1d607e;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  min-width: 150px;
+  padding: 8px 0;
+  z-index: 1000;
+}
+
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #1d607e;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.dropdown.active .dropdown-menu {
+  display: block;
+  position: fixed;
+  top: 70px;
+  right: 25px;
+}
+
+/* Diseño Responsive */
+@media (max-width: 768px) {
+  header {
+    height: 65px;
+  }
+
+  .search-container input {
+    width: 150px;
+  }
+}
+
+@media (max-width: 800px) {
+  .username {
+    display: none;
+  }
+
+  .search-container {
+    justify-content: flex-end;
+  }
+
+  .search-container input {
+    display: none;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .profile-pic {
+    width: 3em;
+  }
+}

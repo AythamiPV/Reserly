@@ -1,0 +1,31 @@
+.title {
+  padding: 0 20px;
+}
+
+.services {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+
+}
+p {
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+.service-card {
+  display: flex;
+  cursor: pointer;
+  gap: 10px;
+  background-color: #23334a;
+  padding: 10px;
+  margin: 10px;
+}
+
+img {
+  width: 120px;
+  height: 120px;
+}

@@ -1,0 +1,27 @@
+<div class="form-container">
+  <h2>Login</h2>
+  <form (ngSubmit)="onSubmit()" method="post">
+    <input
+      type="email"
+      placeholder="Email Address"
+      required
+      [(ngModel)]="formData.email"
+      name="email"
+    />
+    <input
+      type="password"
+      placeholder="Password"
+      required
+      [(ngModel)]="formData.password"
+      name="password"
+    />
+    <button type="submit">Sign in</button>
+  </form>
+  <p class="or-text">or</p>
+  <button class="google-login">Sign in with Google</button>
+
+  <p class="no-account">
+    Don't have an account?
+    <a class="link" routerLink="/register-user">Sign up here</a>
+  </p>
+</div>
