@@ -7,13 +7,14 @@ import { LoggedHeaderComponent } from '../shared/components/logged-header/logged
 import { FooterComponent } from '../shared/components/footer/footer.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FirebaseService } from '../shared/services/firebase.service';
+import { IonToggle } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-mis-favoritos-detalle',
   templateUrl: './mis-favoritos-detalle.page.html',
   styleUrls: ['./mis-favoritos-detalle.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, LoggedHeaderComponent, FooterComponent],
+  imports: [CommonModule, FormsModule, LoggedHeaderComponent, FooterComponent, IonToggle],
 })
 export class MisFavoritosDetallePage implements OnInit {
   public servicio: Services | null = null;
@@ -36,6 +37,10 @@ export class MisFavoritosDetallePage implements OnInit {
         this.servicio = data;
         this.validateFavorite();
       });
+  }
+
+  changeFavorite(event: any){
+    event.target.checked ? this.addFavorite() : this.removeFavorite();
   }
 
   addFavorite() {

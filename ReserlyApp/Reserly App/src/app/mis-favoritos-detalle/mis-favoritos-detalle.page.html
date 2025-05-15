@@ -11,11 +11,7 @@
   <p>{{ servicio.description }}</p>
 
   <div class="buttons">
-    @if (servicio.isFavorite) {
-    <button class="delete" (click)="removeFavorite()">Eliminar favorito</button>
-    } @else{
-    <button (click)="addFavorite()">Agregar a favoritos</button>
-    }
+    <ion-toggle (ionChange)="changeFavorite($event)" [checked]="servicio.isFavorite">Favorito</ion-toggle><br /><br />
 
     <button (click)="back()">Regresar</button>
   </div>
