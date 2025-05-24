@@ -49,6 +49,7 @@ export class LoginFormComponent {
         }
       })
       .catch((error) => {
+        alert('Error al iniciar sesion ' + error.message);
         this.errorMessage = 'Error al iniciar sesión: ' + error.message;
         console.error('Error al iniciar sesión:', error);
       });
