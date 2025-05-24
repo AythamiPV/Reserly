@@ -68,7 +68,7 @@ export const routes: Routes = [
   },
   {
     path: 'mis-favoritos',
-    //canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     loadComponent: () =>
       import('./mis-favoritos/mis-favoritos.page').then(
         (m) => m.MisFavoritosPage
@@ -76,7 +76,7 @@ export const routes: Routes = [
   },
   {
     path: 'mis-favoritos-detalle/:id',
-   // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     loadComponent: () =>
       import('./mis-favoritos-detalle/mis-favoritos-detalle.page').then(
         (m) => m.MisFavoritosDetallePage
