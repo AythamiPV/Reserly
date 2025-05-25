@@ -2,17 +2,32 @@
 
 <main>
   <section class="account-header">
-    <div class="profile-image">
-      <img src="assets/UserDefault-icon.png" alt="Profile Image" />
+    <div class="account-col">
+      <div class="profile-image">
+        <img src="assets/UserDefault-icon.png" alt="Profile Image" />
+      </div>
+      <div class="account-info">
+        <h1>Your Account</h1>
+        <p>
+          <strong>Hello,</strong><br />
+          {{userName}}
+        </p>
+      </div>
     </div>
-    <div class="account-info">
-      <h1>Your Account</h1>
-      <p>
-        <strong>Hello,</strong><br />
-        {{userName}}
-      </p>
+
+    <div class="account-col">
+      <button style="width: 100%" (click)="editingUser = !editingUser">{{editingUser ? 'Cerrar' : 'Editar Cuenta' }}</button>
     </div>
+
   </section>
+
+  @if(editingUser){
+    <section class="account-edit">
+      <input [formControl]="userControl" placeholder="Nombre de usuario" type="text">
+      <button (click)="editUser()">Editar</button>
+      <button class="danger" (click)="deleteUser()">Eliminar</button>
+    </section>
+  }
 
   <section>
     <div class="template-container">

@@ -76,5 +76,13 @@ p {
   .price {
     text-align: center;
   }
+
+  .favorite-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 16px;
+  }
 }
 

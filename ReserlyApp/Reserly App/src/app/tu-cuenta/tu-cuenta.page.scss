@@ -17,13 +17,22 @@ main {
 
 .account-header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 20px;
   background-color: #2c3e50;
   border-bottom: 2px solid #16202a;
   position: relative;
   z-index: 1;
 }
+
+.account-col {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
 .account-info {
   color: white;
 }
@@ -141,6 +150,53 @@ main {
   transform: scale(1.02);
 }
 
+.account-edit{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+input {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+  display: block;
+  width: 60%;
+  padding: 14px; /* Más espacio en los inputs */
+  margin: 15px auto;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  outline: none;
+  font-size: 20px; /* Aumentamos el tamaño del texto */
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: white;
+}
+
+button {
+  width: 20%;
+  padding: 14px;
+  background-color: #4fc3f7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0097a7;
+}
+
+.danger{
+  background-color: red;
+}
+
+.danger:hover{
+  background-color: red;
+}
+
 /* Tablet: 2 columnas */
 @media (max-width: 900px) {
   .account-option {
@@ -151,6 +207,18 @@ main {
 /* Móvil: 1 columna */
 @media (max-width: 600px) {
   .account-option {
+    width: 100%;
+  }
+
+  .account-edit{
+    flex-direction: column;
+  }
+
+  .account-edit input{
+    width: 100%;
+  }
+
+  .account-edit button{
     width: 100%;
   }
 }

@@ -11,8 +11,14 @@
   <p>{{ servicio.description }}</p>
 
   <div class="buttons">
-    <ion-toggle (ionChange)="changeFavorite($event)" [checked]="servicio.isFavorite">Favorito</ion-toggle><br /><br />
-
+    <div class="favorite-section">
+      <label for="favoriteToggle">Favorito</label>
+      <ion-toggle
+        id="favoriteToggle"
+        (ionChange)="changeFavorite($event)"
+        [checked]="servicio.isFavorite">
+      </ion-toggle>
+    </div>
     <button (click)="back()">Regresar</button>
   </div>
 </div>
